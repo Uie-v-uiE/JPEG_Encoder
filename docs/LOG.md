@@ -54,3 +54,20 @@ tb_jpeg_top tag=pat128x96: sent=12288 bytes=1156 errors=0 -> PASS
   WNS=+3.941 / WHS=+0.026 / 0 critDRC / 全实例在网表 / 600 LUTRAM 行缓冲。
   (三次失败教训:陈旧项目网表、readmemh CWD、双 always 多驱动——见 ISSUES。)
 - P2 git 提交完成。
+
+## 2026-11-07(板级交付:四项目 bit 全部出炉)
+
+- 板级演示顶层三件套完成:
+  - rv32i:`z7_rv32i_board`(fib 内置、tohost→LED0),bit 出炉,WNS +4.824 @50 MHz;
+  - fft:`fft_demo_board`(双音帧 ROM→FFT→|I|+|Q| 峰值 bin→LED[2:0]),
+    bit 出炉,WNS +2.250 @200 MHz;IBUFDS 的 DIFF_TERM 与 DIFF_SSTL12
+    不兼容(DRC PORTPROP-6)去参解决;
+  - jpeg:`jpeg_demo_board`(flat64 ROM→jpeg_top→UART 115200-8N1),
+    MMCM 200→100 MHz(200 MHz 直跑 WNS -1.765 不闭合),bit 出炉,
+    WNS +1.061;uart_tx 起始位双拍长 bug 修复(每 DIV 拍移位)。
+- 教训(流程):①后台任务的 cwd 继承主 shell,每条跨项目命令必须以
+  `cd <项目根> &&` 开头,否则文件写错项目(本轮 fft_demo_frame.mem 写进
+  rv32i、jpeg xdc 第一次 heredoc 落空);②后台任务与前台任务不能抢同一
+  build 工程(create_project -force 互踩);③IBUFDS 加 DIFF_TERM 与
+  DIFF_SSTL12 冲突。
+- 上板指南:`docs/BRINGUP.md`(现象预期/串口比对/烧写步骤)。
