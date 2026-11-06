@@ -1,0 +1,22 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vlog -sv rtl/jpeg_top.v rtl/rgb2ycbcr.v rtl/decim420.v rtl/mcu_gather.v rtl/dct2d.v rtl/quant.v rtl/huff_enc.v tb/tb_jpeg_top.sv
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 02:41:24 on Nov 05,2026
+# vlog -sv rtl/jpeg_top.v rtl/rgb2ycbcr.v rtl/decim420.v rtl/mcu_gather.v rtl/dct2d.v rtl/quant.v rtl/huff_enc.v tb/tb_jpeg_top.sv 
+# -- Compiling module jpeg_top
+# -- Compiling module rgb2ycbcr
+# -- Compiling module decim420
+# -- Compiling module mcu_gather
+# -- Compiling module dct2d
+# -- Compiling module quant
+# -- Compiling module huff_enc
+# -- Compiling module tb_jpeg_top
+# 
+# Top level modules:
+# 	tb_jpeg_top
+# End time: 02:41:24 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+#  quit -f

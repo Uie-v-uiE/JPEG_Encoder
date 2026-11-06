@@ -1,0 +1,333 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -voptargs=+acc work.tb_jpeg_top
+# vsim -voptargs="+acc" work.tb_jpeg_top 
+# Start time: 00:14:37 on Nov 06,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt9
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_jpeg_top(fast)
+# Loading work.jpeg_top(fast)
+# Loading work.rgb2ycbcr(fast)
+# Loading work.decim420(fast)
+# Loading work.mcu_gather(fast)
+# Loading work.dct2d(fast)
+# Loading work.fdct1d_llm(fast)
+# Loading work.quant(fast)
+# Loading work.huff_enc(fast)
+#  when {/tb_jpeg_top/dut/u_huff/drain == 1'b1} {echo DRN; examine /tb_jpeg_top/dut/u_huff/acc /tb_jpeg_top/dut/u_huff/nbits /tb_jpeg_top/dut/u_huff/dbyte /tb_jpeg_top/dut/u_huff/put_v /tb_jpeg_top/dut/u_huff/put_len /tb_jpeg_top/dut/u_huff/put_word}
+#  run 12000 ns
+# GBLKEND t=10465000 idx=0 comp=00 mcux=0 emrow=0
+# T10485000 DRAIN  p1=1 slot=0 idx=0
+# T10495000 DRAIN  p1=1 slot=0 idx=1
+# T10505000 DRAIN  p1=1 slot=0 idx=2
+# T10515000 DRAIN  p1=1 slot=0 idx=3
+# T10525000 DRAIN  p1=1 slot=0 idx=4
+# T10535000 DRAIN  p1=1 slot=0 idx=5
+# T10545000 DRAIN  p1=1 slot=0 idx=6
+# GBLKEND t=10555000 idx=1 comp=00 mcux=0 emrow=0
+# T10555000 DRAIN  p1=1 slot=0 idx=7
+# T10565000 DRAIN  p1=1 slot=0 idx=0
+# T10575000 DRAIN  p1=1 slot=1 idx=0
+# T10585000 DRAIN  p1=1 slot=1 idx=1
+# T10595000 DRAIN  p1=1 slot=1 idx=2
+# T10605000 DRAIN  p1=1 slot=1 idx=3
+# T10615000 DRAIN  p1=1 slot=1 idx=4
+# T10625000 DRAIN  p1=1 slot=1 idx=5
+# T10635000 DRAIN  p1=1 slot=1 idx=6
+# T10645000 DRAIN  p1=1 slot=1 idx=7
+# P2ISS t=10655000 act=0 sel=0 irow=0 idx=0 st=(4,4) gate=1
+# T10655000 DRAIN  p1=1 slot=1 idx=0
+# P2ISS t=10665000 act=1 sel=0 irow=1 idx=0 st=(5,4) gate=1
+# DCTD t=10665000 slot=0 row=0 y=(768,0,0,0,0,0,0,0)
+# T10665000 DRAIN  p1=0 slot=0 idx=0
+# QTAK t=10675000 c0=768 c1=0 c2=0
+# P2ISS t=10675000 act=1 sel=0 irow=2 idx=1 st=(5,4) gate=1
+# DCTD t=10675000 slot=0 row=1 y=(0,0,0,0,0,0,0,0)
+# T10675000 DRAIN  p1=0 slot=0 idx=1
+# P2ISS t=10685000 act=1 sel=0 irow=3 idx=2 st=(5,4) gate=1
+# T10685000 DRAIN  p1=0 slot=0 idx=2
+# QTAK t=10685000 c0=0 c1=0 c2=0
+# QTAK t=10695000 c0=0 c1=0 c2=0
+# P2ISS t=10695000 act=1 sel=0 irow=4 idx=3 st=(5,4) gate=1
+# T10695000 DRAIN  p1=0 slot=0 idx=3
+# HTAK t=10705000 ws=0 widx=0 q0=6 q1=0 qlast=0
+# P2ISS t=10705000 act=1 sel=0 irow=5 idx=4 st=(5,4) gate=1
+# T10705000 DRAIN  p1=0 slot=0 idx=4
+# QTAK t=10705000 c0=0 c1=0 c2=0
+# QTAK t=10715000 c0=0 c1=0 c2=0
+# P2ISS t=10715000 act=1 sel=0 irow=6 idx=5 st=(5,4) gate=1
+# T10715000 DRAIN  p1=0 slot=0 idx=5
+# P2ISS t=10725000 act=1 sel=0 irow=7 idx=6 st=(5,4) gate=1
+# T10725000 DRAIN  p1=0 slot=0 idx=6
+# QTAK t=10725000 c0=0 c1=0 c2=0
+# QTAK t=10735000 c0=0 c1=0 c2=0
+# P2ISS t=10735000 act=1 sel=0 irow=0 idx=7 st=(5,4) gate=1
+# T10735000 DRAIN  p1=0 slot=0 idx=7
+# HTAK t=10745000 ws=0 widx=32 q0=0 q1=0 qlast=0
+# P2ISS t=10745000 act=0 sel=1 irow=1 idx=0 st=(0,4) gate=1
+# DCTD t=10745000 slot=0 row=0 y=(768,0,0,0,0,0,0,0)
+# T10745000 DRAIN  p1=0 slot=0 idx=0
+# QTAK t=10745000 c0=0 c1=0 c2=0
+# QTAK t=10755000 c0=768 c1=0 c2=0
+# P2ISS t=10755000 act=1 sel=1 irow=1 idx=0 st=(1,5) gate=1
+# DCTD t=10755000 slot=1 row=0 y=(768,0,0,0,0,0,0,0)
+# T10755000 DRAIN  p1=0 slot=1 idx=0
+# P2ISS t=10765000 act=1 sel=1 irow=2 idx=1 st=(1,5) gate=1
+# DCTD t=10765000 slot=1 row=1 y=(0,0,0,0,0,0,0,0)
+# T10765000 DRAIN  p1=0 slot=1 idx=1
+# QTAK t=10765000 c0=768 c1=0 c2=0
+# QTAK t=10775000 c0=0 c1=0 c2=0
+# P2ISS t=10775000 act=1 sel=1 irow=3 idx=2 st=(1,5) gate=1
+# T10775000 DRAIN  p1=0 slot=1 idx=2
+# HUFFSTART t=10785000 slot=0 nbits=0
+# HTAK t=10785000 ws=1 widx=0 q0=6 q1=0 qlast=0
+# P2ISS t=10785000 act=1 sel=1 irow=4 idx=3 st=(1,5) gate=1
+# T10785000 DRAIN  p1=0 slot=1 idx=3
+# QTAK t=10785000 c0=0 c1=0 c2=0
+# QTAK t=10795000 c0=0 c1=0 c2=0
+# P2ISS t=10795000 act=1 sel=1 irow=5 idx=4 st=(1,5) gate=1
+# T10795000 DRAIN  p1=0 slot=1 idx=4
+# HUFF t=10795000 k=0 din=6 comp=0 cat=3 putlen=6 nbits=0
+# HUFFZ t=10805000 k=1 din=0 run=0
+# P2ISS t=10805000 act=1 sel=1 irow=6 idx=5 st=(1,5) gate=1
+# T10805000 DRAIN  p1=0 slot=1 idx=5
+# QTAK t=10805000 c0=0 c1=0 c2=0
+# GBLKEND t=10815000 idx=2 comp=00 mcux=0 emrow=0
+# QTAK t=10815000 c0=0 c1=0 c2=0
+# P2ISS t=10815000 act=1 sel=1 irow=7 idx=6 st=(1,5) gate=1
+# T10815000 DRAIN  p1=0 slot=1 idx=6
+# HUFFZ t=10815000 k=2 din=0 run=1
+# HTAK t=10825000 ws=1 widx=32 q0=0 q1=0 qlast=0
+# HUFFZ t=10825000 k=3 din=0 run=2
+# T10825000 DRAIN  p1=0 slot=1 idx=7
+# QTAK t=10825000 c0=0 c1=0 c2=0
+# QTAK t=10835000 c0=0 c1=0 c2=0
+# T10835000 DRAIN  p1=1 slot=0 idx=0
+# HUFFZ t=10835000 k=4 din=0 run=3
+# HUFFZ t=10845000 k=5 din=0 run=4
+# T10845000 DRAIN  p1=1 slot=0 idx=1
+# T10855000 DRAIN  p1=1 slot=0 idx=2
+# T10865000 DRAIN  p1=1 slot=0 idx=3
+# T10875000 DRAIN  p1=1 slot=0 idx=4
+# T10885000 DRAIN  p1=1 slot=0 idx=5
+# T10895000 DRAIN  p1=1 slot=0 idx=6
+# GBLKEND t=10905000 idx=3 comp=00 mcux=0 emrow=0
+# T10905000 DRAIN  p1=1 slot=0 idx=7
+# T10915000 DRAIN  p1=1 slot=0 idx=0
+# T10925000 DRAIN  p1=1 slot=1 idx=0
+# T10935000 DRAIN  p1=1 slot=1 idx=1
+# T10945000 DRAIN  p1=1 slot=1 idx=2
+# T10955000 DRAIN  p1=1 slot=1 idx=3
+# T10965000 DRAIN  p1=1 slot=1 idx=4
+# DRN
+# T10975000 DRAIN  p1=1 slot=1 idx=5
+# T10985000 DRAIN  p1=1 slot=1 idx=6
+# ERR byte 0: got 00 exp 9a
+# T10995000 DRAIN  p1=1 slot=1 idx=7
+# ERR byte 1: got 00 exp 8a
+# P2ISS t=11005000 act=0 sel=0 irow=0 idx=0 st=(4,4) gate=1
+# T11005000 DRAIN  p1=1 slot=1 idx=0
+# P2ISS t=11015000 act=1 sel=0 irow=1 idx=0 st=(5,4) gate=1
+# DCTD t=11015000 slot=0 row=0 y=(768,0,0,0,0,0,0,0)
+# T11015000 DRAIN  p1=0 slot=0 idx=0
+# QTAK t=11025000 c0=768 c1=0 c2=0
+# P2ISS t=11025000 act=1 sel=0 irow=2 idx=1 st=(5,4) gate=1
+# DCTD t=11025000 slot=0 row=1 y=(0,0,0,0,0,0,0,0)
+# T11025000 DRAIN  p1=0 slot=0 idx=1
+# P2ISS t=11035000 act=1 sel=0 irow=3 idx=2 st=(5,4) gate=1
+# T11035000 DRAIN  p1=0 slot=0 idx=2
+# QTAK t=11035000 c0=0 c1=0 c2=0
+# QTAK t=11045000 c0=0 c1=0 c2=0
+# P2ISS t=11045000 act=1 sel=0 irow=4 idx=3 st=(5,4) gate=1
+# T11045000 DRAIN  p1=0 slot=0 idx=3
+# QOUT t=11055000 q=(6,0,0,0,0,0,0,0)
+# T11055000 DRAIN  p1=0 slot=0 idx=4
+# QOUT t=11065000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11075000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11085000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11095000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11105000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11115000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11125000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11135000 q=(6,0,0,0,0,0,0,0)
+# DRN
+# QOUT t=11145000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11155000 q=(6,0,0,0,0,0,0,0)
+# ERR byte 2: got 09 exp 28
+# QOUT t=11165000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11175000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11185000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11195000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11205000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11215000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11225000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11235000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11245000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11255000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11265000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11275000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11285000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11295000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11305000 q=(6,0,0,0,0,0,0,0)
+# DRN
+# QOUT t=11315000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11325000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11335000 q=(6,0,0,0,0,0,0,0)
+# ERR byte 3: got 40 exp af
+# QOUT t=11345000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11355000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11365000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11375000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11385000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11395000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11405000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11415000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11425000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11435000 q=(6,0,0,0,0,0,0,0)
+# QOUT t=11445000 q=(6,0,0,0,0,0,0,0)
+# HUFF t=11465000 k=63 din=0 comp=0 cat=3 putlen=4 nbits=7
+# DRN
+# QTAK t=11475000 c0=0 c1=0 c2=0
+# P2ISS t=11475000 act=1 sel=0 irow=5 idx=4 st=(5,4) gate=1
+# HTAK t=11475000 ws=2 widx=0 q0=6 q1=0 qlast=0
+# HUFFSTART t=11475000 slot=1 nbits=11
+# HUFF t=11485000 k=0 din=0 comp=0 cat=3 putlen=6 nbits=3
+# P2ISS t=11485000 act=1 sel=0 irow=6 idx=5 st=(5,4) gate=1
+# T11485000 DRAIN  p1=0 slot=0 idx=5
+# DRN
+# QTAK t=11495000 c0=0 c1=0 c2=0
+# P2ISS t=11495000 act=1 sel=0 irow=7 idx=6 st=(5,4) gate=1
+# T11495000 DRAIN  p1=0 slot=0 idx=6
+# HUFFZ t=11495000 k=1 din=0 run=0
+# ERR byte 4: got 03 exp 40
+# HUFF t=11505000 k=2 din=6 comp=0 cat=3 putlen=10 nbits=1
+# P2ISS t=11505000 act=1 sel=0 irow=0 idx=7 st=(5,4) gate=1
+# T11505000 DRAIN  p1=0 slot=0 idx=7
+# QTAK t=11505000 c0=0 c1=0 c2=0
+# ERR byte 5: got 20 exp f2
+# DRN
+# QTAK t=11515000 c0=0 c1=0 c2=0
+# P2ISS t=11515000 act=0 sel=1 irow=1 idx=0 st=(0,4) gate=1
+# DCTD t=11515000 slot=0 row=0 y=(768,0,0,0,0,0,0,0)
+# T11515000 DRAIN  p1=0 slot=0 idx=0
+# HUFFZ t=11515000 k=3 din=0 run=0
+# HTAK t=11525000 ws=2 widx=32 q0=0 q1=0 qlast=0
+# HUFFZ t=11525000 k=4 din=0 run=1
+# P2ISS t=11525000 act=1 sel=1 irow=1 idx=0 st=(1,5) gate=1
+# DCTD t=11525000 slot=1 row=0 y=(768,0,0,0,0,0,0,0)
+# T11525000 DRAIN  p1=0 slot=1 idx=0
+# QTAK t=11525000 c0=768 c1=0 c2=0
+# QTAK t=11535000 c0=768 c1=0 c2=0
+# P2ISS t=11535000 act=1 sel=1 irow=2 idx=1 st=(1,5) gate=1
+# DCTD t=11535000 slot=1 row=1 y=(0,0,0,0,0,0,0,0)
+# T11535000 DRAIN  p1=0 slot=1 idx=1
+# HUFFZ t=11535000 k=5 din=0 run=2
+# ERR byte 6: got 90 exp 82
+# P2ISS t=11545000 act=1 sel=1 irow=3 idx=2 st=(1,5) gate=1
+# T11545000 DRAIN  p1=0 slot=1 idx=2
+# QTAK t=11545000 c0=0 c1=0 c2=0
+# HTAK t=11555000 ws=3 widx=0 q0=6 q1=0 qlast=0
+# QTAK t=11555000 c0=0 c1=0 c2=0
+# P2ISS t=11555000 act=1 sel=1 irow=4 idx=3 st=(1,5) gate=1
+# T11555000 DRAIN  p1=0 slot=1 idx=3
+# P2ISS t=11565000 act=1 sel=1 irow=5 idx=4 st=(1,5) gate=1
+# T11565000 DRAIN  p1=0 slot=1 idx=4
+# QTAK t=11565000 c0=0 c1=0 c2=0
+# QTAK t=11575000 c0=0 c1=0 c2=0
+# P2ISS t=11575000 act=1 sel=1 irow=6 idx=5 st=(1,5) gate=1
+# T11575000 DRAIN  p1=0 slot=1 idx=5
+# GBLKEND t=11585000 idx=4 comp=01 mcux=0 emrow=0
+# P2ISS t=11585000 act=1 sel=1 irow=7 idx=6 st=(1,5) gate=1
+# T11585000 DRAIN  p1=0 slot=1 idx=6
+# QTAK t=11585000 c0=0 c1=0 c2=0
+# HTAK t=11595000 ws=3 widx=32 q0=0 q1=0 qlast=0
+# QTAK t=11595000 c0=0 c1=0 c2=0
+# T11595000 DRAIN  p1=0 slot=1 idx=7
+# T11605000 DRAIN  p1=1 slot=0 idx=0
+# QTAK t=11605000 c0=0 c1=0 c2=0
+# T11615000 DRAIN  p1=1 slot=0 idx=1
+# T11625000 DRAIN  p1=1 slot=0 idx=2
+# T11635000 DRAIN  p1=1 slot=0 idx=3
+# T11645000 DRAIN  p1=1 slot=0 idx=4
+# T11655000 DRAIN  p1=1 slot=0 idx=5
+# T11665000 DRAIN  p1=1 slot=0 idx=6
+# GBLKEND t=11675000 idx=5 comp=10 mcux=0 emrow=0
+# T11675000 DRAIN  p1=1 slot=0 idx=7
+# DRN
+# T11685000 DRAIN  p1=1 slot=0 idx=0
+# T11695000 DRAIN  p1=1 slot=1 idx=0
+# ERR byte 7: got 04 exp 8a
+# T11705000 DRAIN  p1=1 slot=1 idx=1
+# T11715000 DRAIN  p1=1 slot=1 idx=2
+# T11725000 DRAIN  p1=1 slot=1 idx=3
+# T11735000 DRAIN  p1=1 slot=1 idx=4
+# T11745000 DRAIN  p1=1 slot=1 idx=5
+# T11755000 DRAIN  p1=1 slot=1 idx=6
+# T11765000 DRAIN  p1=1 slot=1 idx=7
+# P2ISS t=11775000 act=0 sel=0 irow=0 idx=0 st=(4,4) gate=1
+# T11775000 DRAIN  p1=1 slot=1 idx=0
+# P2ISS t=11785000 act=1 sel=0 irow=1 idx=0 st=(5,4) gate=1
+# DCTD t=11785000 slot=0 row=0 y=(2112,0,0,0,0,0,0,0)
+# T11785000 DRAIN  p1=0 slot=0 idx=0
+# QTAK t=11795000 c0=2112 c1=0 c2=0
+# P2ISS t=11795000 act=1 sel=0 irow=2 idx=1 st=(5,4) gate=1
+# DCTD t=11795000 slot=0 row=1 y=(0,0,0,0,0,0,0,0)
+# T11795000 DRAIN  p1=0 slot=0 idx=1
+# P2ISS t=11805000 act=1 sel=0 irow=3 idx=2 st=(5,4) gate=1
+# T11805000 DRAIN  p1=0 slot=0 idx=2
+# QTAK t=11805000 c0=0 c1=0 c2=0
+# QTAK t=11815000 c0=0 c1=0 c2=0
+# P2ISS t=11815000 act=1 sel=0 irow=4 idx=3 st=(5,4) gate=1
+# T11815000 DRAIN  p1=0 slot=0 idx=3
+# HTAK t=11825000 ws=0 widx=0 q0=16 q1=0 qlast=0
+# P2ISS t=11825000 act=1 sel=0 irow=5 idx=4 st=(5,4) gate=1
+# T11825000 DRAIN  p1=0 slot=0 idx=4
+# QTAK t=11825000 c0=0 c1=0 c2=0
+# QTAK t=11835000 c0=0 c1=0 c2=0
+# P2ISS t=11835000 act=1 sel=0 irow=6 idx=5 st=(5,4) gate=1
+# T11835000 DRAIN  p1=0 slot=0 idx=5
+# P2ISS t=11845000 act=1 sel=0 irow=7 idx=6 st=(5,4) gate=1
+# T11845000 DRAIN  p1=0 slot=0 idx=6
+# QTAK t=11845000 c0=0 c1=0 c2=0
+# DRN
+# QTAK t=11855000 c0=0 c1=0 c2=0
+# P2ISS t=11855000 act=1 sel=0 irow=0 idx=7 st=(5,4) gate=1
+# T11855000 DRAIN  p1=0 slot=0 idx=7
+# HTAK t=11865000 ws=0 widx=32 q0=0 q1=0 qlast=0
+# P2ISS t=11865000 act=0 sel=1 irow=1 idx=0 st=(0,4) gate=1
+# DCTD t=11865000 slot=0 row=0 y=(2112,0,0,0,0,0,0,0)
+# T11865000 DRAIN  p1=0 slot=0 idx=0
+# QTAK t=11865000 c0=0 c1=0 c2=0
+# ERR byte 8: got f3 exp 28
+# QTAK t=11875000 c0=2112 c1=0 c2=0
+# P2ISS t=11875000 act=1 sel=1 irow=1 idx=0 st=(1,5) gate=1
+# DCTD t=11875000 slot=1 row=0 y=(-2816,0,0,0,0,0,0,0)
+# T11875000 DRAIN  p1=0 slot=1 idx=0
+# ERR byte 9: got 80 exp a0
+# P2ISS t=11885000 act=1 sel=1 irow=2 idx=1 st=(1,5) gate=1
+# DCTD t=11885000 slot=1 row=1 y=(0,0,0,0,0,0,0,0)
+# T11885000 DRAIN  p1=0 slot=1 idx=1
+# QTAK t=11885000 c0=-2816 c1=0 c2=0
+# QTAK t=11895000 c0=0 c1=0 c2=0
+# P2ISS t=11895000 act=1 sel=1 irow=3 idx=2 st=(1,5) gate=1
+# T11895000 DRAIN  p1=0 slot=1 idx=2
+# T11905000 DRAIN  p1=0 slot=1 idx=3
+# GBLKEND t=11935000 idx=0 comp=00 mcux=1 emrow=0
+#  quit -f
+# End time: 00:14:37 on Nov 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

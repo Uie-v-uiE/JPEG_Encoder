@@ -1,0 +1,15 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vlog -sv rtl/huff_enc.v
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 00:28:38 on Nov 06,2026
+# vlog -sv rtl/huff_enc.v 
+# -- Compiling module huff_enc
+# 
+# Top level modules:
+# 	huff_enc
+# End time: 00:28:38 on Nov 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+#  quit -f

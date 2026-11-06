@@ -1,0 +1,21 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vlog -sv tb/tb_jpeg_top.sv
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 23:39:19 on Nov 05,2026
+# vlog -sv tb/tb_jpeg_top.sv 
+# -- Compiling module tb_jpeg_top
+# ** Error: (vlog-13069) tb/tb_jpeg_top.sv(108): near "end": syntax error, unexpected end, expecting join or "SystemVerilog keyword 'join_any'" or "SystemVerilog keyword 'join_none'".
+# ** Error: tb/tb_jpeg_top.sv(113): (vlog-2730) Undefined variable: 'blk_valid'.
+# ** Error: tb/tb_jpeg_top.sv(113): (vlog-2730) Undefined variable: 'blk_ready'.
+# ** Error: tb/tb_jpeg_top.sv(113): (vlog-2730) Undefined variable: 'blk_a'.
+# ** Error: (vlog-13069) tb/tb_jpeg_top.sv(117): near "end": syntax error, unexpected end, expecting join or "SystemVerilog keyword 'join_any'" or "SystemVerilog keyword 'join_none'".
+# ** Error: (vlog-13069) tb/tb_jpeg_top.sv(148): near "end": syntax error, unexpected end, expecting join or "SystemVerilog keyword 'join_any'" or "SystemVerilog keyword 'join_none'".
+# ** Error: (vlog-13069) tb/tb_jpeg_top.sv(155): near "end": syntax error, unexpected end, expecting join or "SystemVerilog keyword 'join_any'" or "SystemVerilog keyword 'join_none'".
+# ** Error: (vlog-13069) tb/tb_jpeg_top.sv(174): near "end": syntax error, unexpected end, expecting join or "SystemVerilog keyword 'join_any'" or "SystemVerilog keyword 'join_none'".
+# End time: 23:39:19 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# D:/Software/ModelSim/modelsim/win64/vlog failed.
+#  quit -f

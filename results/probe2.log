@@ -1,0 +1,50 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vsim -voptargs=+acc work.tb_huff +TAG=flat64
+# vsim -voptargs="+acc" work.tb_huff "+TAG=flat64" 
+# Start time: 01:04:18 on Nov 06,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt9
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_huff(fast)
+# Loading work.huff_enc(fast)
+#  run 25000 ns
+# HUFFSTART t=135000 slot=0 nbits=0
+# HUFF t=145000 k=0 din=6 comp=0 cat=3 putlen=6 nbits=0
+# DCBK t=145000 din=6 pred=0 diff=6 cat=3
+# HUFFZ t=155000 k=1 din=0 run=0
+# HUFFZ t=165000 k=2 din=0 run=1
+# HUFFZ t=175000 k=3 din=0 run=2
+# HUFFZ t=185000 k=4 din=0 run=3
+# HUFFZ t=195000 k=5 din=0 run=4
+# HUFF t=785000 k=63 din=0 comp=0 cat=3 putlen=4 nbits=6
+# HUFFSTART t=795000 slot=1 nbits=10
+# HUFF t=805000 k=0 din=6 comp=0 cat=0 putlen=2 nbits=2
+# DCBK t=805000 din=6 pred=6 diff=0 cat=0
+# HUFFZ t=815000 k=1 din=0 run=0
+# HUFFZ t=825000 k=2 din=0 run=1
+# HUFFZ t=835000 k=3 din=0 run=2
+# HUFFZ t=845000 k=4 din=0 run=3
+# HUFFZ t=855000 k=5 din=0 run=4
+# HUFF t=1445000 k=63 din=0 comp=0 cat=3 putlen=4 nbits=4
+#  echo PROBE
+# PROBE
+#  examine -radix decimal /tb_huff/dut/fstate /tb_huff/dut/eng_run /tb_huff/dut/eng_eof /tb_huff/dut/slot_eof /tb_huff/dut/pad_n /tb_huff/dut/nbits /tb_huff/dut/acc /tb_huff/dut/f_cnt
+# 0 0 0 {0 0} 0 0 0 0
+#  quit -f
+# End time: 01:04:18 on Nov 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

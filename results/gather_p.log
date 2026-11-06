@@ -1,0 +1,329 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vsim work.tb_gather +TAG=pat128x96
+# vsim work.tb_gather "+TAG=pat128x96" 
+# Start time: 23:18:34 on Nov 05,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt9
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_gather(fast)
+#  run -all
+# SEQ blk=0 comp=000 first=9b
+# GBLKEND t=20655000 idx=0 comp=00 mcux=0 emrow=0
+# SEQ blk=1 comp=000 first=77
+# GBLKEND t=20775000 idx=1 comp=00 mcux=0 emrow=0
+# SEQ blk=2 comp=000 first=75
+# GBLKEND t=20895000 idx=2 comp=00 mcux=0 emrow=0
+# SEQ blk=3 comp=000 first=9f
+# GBLKEND t=21015000 idx=3 comp=00 mcux=0 emrow=0
+# SEQ blk=4 comp=001 first=28
+# GBLKEND t=21135000 idx=4 comp=01 mcux=0 emrow=0
+# SEQ blk=5 comp=010 first=1f
+# GBLKEND t=21255000 idx=5 comp=10 mcux=0 emrow=0
+# SEQ blk=6 comp=000 first=a1
+# GBLKEND t=21375000 idx=0 comp=00 mcux=1 emrow=0
+# SEQ blk=7 comp=000 first=7c
+# GBLKEND t=21495000 idx=1 comp=00 mcux=1 emrow=0
+# SEQ blk=8 comp=000 first=7a
+# GBLKEND t=21615000 idx=2 comp=00 mcux=1 emrow=0
+# SEQ blk=9 comp=000 first=a4
+# GBLKEND t=21735000 idx=3 comp=00 mcux=1 emrow=0
+# SEQ blk=10 comp=001 first=40
+# GBLKEND t=21855000 idx=4 comp=01 mcux=1 emrow=0
+# SEQ blk=11 comp=010 first=1b
+# GBLKEND t=21975000 idx=5 comp=10 mcux=1 emrow=0
+# GBLKEND t=22095000 idx=0 comp=00 mcux=2 emrow=0
+# GBLKEND t=22215000 idx=1 comp=00 mcux=2 emrow=0
+# GBLKEND t=22335000 idx=2 comp=00 mcux=2 emrow=0
+# GBLKEND t=22455000 idx=3 comp=00 mcux=2 emrow=0
+# GBLKEND t=22575000 idx=4 comp=01 mcux=2 emrow=0
+# GBLKEND t=22695000 idx=5 comp=10 mcux=2 emrow=0
+# GBLKEND t=22815000 idx=0 comp=00 mcux=3 emrow=0
+# GBLKEND t=22935000 idx=1 comp=00 mcux=3 emrow=0
+# GBLKEND t=23055000 idx=2 comp=00 mcux=3 emrow=0
+# GBLKEND t=23175000 idx=3 comp=00 mcux=3 emrow=0
+# GBLKEND t=23295000 idx=4 comp=01 mcux=3 emrow=0
+# GBLKEND t=23415000 idx=5 comp=10 mcux=3 emrow=0
+# GBLKEND t=23535000 idx=0 comp=00 mcux=4 emrow=0
+# GBLKEND t=23655000 idx=1 comp=00 mcux=4 emrow=0
+# GBLKEND t=23775000 idx=2 comp=00 mcux=4 emrow=0
+# GBLKEND t=23895000 idx=3 comp=00 mcux=4 emrow=0
+# GBLKEND t=24015000 idx=4 comp=01 mcux=4 emrow=0
+# GBLKEND t=24135000 idx=5 comp=10 mcux=4 emrow=0
+# GBLKEND t=24255000 idx=0 comp=00 mcux=5 emrow=0
+# GBLKEND t=24375000 idx=1 comp=00 mcux=5 emrow=0
+# GBLKEND t=24495000 idx=2 comp=00 mcux=5 emrow=0
+# GBLKEND t=24615000 idx=3 comp=00 mcux=5 emrow=0
+# GBLKEND t=24735000 idx=4 comp=01 mcux=5 emrow=0
+# GBLKEND t=24855000 idx=5 comp=10 mcux=5 emrow=0
+# GBLKEND t=24975000 idx=0 comp=00 mcux=6 emrow=0
+# GBLKEND t=25095000 idx=1 comp=00 mcux=6 emrow=0
+# GBLKEND t=25215000 idx=2 comp=00 mcux=6 emrow=0
+# GBLKEND t=25335000 idx=3 comp=00 mcux=6 emrow=0
+# GBLKEND t=25455000 idx=4 comp=01 mcux=6 emrow=0
+# GBLKEND t=25575000 idx=5 comp=10 mcux=6 emrow=0
+# GBLKEND t=25695000 idx=0 comp=00 mcux=7 emrow=0
+# GBLKEND t=25815000 idx=1 comp=00 mcux=7 emrow=0
+# GBLKEND t=25935000 idx=2 comp=00 mcux=7 emrow=0
+# GBLKEND t=26055000 idx=3 comp=00 mcux=7 emrow=0
+# GBLKEND t=26175000 idx=4 comp=01 mcux=7 emrow=0
+# GBLKEND t=26295000 idx=5 comp=10 mcux=7 emrow=0
+# GBLKEND t=41135000 idx=0 comp=00 mcux=0 emrow=1
+# GBLKEND t=41255000 idx=1 comp=00 mcux=0 emrow=1
+# GBLKEND t=41375000 idx=2 comp=00 mcux=0 emrow=1
+# GBLKEND t=41495000 idx=3 comp=00 mcux=0 emrow=1
+# GBLKEND t=41615000 idx=4 comp=01 mcux=0 emrow=1
+# GBLKEND t=41735000 idx=5 comp=10 mcux=0 emrow=1
+# GBLKEND t=41855000 idx=0 comp=00 mcux=1 emrow=1
+# GBLKEND t=41975000 idx=1 comp=00 mcux=1 emrow=1
+# GBLKEND t=42095000 idx=2 comp=00 mcux=1 emrow=1
+# GBLKEND t=42215000 idx=3 comp=00 mcux=1 emrow=1
+# GBLKEND t=42335000 idx=4 comp=01 mcux=1 emrow=1
+# GBLKEND t=42455000 idx=5 comp=10 mcux=1 emrow=1
+# GBLKEND t=42575000 idx=0 comp=00 mcux=2 emrow=1
+# GBLKEND t=42695000 idx=1 comp=00 mcux=2 emrow=1
+# GBLKEND t=42815000 idx=2 comp=00 mcux=2 emrow=1
+# GBLKEND t=42935000 idx=3 comp=00 mcux=2 emrow=1
+# GBLKEND t=43055000 idx=4 comp=01 mcux=2 emrow=1
+# GBLKEND t=43175000 idx=5 comp=10 mcux=2 emrow=1
+# GBLKEND t=43295000 idx=0 comp=00 mcux=3 emrow=1
+# GBLKEND t=43415000 idx=1 comp=00 mcux=3 emrow=1
+# GBLKEND t=43535000 idx=2 comp=00 mcux=3 emrow=1
+# GBLKEND t=43655000 idx=3 comp=00 mcux=3 emrow=1
+# GBLKEND t=43775000 idx=4 comp=01 mcux=3 emrow=1
+# GBLKEND t=43895000 idx=5 comp=10 mcux=3 emrow=1
+# GBLKEND t=44015000 idx=0 comp=00 mcux=4 emrow=1
+# GBLKEND t=44135000 idx=1 comp=00 mcux=4 emrow=1
+# GBLKEND t=44255000 idx=2 comp=00 mcux=4 emrow=1
+# GBLKEND t=44375000 idx=3 comp=00 mcux=4 emrow=1
+# GBLKEND t=44495000 idx=4 comp=01 mcux=4 emrow=1
+# GBLKEND t=44615000 idx=5 comp=10 mcux=4 emrow=1
+# GBLKEND t=44735000 idx=0 comp=00 mcux=5 emrow=1
+# GBLKEND t=44855000 idx=1 comp=00 mcux=5 emrow=1
+# GBLKEND t=44975000 idx=2 comp=00 mcux=5 emrow=1
+# GBLKEND t=45095000 idx=3 comp=00 mcux=5 emrow=1
+# GBLKEND t=45215000 idx=4 comp=01 mcux=5 emrow=1
+# GBLKEND t=45335000 idx=5 comp=10 mcux=5 emrow=1
+# GBLKEND t=45455000 idx=0 comp=00 mcux=6 emrow=1
+# GBLKEND t=45575000 idx=1 comp=00 mcux=6 emrow=1
+# GBLKEND t=45695000 idx=2 comp=00 mcux=6 emrow=1
+# GBLKEND t=45815000 idx=3 comp=00 mcux=6 emrow=1
+# GBLKEND t=45935000 idx=4 comp=01 mcux=6 emrow=1
+# GBLKEND t=46055000 idx=5 comp=10 mcux=6 emrow=1
+# GBLKEND t=46175000 idx=0 comp=00 mcux=7 emrow=1
+# GBLKEND t=46295000 idx=1 comp=00 mcux=7 emrow=1
+# GBLKEND t=46415000 idx=2 comp=00 mcux=7 emrow=1
+# GBLKEND t=46535000 idx=3 comp=00 mcux=7 emrow=1
+# GBLKEND t=46655000 idx=4 comp=01 mcux=7 emrow=1
+# GBLKEND t=46775000 idx=5 comp=10 mcux=7 emrow=1
+# GBLKEND t=61615000 idx=0 comp=00 mcux=0 emrow=2
+# GBLKEND t=61735000 idx=1 comp=00 mcux=0 emrow=2
+# GBLKEND t=61855000 idx=2 comp=00 mcux=0 emrow=2
+# GBLKEND t=61975000 idx=3 comp=00 mcux=0 emrow=2
+# GBLKEND t=62095000 idx=4 comp=01 mcux=0 emrow=2
+# GBLKEND t=62215000 idx=5 comp=10 mcux=0 emrow=2
+# GBLKEND t=62335000 idx=0 comp=00 mcux=1 emrow=2
+# GBLKEND t=62455000 idx=1 comp=00 mcux=1 emrow=2
+# GBLKEND t=62575000 idx=2 comp=00 mcux=1 emrow=2
+# GBLKEND t=62695000 idx=3 comp=00 mcux=1 emrow=2
+# GBLKEND t=62815000 idx=4 comp=01 mcux=1 emrow=2
+# GBLKEND t=62935000 idx=5 comp=10 mcux=1 emrow=2
+# GBLKEND t=63055000 idx=0 comp=00 mcux=2 emrow=2
+# GBLKEND t=63175000 idx=1 comp=00 mcux=2 emrow=2
+# GBLKEND t=63295000 idx=2 comp=00 mcux=2 emrow=2
+# GBLKEND t=63415000 idx=3 comp=00 mcux=2 emrow=2
+# GBLKEND t=63535000 idx=4 comp=01 mcux=2 emrow=2
+# GBLKEND t=63655000 idx=5 comp=10 mcux=2 emrow=2
+# GBLKEND t=63775000 idx=0 comp=00 mcux=3 emrow=2
+# GBLKEND t=63895000 idx=1 comp=00 mcux=3 emrow=2
+# GBLKEND t=64015000 idx=2 comp=00 mcux=3 emrow=2
+# GBLKEND t=64135000 idx=3 comp=00 mcux=3 emrow=2
+# GBLKEND t=64255000 idx=4 comp=01 mcux=3 emrow=2
+# GBLKEND t=64375000 idx=5 comp=10 mcux=3 emrow=2
+# GBLKEND t=64495000 idx=0 comp=00 mcux=4 emrow=2
+# GBLKEND t=64615000 idx=1 comp=00 mcux=4 emrow=2
+# GBLKEND t=64735000 idx=2 comp=00 mcux=4 emrow=2
+# GBLKEND t=64855000 idx=3 comp=00 mcux=4 emrow=2
+# GBLKEND t=64975000 idx=4 comp=01 mcux=4 emrow=2
+# GBLKEND t=65095000 idx=5 comp=10 mcux=4 emrow=2
+# GBLKEND t=65215000 idx=0 comp=00 mcux=5 emrow=2
+# GBLKEND t=65335000 idx=1 comp=00 mcux=5 emrow=2
+# GBLKEND t=65455000 idx=2 comp=00 mcux=5 emrow=2
+# GBLKEND t=65575000 idx=3 comp=00 mcux=5 emrow=2
+# GBLKEND t=65695000 idx=4 comp=01 mcux=5 emrow=2
+# GBLKEND t=65815000 idx=5 comp=10 mcux=5 emrow=2
+# GBLKEND t=65935000 idx=0 comp=00 mcux=6 emrow=2
+# GBLKEND t=66055000 idx=1 comp=00 mcux=6 emrow=2
+# GBLKEND t=66175000 idx=2 comp=00 mcux=6 emrow=2
+# GBLKEND t=66295000 idx=3 comp=00 mcux=6 emrow=2
+# GBLKEND t=66415000 idx=4 comp=01 mcux=6 emrow=2
+# GBLKEND t=66535000 idx=5 comp=10 mcux=6 emrow=2
+# GBLKEND t=66655000 idx=0 comp=00 mcux=7 emrow=2
+# GBLKEND t=66775000 idx=1 comp=00 mcux=7 emrow=2
+# GBLKEND t=66895000 idx=2 comp=00 mcux=7 emrow=2
+# GBLKEND t=67015000 idx=3 comp=00 mcux=7 emrow=2
+# GBLKEND t=67135000 idx=4 comp=01 mcux=7 emrow=2
+# GBLKEND t=67255000 idx=5 comp=10 mcux=7 emrow=2
+# GBLKEND t=82095000 idx=0 comp=00 mcux=0 emrow=3
+# GBLKEND t=82215000 idx=1 comp=00 mcux=0 emrow=3
+# GBLKEND t=82335000 idx=2 comp=00 mcux=0 emrow=3
+# GBLKEND t=82455000 idx=3 comp=00 mcux=0 emrow=3
+# GBLKEND t=82575000 idx=4 comp=01 mcux=0 emrow=3
+# GBLKEND t=82695000 idx=5 comp=10 mcux=0 emrow=3
+# GBLKEND t=82815000 idx=0 comp=00 mcux=1 emrow=3
+# GBLKEND t=82935000 idx=1 comp=00 mcux=1 emrow=3
+# GBLKEND t=83055000 idx=2 comp=00 mcux=1 emrow=3
+# GBLKEND t=83175000 idx=3 comp=00 mcux=1 emrow=3
+# GBLKEND t=83295000 idx=4 comp=01 mcux=1 emrow=3
+# GBLKEND t=83415000 idx=5 comp=10 mcux=1 emrow=3
+# GBLKEND t=83535000 idx=0 comp=00 mcux=2 emrow=3
+# GBLKEND t=83655000 idx=1 comp=00 mcux=2 emrow=3
+# GBLKEND t=83775000 idx=2 comp=00 mcux=2 emrow=3
+# GBLKEND t=83895000 idx=3 comp=00 mcux=2 emrow=3
+# GBLKEND t=84015000 idx=4 comp=01 mcux=2 emrow=3
+# GBLKEND t=84135000 idx=5 comp=10 mcux=2 emrow=3
+# GBLKEND t=84255000 idx=0 comp=00 mcux=3 emrow=3
+# GBLKEND t=84375000 idx=1 comp=00 mcux=3 emrow=3
+# GBLKEND t=84495000 idx=2 comp=00 mcux=3 emrow=3
+# GBLKEND t=84615000 idx=3 comp=00 mcux=3 emrow=3
+# GBLKEND t=84735000 idx=4 comp=01 mcux=3 emrow=3
+# GBLKEND t=84855000 idx=5 comp=10 mcux=3 emrow=3
+# GBLKEND t=84975000 idx=0 comp=00 mcux=4 emrow=3
+# GBLKEND t=85095000 idx=1 comp=00 mcux=4 emrow=3
+# GBLKEND t=85215000 idx=2 comp=00 mcux=4 emrow=3
+# GBLKEND t=85335000 idx=3 comp=00 mcux=4 emrow=3
+# GBLKEND t=85455000 idx=4 comp=01 mcux=4 emrow=3
+# GBLKEND t=85575000 idx=5 comp=10 mcux=4 emrow=3
+# GBLKEND t=85695000 idx=0 comp=00 mcux=5 emrow=3
+# GBLKEND t=85815000 idx=1 comp=00 mcux=5 emrow=3
+# GBLKEND t=85935000 idx=2 comp=00 mcux=5 emrow=3
+# GBLKEND t=86055000 idx=3 comp=00 mcux=5 emrow=3
+# GBLKEND t=86175000 idx=4 comp=01 mcux=5 emrow=3
+# GBLKEND t=86295000 idx=5 comp=10 mcux=5 emrow=3
+# GBLKEND t=86415000 idx=0 comp=00 mcux=6 emrow=3
+# GBLKEND t=86535000 idx=1 comp=00 mcux=6 emrow=3
+# GBLKEND t=86655000 idx=2 comp=00 mcux=6 emrow=3
+# GBLKEND t=86775000 idx=3 comp=00 mcux=6 emrow=3
+# GBLKEND t=86895000 idx=4 comp=01 mcux=6 emrow=3
+# GBLKEND t=87015000 idx=5 comp=10 mcux=6 emrow=3
+# GBLKEND t=87135000 idx=0 comp=00 mcux=7 emrow=3
+# GBLKEND t=87255000 idx=1 comp=00 mcux=7 emrow=3
+# GBLKEND t=87375000 idx=2 comp=00 mcux=7 emrow=3
+# GBLKEND t=87495000 idx=3 comp=00 mcux=7 emrow=3
+# GBLKEND t=87615000 idx=4 comp=01 mcux=7 emrow=3
+# GBLKEND t=87735000 idx=5 comp=10 mcux=7 emrow=3
+# GBLKEND t=102575000 idx=0 comp=00 mcux=0 emrow=4
+# GBLKEND t=102695000 idx=1 comp=00 mcux=0 emrow=4
+# GBLKEND t=102815000 idx=2 comp=00 mcux=0 emrow=4
+# GBLKEND t=102935000 idx=3 comp=00 mcux=0 emrow=4
+# GBLKEND t=103055000 idx=4 comp=01 mcux=0 emrow=4
+# GBLKEND t=103175000 idx=5 comp=10 mcux=0 emrow=4
+# GBLKEND t=103295000 idx=0 comp=00 mcux=1 emrow=4
+# GBLKEND t=103415000 idx=1 comp=00 mcux=1 emrow=4
+# GBLKEND t=103535000 idx=2 comp=00 mcux=1 emrow=4
+# GBLKEND t=103655000 idx=3 comp=00 mcux=1 emrow=4
+# GBLKEND t=103775000 idx=4 comp=01 mcux=1 emrow=4
+# GBLKEND t=103895000 idx=5 comp=10 mcux=1 emrow=4
+# GBLKEND t=104015000 idx=0 comp=00 mcux=2 emrow=4
+# GBLKEND t=104135000 idx=1 comp=00 mcux=2 emrow=4
+# GBLKEND t=104255000 idx=2 comp=00 mcux=2 emrow=4
+# GBLKEND t=104375000 idx=3 comp=00 mcux=2 emrow=4
+# GBLKEND t=104495000 idx=4 comp=01 mcux=2 emrow=4
+# GBLKEND t=104615000 idx=5 comp=10 mcux=2 emrow=4
+# GBLKEND t=104735000 idx=0 comp=00 mcux=3 emrow=4
+# GBLKEND t=104855000 idx=1 comp=00 mcux=3 emrow=4
+# GBLKEND t=104975000 idx=2 comp=00 mcux=3 emrow=4
+# GBLKEND t=105095000 idx=3 comp=00 mcux=3 emrow=4
+# GBLKEND t=105215000 idx=4 comp=01 mcux=3 emrow=4
+# GBLKEND t=105335000 idx=5 comp=10 mcux=3 emrow=4
+# GBLKEND t=105455000 idx=0 comp=00 mcux=4 emrow=4
+# GBLKEND t=105575000 idx=1 comp=00 mcux=4 emrow=4
+# GBLKEND t=105695000 idx=2 comp=00 mcux=4 emrow=4
+# GBLKEND t=105815000 idx=3 comp=00 mcux=4 emrow=4
+# GBLKEND t=105935000 idx=4 comp=01 mcux=4 emrow=4
+# GBLKEND t=106055000 idx=5 comp=10 mcux=4 emrow=4
+# GBLKEND t=106175000 idx=0 comp=00 mcux=5 emrow=4
+# GBLKEND t=106295000 idx=1 comp=00 mcux=5 emrow=4
+# GBLKEND t=106415000 idx=2 comp=00 mcux=5 emrow=4
+# GBLKEND t=106535000 idx=3 comp=00 mcux=5 emrow=4
+# GBLKEND t=106655000 idx=4 comp=01 mcux=5 emrow=4
+# GBLKEND t=106775000 idx=5 comp=10 mcux=5 emrow=4
+# GBLKEND t=106895000 idx=0 comp=00 mcux=6 emrow=4
+# GBLKEND t=107015000 idx=1 comp=00 mcux=6 emrow=4
+# GBLKEND t=107135000 idx=2 comp=00 mcux=6 emrow=4
+# GBLKEND t=107255000 idx=3 comp=00 mcux=6 emrow=4
+# GBLKEND t=107375000 idx=4 comp=01 mcux=6 emrow=4
+# GBLKEND t=107495000 idx=5 comp=10 mcux=6 emrow=4
+# GBLKEND t=107615000 idx=0 comp=00 mcux=7 emrow=4
+# GBLKEND t=107735000 idx=1 comp=00 mcux=7 emrow=4
+# GBLKEND t=107855000 idx=2 comp=00 mcux=7 emrow=4
+# GBLKEND t=107975000 idx=3 comp=00 mcux=7 emrow=4
+# GBLKEND t=108095000 idx=4 comp=01 mcux=7 emrow=4
+# GBLKEND t=108215000 idx=5 comp=10 mcux=7 emrow=4
+# GBLKEND t=123055000 idx=0 comp=00 mcux=0 emrow=5
+# GBLKEND t=123175000 idx=1 comp=00 mcux=0 emrow=5
+# GBLKEND t=123295000 idx=2 comp=00 mcux=0 emrow=5
+# GBLKEND t=123415000 idx=3 comp=00 mcux=0 emrow=5
+# GBLKEND t=123535000 idx=4 comp=01 mcux=0 emrow=5
+# GBLKEND t=123655000 idx=5 comp=10 mcux=0 emrow=5
+# GBLKEND t=123775000 idx=0 comp=00 mcux=1 emrow=5
+# GBLKEND t=123895000 idx=1 comp=00 mcux=1 emrow=5
+# GBLKEND t=124015000 idx=2 comp=00 mcux=1 emrow=5
+# GBLKEND t=124135000 idx=3 comp=00 mcux=1 emrow=5
+# GBLKEND t=124255000 idx=4 comp=01 mcux=1 emrow=5
+# GBLKEND t=124375000 idx=5 comp=10 mcux=1 emrow=5
+# GBLKEND t=124495000 idx=0 comp=00 mcux=2 emrow=5
+# GBLKEND t=124615000 idx=1 comp=00 mcux=2 emrow=5
+# GBLKEND t=124735000 idx=2 comp=00 mcux=2 emrow=5
+# GBLKEND t=124855000 idx=3 comp=00 mcux=2 emrow=5
+# GBLKEND t=124975000 idx=4 comp=01 mcux=2 emrow=5
+# GBLKEND t=125095000 idx=5 comp=10 mcux=2 emrow=5
+# GBLKEND t=125215000 idx=0 comp=00 mcux=3 emrow=5
+# GBLKEND t=125335000 idx=1 comp=00 mcux=3 emrow=5
+# GBLKEND t=125455000 idx=2 comp=00 mcux=3 emrow=5
+# GBLKEND t=125575000 idx=3 comp=00 mcux=3 emrow=5
+# GBLKEND t=125695000 idx=4 comp=01 mcux=3 emrow=5
+# GBLKEND t=125815000 idx=5 comp=10 mcux=3 emrow=5
+# GBLKEND t=125935000 idx=0 comp=00 mcux=4 emrow=5
+# GBLKEND t=126055000 idx=1 comp=00 mcux=4 emrow=5
+# GBLKEND t=126175000 idx=2 comp=00 mcux=4 emrow=5
+# GBLKEND t=126295000 idx=3 comp=00 mcux=4 emrow=5
+# GBLKEND t=126415000 idx=4 comp=01 mcux=4 emrow=5
+# GBLKEND t=126535000 idx=5 comp=10 mcux=4 emrow=5
+# GBLKEND t=126655000 idx=0 comp=00 mcux=5 emrow=5
+# GBLKEND t=126775000 idx=1 comp=00 mcux=5 emrow=5
+# GBLKEND t=126895000 idx=2 comp=00 mcux=5 emrow=5
+# GBLKEND t=127015000 idx=3 comp=00 mcux=5 emrow=5
+# GBLKEND t=127135000 idx=4 comp=01 mcux=5 emrow=5
+# GBLKEND t=127255000 idx=5 comp=10 mcux=5 emrow=5
+# GBLKEND t=127375000 idx=0 comp=00 mcux=6 emrow=5
+# GBLKEND t=127495000 idx=1 comp=00 mcux=6 emrow=5
+# GBLKEND t=127615000 idx=2 comp=00 mcux=6 emrow=5
+# GBLKEND t=127735000 idx=3 comp=00 mcux=6 emrow=5
+# GBLKEND t=127855000 idx=4 comp=01 mcux=6 emrow=5
+# GBLKEND t=127975000 idx=5 comp=10 mcux=6 emrow=5
+# GBLKEND t=128095000 idx=0 comp=00 mcux=7 emrow=5
+# GBLKEND t=128215000 idx=1 comp=00 mcux=7 emrow=5
+# GBLKEND t=128335000 idx=2 comp=00 mcux=7 emrow=5
+# GBLKEND t=128455000 idx=3 comp=00 mcux=7 emrow=5
+# GBLKEND t=128575000 idx=4 comp=01 mcux=7 emrow=5
+# GBLKEND t=128695000 idx=5 comp=10 mcux=7 emrow=5
+# tb_gather tag=pat128x96: y=12288 c=3072 blocks=288 errors=0 -> PASS
+# ** Note: $finish    : tb/tb_gather.sv(225)
+#    Time: 128695 ns  Iteration: 1  Instance: /tb_gather
+# End time: 23:18:34 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

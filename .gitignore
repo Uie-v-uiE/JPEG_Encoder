@@ -1,0 +1,9 @@
+sim/work/
+results/ooc*
+build/
+transcript
+vivado*.log
+vivado*.jou
+vsim_stacktrace.vstf
+*.bak
+.Xil/

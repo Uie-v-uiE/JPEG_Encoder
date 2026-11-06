@@ -1,0 +1,59 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vsim work.tb_huff +TAG=noise64
+# vsim work.tb_huff "+TAG=noise64" 
+# Start time: 01:01:46 on Nov 06,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt9
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_huff(fast)
+#  run -all
+# HUFFSTART t=135000 slot=0 nbits=0
+# HUFF t=145000 k=0 din=-6 comp=0 cat=3 putlen=6 nbits=0
+# DCBK t=145000 din=-6 pred=0 diff=-6 cat=3
+# HUFF t=155000 k=1 din=8 comp=0 cat=4 putlen=8 nbits=6
+# HUFF t=165000 k=2 din=2 comp=0 cat=4 putlen=4 nbits=14
+# HUFFZ t=175000 k=3 din=0 run=0
+# HUFF t=185000 k=4 din=3 comp=0 cat=4 putlen=7 nbits=2
+# ERR byte 1: got e1 exp e0
+# HUFF t=195000 k=5 din=-1 comp=0 cat=3 putlen=3 nbits=9
+# ERR byte 2: got b7 exp 48
+# ERR byte 3: got 89 exp 8e
+# ERR byte 4: got 16 exp f6
+# ERR byte 5: got 45 exp cc
+# ERR byte 6: got 42 exp ea
+# ERR byte 7: got ae exp ea
+# ERR byte 8: got 8e exp aa
+# ERR byte 9: got b2 exp 7c
+# ERR byte 10: got 37 exp c5
+# ERR byte 11: got 04 exp 90
+# HUFF t=785000 k=63 din=0 comp=0 cat=3 putlen=4 nbits=7
+# HUFFSTART t=795000 slot=1 nbits=11
+# HUFF t=805000 k=0 din=4 comp=0 cat=4 putlen=7 nbits=3
+# DCBK t=805000 din=4 pred=-6 diff=10 cat=4
+# HUFF t=815000 k=1 din=5 comp=0 cat=1 putlen=6 nbits=10
+# HUFF t=825000 k=2 din=4 comp=0 cat=0 putlen=6 nbits=8
+# HUFF t=835000 k=3 din=4 comp=0 cat=0 putlen=6 nbits=6
+# HUFF t=845000 k=4 din=4 comp=0 cat=0 putlen=6 nbits=12
+# HUFF t=855000 k=5 din=6 comp=0 cat=2 putlen=6 nbits=10
+# HUFF t=1435000 k=63 din=1 comp=0 cat=2 putlen=7 nbits=6
+# FATAL: watchdog
+# tb_huff tag=noise64: blocks=96 bytes=48 errors=1047 -> FAIL
+# ** Note: $finish    : tb/tb_huff.sv(136)
+#    Time: 2000035 ns  Iteration: 2  Instance: /tb_huff
+# End time: 01:01:46 on Nov 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

@@ -1,0 +1,54 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vsim work.tb_huff +TAG=grad64
+# vsim work.tb_huff "+TAG=grad64" 
+# Start time: 01:01:47 on Nov 06,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt9
+# //  ModelSim SE-64 2020.4 Oct 13 2020
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_huff(fast)
+#  run -all
+# HUFFSTART t=135000 slot=0 nbits=0
+# HUFF t=145000 k=0 din=-57 comp=0 cat=6 putlen=10 nbits=0
+# DCBK t=145000 din=-57 pred=0 diff=-57 cat=6
+# HUFF t=155000 k=1 din=-2 comp=0 cat=6 putlen=4 nbits=10
+# HUFFZ t=165000 k=2 din=0 run=0
+# HUFFZ t=175000 k=3 din=0 run=1
+# HUFFZ t=185000 k=4 din=0 run=2
+# HUFF t=195000 k=5 din=-4 comp=0 cat=6 putlen=15 nbits=6
+# ERR byte 1: got 97 exp 96
+# ERR byte 2: got fd exp 3a
+# HUFF t=785000 k=63 din=0 comp=0 cat=6 putlen=4 nbits=5
+# HUFFSTART t=795000 slot=1 nbits=9
+# HUFF t=805000 k=0 din=-51 comp=0 cat=3 putlen=6 nbits=1
+# DCBK t=805000 din=-51 pred=-57 diff=6 cat=3
+# ERR byte 3: got 5d exp 99
+# HUFF t=815000 k=1 din=-2 comp=0 cat=6 putlen=4 nbits=7
+# HUFFZ t=825000 k=2 din=0 run=0
+# HUFFZ t=835000 k=3 din=0 run=1
+# ERR byte 4: got 4c exp 63
+# HUFFZ t=845000 k=4 din=0 run=2
+# HUFF t=855000 k=5 din=-4 comp=0 cat=6 putlen=15 nbits=3
+# ERR byte 5: got bf exp a9
+# ERR byte 6: got ea exp 16
+# HUFF t=1445000 k=63 din=0 comp=0 cat=6 putlen=4 nbits=2
+# FATAL: watchdog
+# tb_huff tag=grad64: blocks=96 bytes=7 errors=1006 -> FAIL
+# ** Note: $finish    : tb/tb_huff.sv(136)
+#    Time: 2000035 ns  Iteration: 2  Instance: /tb_huff
+# End time: 01:01:48 on Nov 06,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

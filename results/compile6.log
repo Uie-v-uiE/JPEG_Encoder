@@ -1,0 +1,33 @@
+Reading pref.tcl
+
+# 2020.4
+
+# vlib sim/work
+# ** Warning: (vlib-34) Library already exists at "sim/work".
+# Errors: 0, Warnings: 1
+#  vmap work sim/work
+# Model Technology ModelSim SE-64 vmap 2020.4 Lib Mapping Utility 2020.10 Oct 13 2020
+# vmap work sim/work 
+# Modifying modelsim.ini
+#  vlog -sv rtl/rgb2ycbcr.v rtl/decim420.v rtl/mcu_gather.v rtl/fdct1d_llm.v rtl/dct2d.v rtl/quant.v rtl/huff_enc.v rtl/jpeg_top.v tb/tb_gather.sv
+# Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+# Start time: 03:06:52 on Nov 05,2026
+# vlog -sv rtl/rgb2ycbcr.v rtl/decim420.v rtl/mcu_gather.v rtl/fdct1d_llm.v rtl/dct2d.v rtl/quant.v rtl/huff_enc.v rtl/jpeg_top.v tb/tb_gather.sv 
+# -- Compiling module rgb2ycbcr
+# -- Compiling module decim420
+# -- Compiling module mcu_gather
+# -- Compiling module fdct1d_llm
+# -- Compiling module dct2d
+# -- Compiling module quant
+# -- Compiling module huff_enc
+# -- Compiling module jpeg_top
+# -- Compiling module tb_gather
+# ** Warning: tb/tb_gather.sv(130): (vlog-2697) MSB 15 of part-select into 'cr' is out of bounds.
+# ** Warning: tb/tb_gather.sv(130): (vlog-2697) LSB 8 of part-select into 'cr' is out of bounds.
+# 
+# Top level modules:
+# 	jpeg_top
+# 	tb_gather
+# End time: 03:06:52 on Nov 05,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+#  quit -f
