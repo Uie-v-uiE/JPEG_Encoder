@@ -7,3 +7,4 @@ vivado*.jou
 vsim_stacktrace.vstf
 *.bak
 .Xil/
+__pycache__/

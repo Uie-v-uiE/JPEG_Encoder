@@ -87,7 +87,10 @@ module quant (
                      // position {gidx, lane} -- lane-only indexing served
                      // table entries 0-7 to every group (I-20)
     // stage 2: products
-    reg [26:0] pr0, pr1, pr2, pr3, pr4, pr5, pr6, pr7;
+    // full-precision products: t(11b, <= VQ_MAX+1) x M(24b) needs 35 bits.
+    // A 27-bit product WRAPPED for luma positions 58-61 (M~176603) once
+    // |v| >= ~5700 -- reachable by high-frequency content (I-24/P0-2).
+    reg [34:0] pr0, pr1, pr2, pr3, pr4, pr5, pr6, pr7;
     reg        v2, v2f, v2l;
     reg [2:0]  c2;   // [2]=frame-end eof bit
     reg [4:0]  sh0, sh1, sh2, sh3, sh4, sh5, sh6, sh7;

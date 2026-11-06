@@ -203,3 +203,14 @@
    全部免疫,四类 bug 都在 flat 全绿后由内容图暴露。**内容图必须进回归。**
 5. **vopt 缓存**:`vsim` 可能复用旧 `_opt` 设计,vlog 后不重究化。
    可靠流程 = `vlog` + `vopt <lib>.<top> -o <新名> +acc` + `vsim <新名>`。
+
+## I-22 补记(2026-11-07):OOC 综合仍死于 per-row RAM 建模内存
+- 现象:synth_design 在 mcu_gather per-row RAM(24×20480×8b + 12×20480×16b,
+  共 ~5.9Mb = 164 RAMB36,器件资源足够)推断后无 ERROR 退出(exit 0,
+  无 ooc_status.txt);synth log 尾部 = 8-11357 "Potential Runtime issue for
+  3D-RAM or RAM"(综合器内部 record/struct 建模内存问题),另有 4 条
+  8-7186(ram_style=block 被忽略,对象 ybuf[0][x],疑属性作用域告警)。
+- 功能不受影响:4 向量端到端全 PASS(行为仿真数组语义精确)。
+- 待办方向:每行 mem 从 generate 多实例改为单 1D 大数组 + 显式行寄存选通
+  (牺牲 8 读口 → 1 读口 × 行寄存复制,或分行 bank 轮换),或 MAX_W
+  参数化缩图。改动后需重验 4 向量端到端 + 单元(tb_gather)。

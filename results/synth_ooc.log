@@ -1,0 +1,182 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Fri Nov  6 23:48:40 2026
+# Process ID         : 17364
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts/synth_ooc.tcl -nojournal -log results/synth_ooc.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/synth_ooc.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 25596 MB
+#-----------------------------------------------------------
+source scripts/synth_ooc.tcl
+# set part xcku5p-ffvb676-2-i
+# set period 10.0
+# create_project -force jpeg_ooc build/ooc -part $part
+create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 539.484 ; gain = 220.277
+# add_files rtl/jpeg_top.v
+# add_files rtl/rgb2ycbcr.v
+# add_files rtl/decim420.v
+# add_files rtl/mcu_gather.v
+# add_files rtl/fdct1d_llm.v
+# add_files rtl/dct2d.v
+# add_files rtl/quant.v
+# add_files rtl/huff_enc.v
+# set_property top jpeg_top [current_fileset]
+# set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} \
+#     -value {-mode out_of_context} -objects [get_runs synth_1]
+# synth_design -top jpeg_top -part $part -mode out_of_context
+Command: synth_design -top jpeg_top -part xcku5p-ffvb676-2-i -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4208
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1081.348 ; gain = 537.914
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'jpeg_top' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+INFO: [Synth 8-6157] synthesizing module 'rgb2ycbcr' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2ycbcr' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6157] synthesizing module 'decim420' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'decim420' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mcu_gather' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+	Parameter MAX_W bound to: 1920 - type: integer 
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][0]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][1]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][2]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][3]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][4]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][5]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][6]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][7]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][8]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][9]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][10]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][11]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][12]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][13]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][14]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][15]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][16]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][17]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][18]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][19]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][20]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][21]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][22]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][23]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][24]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][25]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][26]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][27]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][28]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][29]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][30]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][31]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][32]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][33]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][34]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][35]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][36]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][37]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][38]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][39]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][40]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][41]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][42]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][43]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][44]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][45]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][46]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][47]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][48]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][49]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][50]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][51]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][52]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][53]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][54]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][55]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][56]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][57]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][58]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][59]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][60]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][61]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][62]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][63]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][64]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][65]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][66]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][67]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][68]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][69]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][70]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][71]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][72]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][73]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][74]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][75]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][76]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][77]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][78]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][79]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][80]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][81]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][82]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][83]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][84]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][85]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][86]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][87]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][88]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][89]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][90]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][91]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][92]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][93]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][94]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][95]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][96]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][97]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][98]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+WARNING: [Synth 8-7186] Applying attribute ram_style = "block" is ignored, object 'ybuf[0][99]' is not inferred as ram due to incorrect usage [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:62]
+INFO: [Common 17-14] Message 'Synth 8-7186' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'mcu_gather' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+INFO: [Synth 8-6157] synthesizing module 'dct2d' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fdct1d_llm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fdct1d_llm' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dct2d' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'quant' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_q.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:52]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_m.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:53]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_s.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:54]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_q.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:55]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_m.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:56]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_s.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'quant' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-6157] synthesizing module 'huff_enc' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-3876] $readmem data file 'zigzag.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:46]
+INFO: [Synth 8-3876] $readmem data file 'huff_dc0.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:47]
+INFO: [Synth 8-3876] $readmem data file 'huff_dc1.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:48]
+INFO: [Synth 8-3876] $readmem data file 'huff_ac0.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:49]
+INFO: [Synth 8-3876] $readmem data file 'huff_ac1.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'huff_enc' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_top' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  ybuf_reg with 491520 registers
+WARNING: [Synth 8-11357] Potential Runtime issue for 3D-RAM or RAM from Record/Structs for RAM  cbuf_reg with 245760 registers

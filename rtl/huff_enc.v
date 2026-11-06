@@ -337,13 +337,24 @@ module huff_enc (
                     end
                 end
             end else if (fstate == 2'd1) begin
-                // pad to byte boundary with 1s (single cycle)
+                // pad to byte boundary with 1s (single cycle). The pad must
+                // apply to the POST-DRAIN accumulator: a drain may fire on
+                // this very edge (nbits>=8 left over from the last put), and
+                // the plain assignment at the top of the block would
+                // otherwise be overridden here with an un-drained acc,
+                // duplicating the already-pushed byte on frames whose tail
+                // lands in [9..43] bits (I-23). pad_n is a mod-8 quantity,
+                // so draining 8 bits does not change it.
                 if (pad_n != 4'd0) begin
-                    acc <= (acc << pad_n) | ((48'h1 << pad_n) - 1);
-                    nbits <= nbits + {2'b0, pad_n};
+                    acc   <= ((drain ? acc_drain : acc) << pad_n)
+                             | ((48'h1 << pad_n) - 1);
+                    nbits <= (drain ? (nbits - 6'd8) : nbits)
+                             + {2'b0, pad_n};
                     pad_n <= 4'd0;
                     fstate <= 2'd2;
                 end else begin
+                    acc   <= acc_shift;
+                    nbits <= nbits_shift;
                     fstate <= 2'd2;
                 end
             end else if (fstate == 2'd2) begin

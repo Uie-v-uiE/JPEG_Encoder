@@ -54,14 +54,6 @@ module mcu_gather #(
         end
     endfunction
 
-    // ------------------------------------------------------------- storage
-    (* ram_style = "block" *)
-    // 2-D flat arrays (set folded into the row index): Vivado 2025.2 has a
-    // pathologically slow / unbounded elaboration path for 3-D packed RAMs
-    // of this shape (ybuf 3-D stalled synthesis indefinitely, I-22)
-    reg [7:0]  ybuf [0:2*YL-1][0:MAX_W-1];
-    (* ram_style = "block" *)
-    reg [15:0] cbuf [0:2*CL-1][0:MAX_W/2-1];
 
     // ---------------------------------------------------------- gather FSM
     reg [10:0] W, H;
@@ -119,21 +111,66 @@ module mcu_gather #(
     wire [LCW-1:0] c_raddr = (phase == 1'b0) ? c_base
                             : (c_base + row_cnt + 3'd1);
 
-    // synchronous reads: 8 row buffers at the shared column address
-    reg [7:0]  y_rd [0:7];
-    reg [15:0] c_rd [0:7];
-    integer gi;
-    // capture enable: warm cycle loads row 0; data cycles load the next
-    // column only when the current one is accepted, so backpressure holds
+    // synchronous reads: the registered BRAM outputs live in the per-row
+    // generate blocks (y_rd_q/c_rd_q -- exactly one cycle, as before)
     wire rd_en = (phase == 1'b0) || emit_step;
-    always @(posedge clk) begin
-        if (rd_en) begin
-            for (gi = 0; gi < 8; gi = gi + 1) begin
-                y_rd[gi] <= ybuf[{epp, y_row_base + gi[3:0]}][y_raddr];
-                c_rd[gi] <= cbuf[{epp, gi[2:0]}][c_raddr];
+    // ------------------------------------------------------------- storage
+    // ONE 1-D array PER ROW (generate): a single declared array with 8
+    // simultaneous read ports (8 different row indices per cycle) cannot
+    // be inferred as RAM -- Vivado exploded ybuf+cbuf into ~740k flip-
+    // flops and the OOC synthesis died of memory exhaustion (I-22/P0-3).
+    // Per-row arrays give every RAM exactly one write + one read port.
+    localparam integer YROWS = 2*YL;
+    localparam integer CROWS = 2*CL;
+    wire [10:0] wr_row_y = {gpp, y_line};
+    wire [10:0] wr_row_c = {gpp, c_line};
+    wire        wr_en_y  = accept_y && cfg_seen;
+    wire        wr_en_c  = accept_c && cfg_seen;
+    reg [7:0]   y_rd_q [0:7];
+    reg [15:0]  c_rd_q [0:7];
+    genvar r;
+    generate
+        for (r = 0; r < YROWS; r = r + 1) begin : g_yrow
+            (* ram_style = "block" *)
+            reg [7:0] mem [0:MAX_W-1];
+            integer gi;
+            always @(posedge clk) begin
+                if (rd_en) begin
+                    for (gi = 0; gi < 8; gi = gi + 1)
+                        if ({epp, y_row_base + gi[3:0]} == r)
+                            y_rd_q[gi] <= mem[y_raddr];
+                end
+                if (wr_en_y && wr_row_y == r)
+                    mem[y_x] <= y_data;
             end
         end
-    end
+    endgenerate
+    generate
+        for (r = 0; r < CROWS; r = r + 1) begin : g_crow
+            (* ram_style = "block" *)
+            reg [15:0] mem [0:MAX_W/2-1];
+            integer gi;
+            always @(posedge clk) begin
+                if (rd_en) begin
+                    for (gi = 0; gi < 8; gi = gi + 1)
+                        if ({epp, gi[2:0]} == r)
+                            c_rd_q[gi] <= mem[c_raddr];
+                end
+                if (wr_en_c && wr_row_c == r)
+                    mem[c_x] <= {c_cb, c_cr};
+            end
+        end
+    endgenerate
+
+    wire [7:0]  y_rd [0:7];
+    wire [15:0] c_rd [0:7];
+    genvar gi2;
+    generate
+        for (gi2 = 0; gi2 < 8; gi2 = gi2 + 1) begin : g_rd
+            assign y_rd[gi2] = y_rd_q[gi2];
+            assign c_rd[gi2] = c_rd_q[gi2];
+        end
+    endgenerate
 
     // ------------------------------------------------------------- window
     task start_emit(input [10:0] row);
@@ -166,7 +203,6 @@ module mcu_gather #(
 
             // ------------------------------------------------ gather writes
             if (accept_y && cfg_seen) begin
-                ybuf[{gpp, y_line}][y_x] <= y_data;
                 if (y_eol) begin
                     y_x <= 0;
                     if (y_line == YL-1) begin
@@ -180,7 +216,6 @@ module mcu_gather #(
                 end
             end
             if (accept_c && cfg_seen) begin
-                cbuf[{gpp, c_line}][c_x] <= {c_cb, c_cr};
                 if (c_eol) begin
                     c_x <= 0;
                     c_line <= (c_line == CL-1) ? 3'd0 : c_line + 1'b1;
