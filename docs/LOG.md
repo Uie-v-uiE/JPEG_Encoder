@@ -42,3 +42,15 @@ tb_jpeg_top tag=pat128x96: sent=12288 bytes=1156 errors=0 -> PASS
 
 - Vivado OOC 综合(xcku5p-ffvb676-2-i,100 MHz 目标)启动。
 - 文档(README/DESIGN/LOG/ISSUES)成稿,git 提交。
+
+## 2026-11-07(审查轮)
+
+- 双代理代码审查(P2/P1 各一)。P2 侧 3 个 P0 全部证实并修复:
+  I-23(huff pad 同拍覆盖)、I-24(quant 乘积回绕)、I-22(gather RAM 推断);
+  新增 I-29/I-32(综合脚本两坑)与 I-33(双 always 多驱动)。
+- 回归扩到 10 图(flat64/grad64/noise64/pat128x96 + rnd1-4 随机),
+  tb_huff/tb_jpeg_top 10/10 PASS。
+- OOC 综合(xcku5p-ffvb676-2-i,100 MHz)最终收敛:
+  WNS=+3.941 / WHS=+0.026 / 0 critDRC / 全实例在网表 / 600 LUTRAM 行缓冲。
+  (三次失败教训:陈旧项目网表、readmemh CWD、双 always 多驱动——见 ISSUES。)
+- P2 git 提交完成。

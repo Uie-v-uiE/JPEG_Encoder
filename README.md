@@ -12,10 +12,12 @@ RGB888 光栅 → JFIF 熵编码字节流,**与 golden 定点模型逐字节一�
 | tb_gather(MCU 组装,4 图,96/96/96/288 块) | 0 误差 |
 | tb_decim(4:2:0 隔离单测,4 图,随机双侧背压) | 0 误差 |
 | tb_huff(熵编码单元,4 图,含 0xFF 塞字节/帧尾 pad) | 0 误差 |
-| **tb_jpeg_top(整核端到端,字节精确对拍 golden)** | **4 图 0 误差** |
+| **tb_jpeg_top(整核端到端,字节精确对拍 golden)** | **10 图 0 误差**(含 4 张随机图) |
+| OOC 综合 xcku5p @ 100 MHz | TIMING_MET(WNS +3.94 / WHS +0.03 / 0 critDRC) |
 
-端到端输出字节数:flat64=67、grad64=236、noise64=1658、pat128x96=1156 ——
-与 golden 逐字节一致(含帧尾 1 位填充字节与 out_last)。
+端到端输出字节数:flat64=67、grad64=236、noise64=1658、pat128x96=1156、
+rnd1=1665、rnd2=2518、rnd3=2512、rnd4=3359 —— 与 golden 逐字节一致
+(含帧尾 1 位填充字节与 out_last)。
 
 golden 模型可信度:整数量化与截断除法 2,097,024 例全等;FDCT 与浮点参考
 ≤2 LSB;golden JFIF 经 PIL 解码与 libjpeg 编码同图 PSNR 一致。
@@ -27,7 +29,7 @@ golden 模型可信度:整数量化与截断除法 2,097,024 例全等;FDCT 与�
 - **含金量**:JPEG 编码覆盖色彩空间转换、抽样、整数变换、量化、游程+Huffman、
   位打包——一条完整的信号处理+协议栈,面试可讲的层比"点个 IP"多得多。
 - **可验证性**:golden 定点模型可以做到**逐字节对拍**,比"仿真不报错"强一个量级。
-- 已排除的备选:PCIe/10G MAC(MModelSim 缺 IP 仿真库)、DDR4 MIG(同)、
+- 已排除的备选:PCIe/10G MAC(ModelSim 缺 IP 仿真库)、DDR4 MIG(同)、
   RISC-V 核/视频处理(与既有项目重复)。
 
 ## 仓库结构
