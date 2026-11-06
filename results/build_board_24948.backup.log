@@ -1,0 +1,300 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Sat Nov  7 03:19:13 2026
+# Process ID         : 24948
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts/build_board.tcl -nojournal -log results/build_board.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/build_board.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 29372 MB
+#-----------------------------------------------------------
+source scripts/build_board.tcl
+# set part xcku5p-ffvb676-2-i
+# set out results
+# file mkdir $out
+# create_project -force jpeg_board build/jpeg_board -part $part
+# add_files rtl/rgb2ycbcr.v
+# add_files rtl/decim420.v
+# add_files rtl/mcu_gather.v
+# add_files rtl/dct2d.v
+# add_files rtl/fdct1d_llm.v
+# add_files rtl/quant.v
+# add_files rtl/huff_enc.v
+# add_files rtl/jpeg_top.v
+# add_files rtl/uart_tx.v
+# add_files rtl/jpeg_demo_board.v
+# add_files vectors/jpeg_demo_rgb.mem
+# set_property file_type {Memory File} [get_files vectors/jpeg_demo_rgb.mem]
+# add_files -fileset constrs_1 constr/jpeg_demo_board.xdc
+# set_property top jpeg_demo_board [current_fileset]
+# launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Sat Nov  7 03:19:24 2026] Launched synth_1...
+Run output will be captured here: D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Sat Nov  7 03:19:24 2026] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log jpeg_demo_board.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source jpeg_demo_board.tcl
+
+
+
+****** Vivado v2025.2.1 (64-bit)
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+  **** IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+  **** SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+  **** Start of session at: Sat Nov  7 03:19:25 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source jpeg_demo_board.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 538.805 ; gain = 220.980
+Command: synth_design -top jpeg_demo_board -part xcku5p-ffvb676-2-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 26356
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1933.371 ; gain = 254.164
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clk_raw', assumed default net type 'wire' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:15]
+INFO: [Synth 8-6157] synthesizing module 'jpeg_demo_board' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:7]
+INFO: [Synth 8-3876] $readmem data file 'jpeg_demo_rgb.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:39]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:82819]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (0#1) [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:82819]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:95830]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 5.000000e+00 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 5.000000e+00 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 1.000000e+01 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (0#1) [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:95830]
+WARNING: [Synth 8-7071] port 'CLKFBOUTB' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT0B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT1' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT1B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT2' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT2B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT3' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT3B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT4' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT5' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7071] port 'CLKOUT6' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+WARNING: [Synth 8-7023] instance 'u_mmcm' of module 'MMCME2_BASE' has 18 connections declared, but only 7 given [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:23]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-226] default block is never used [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:63]
+INFO: [Synth 8-6157] synthesizing module 'jpeg_top' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rgb2ycbcr' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2ycbcr' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6157] synthesizing module 'decim420' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'decim420' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mcu_gather' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mcu_gather' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+INFO: [Synth 8-6157] synthesizing module 'dct2d' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fdct1d_llm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fdct1d_llm' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dct2d' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'quant' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_luma_q.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:52]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_luma_m.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:53]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_luma_s.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:54]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_chroma_q.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:55]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_chroma_m.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:56]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_chroma_s.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'quant' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-6157] synthesizing module 'huff_enc' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'zigzag.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:46]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_dc0.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:47]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_dc1.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:48]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_ac0.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:49]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_ac1.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'huff_enc' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_top' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/uart_tx.v:2]
+	Parameter DIV bound to: 868 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/uart_tx.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_demo_board' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:7]
+WARNING: [Synth 8-6014] Unused sequential element fp_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:43]
+WARNING: [Synth 8-6014] Unused sequential element tmp0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:45]
+WARNING: [Synth 8-6014] Unused sequential element tmp7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:46]
+WARNING: [Synth 8-6014] Unused sequential element tmp1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:47]
+WARNING: [Synth 8-6014] Unused sequential element tmp6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:48]
+WARNING: [Synth 8-6014] Unused sequential element tmp2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:49]
+WARNING: [Synth 8-6014] Unused sequential element tmp5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:50]
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:51]
+WARNING: [Synth 8-6014] Unused sequential element tmp4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:52]
+WARNING: [Synth 8-6014] Unused sequential element tmp10_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:54]
+WARNING: [Synth 8-6014] Unused sequential element tmp13_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:55]
+WARNING: [Synth 8-6014] Unused sequential element tmp11_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:56]
+WARNING: [Synth 8-6014] Unused sequential element tmp12_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:57]
+WARNING: [Synth 8-6014] Unused sequential element even0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:60]
+WARNING: [Synth 8-6014] Unused sequential element even4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:61]
+WARNING: [Synth 8-6014] Unused sequential element z1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:66]
+WARNING: [Synth 8-6014] Unused sequential element even2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:68]
+WARNING: [Synth 8-6014] Unused sequential element even6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:69]
+WARNING: [Synth 8-6014] Unused sequential element z2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:76]
+WARNING: [Synth 8-6014] Unused sequential element z3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:77]
+WARNING: [Synth 8-6014] Unused sequential element z4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:78]
+WARNING: [Synth 8-6014] Unused sequential element z5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:79]
+WARNING: [Synth 8-6014] Unused sequential element m4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:81]
+WARNING: [Synth 8-6014] Unused sequential element m5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:82]
+WARNING: [Synth 8-6014] Unused sequential element m6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:83]
+WARNING: [Synth 8-6014] Unused sequential element m7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:84]
+WARNING: [Synth 8-6014] Unused sequential element odd7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:93]
+WARNING: [Synth 8-6014] Unused sequential element odd5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:94]
+WARNING: [Synth 8-6014] Unused sequential element odd3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:95]
+WARNING: [Synth 8-6014] Unused sequential element odd1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:96]
+WARNING: [Synth 8-6014] Unused sequential element gidx_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:104]
+WARNING: [Synth 8-3848] Net qtab_l in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:41]
+WARNING: [Synth 8-3848] Net qtab_c in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:43]
+WARNING: [Synth 8-3848] Net mtab_l in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:45]
+WARNING: [Synth 8-3848] Net mtab_c in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:47]
+WARNING: [Synth 8-3848] Net stab_l in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:49]
+WARNING: [Synth 8-3848] Net stab_c in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:51]
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_d_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:277]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_l_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:278]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-3848] Net dc0 in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:39]
+WARNING: [Synth 8-3848] Net dc1 in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:41]
+WARNING: [Synth 8-3848] Net zz[0] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[1] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[2] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[3] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[4] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[5] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[6] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[7] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[8] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[9] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[10] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[11] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[12] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[13] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[14] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[15] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[16] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[17] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[18] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[19] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[20] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[21] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[22] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[23] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[24] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[25] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[26] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[27] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[28] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[29] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[30] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[31] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[32] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[33] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[34] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[35] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[36] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[37] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[38] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[39] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[40] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[41] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[42] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[43] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[44] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[45] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[46] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[47] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[48] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[49] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[50] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[51] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[52] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[53] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[54] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[55] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[56] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[57] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[58] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[59] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[60] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[61] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[62] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[63] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net ac0[0] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac1[0] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:45]
+WARNING: [Synth 8-3848] Net ac0[240] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac1[240] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:45]
+WARNING: [Synth 8-3848] Net ac0[1] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[2] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[3] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[4] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[5] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[6] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[7] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[8] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[9] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[10] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[11] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[12] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[13] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[14] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[15] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[16] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[17] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[18] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[19] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[20] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[21] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[22] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[23] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[24] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+INFO: [Common 17-14] Message 'Synth 8-3848' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6014] Unused sequential element tx_cnt_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:59]
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[2] driven by constant 0
+WARNING: [Synth 8-7129] Port q_first in module huff_enc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port blk_first in module dct2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_sof in module mcu_gather is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_sof in module mcu_gather is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2232.570 ; gain = 553.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2232.570 ; gain = 553.363
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2232.570 ; gain = 553.363
+---------------------------------------------------------------------------------

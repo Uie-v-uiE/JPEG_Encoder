@@ -27,11 +27,11 @@ module uart_tx #(
         end else begin
             if (baud_cnt == DIV - 1) begin
                 baud_cnt <= 0;
-                if (bitidx == 4'd9) begin
-                    running <= 1'b0; tx <= 1'b1;      // 停止位结束
+                if (bitidx == 4'd8) begin
+                    running <= 1'b0; tx <= 1'b1;      // 8 数据位毕 → 停止位
                 end else begin
-                    tx <= (bitidx == 4'd0) ? 1'b0 : shreg[0];  // 起始位后移位发
-                    if (bitidx != 4'd0) shreg <= shreg >> 1;
+                    tx <= shreg[0];                    // LSB 先
+                    shreg <= shreg >> 1;
                     bitidx <= bitidx + 1'b1;
                 end
             end else begin

@@ -1,0 +1,12 @@
+# jpeg_demo_board.xdc — RK-XCKU5P-F 板级引脚(同 KU5P_DEMO 已验证集)
+set_property -dict {PACKAGE_PIN T24 IOSTANDARD DIFF_SSTL12} [get_ports i_sys_clk_p]
+create_clock -period 5.000 -name sys_clk [get_ports i_sys_clk_p]
+set_property -dict {PACKAGE_PIN K9 IOSTANDARD LVCMOS33} [get_ports i_sys_rst]
+set_property -dict {PACKAGE_PIN H9 IOSTANDARD LVCMOS33} [get_ports {o_led[0]}]
+set_property -dict {PACKAGE_PIN J9 IOSTANDARD LVCMOS33} [get_ports {o_led[1]}]
+set_property -dict {PACKAGE_PIN G11 IOSTANDARD LVCMOS33} [get_ports {o_led[2]}]
+set_property -dict {PACKAGE_PIN H11 IOSTANDARD LVCMOS33} [get_ports {o_led[3]}]
+set_property -dict {PACKAGE_PIN AC14 IOSTANDARD LVCMOS33} [get_ports o_uart_tx]
+set_property CFGBVS VCCO [current_design]
+set_property CONFIG_VOLTAGE 1.8 [current_design]
+set_property BITSTREAM.GENERAL.COMPRESS TRUE [current_design]

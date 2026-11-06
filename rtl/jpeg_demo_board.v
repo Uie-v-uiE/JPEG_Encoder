@@ -11,13 +11,24 @@ module jpeg_demo_board (
     output wire [3:0] o_led,          // H9/J9/G11/H11
     output wire       o_uart_tx       // AC14
 );
-    wire clk;
-    IBUFDS #(.DIFF_TERM("TRUE")) u_ibufds (
-        .O(clk), .I(i_sys_clk_p), .IB(i_sys_clk_n));
+    IBUFDS u_ibufds (
+        .O(clk_raw), .I(i_sys_clk_p), .IB(i_sys_clk_n));
+
+    // MMCM 200 → 100 MHz(gather/dct 组合链 ~6 ns,200 MHz 时序不闭合)
+    wire clk_0, clk, clk_fb, clk_locked;
+    MMCME2_BASE #(
+        .BANDWIDTH("OPTIMIZED"), .CLKIN1_PERIOD(5.000),
+        .CLKFBOUT_MULT_F(5.000), .DIVCLK_DIVIDE(1), .CLKOUT0_DIVIDE_F(10.000),
+        .STARTUP_WAIT("FALSE"))
+    u_mmcm (
+        .CLKIN1(clk_raw), .CLKFBIN(clk_fb), .CLKFBOUT(clk_fb),
+        .CLKOUT0(clk_0), .LOCKED(clk_locked),
+        .RST(1'b0), .PWRDWN(1'b0));
+    BUFG u_bufg (.I(clk_0), .O(clk));
 
     reg [1:0] rsync;
     always @(posedge clk) rsync <= {rsync[0], i_sys_rst};
-    wire rst = rsync[1];
+    wire rst = rsync[1] || !clk_locked;
 
     reg [24:0] blink_cnt;
     always @(posedge clk) blink_cnt <= blink_cnt + 1'b1;
@@ -90,7 +101,7 @@ module jpeg_demo_board (
         .m_valid(m_valid), .m_ready(!tx_busy), .m_data(m_data), .m_last(m_last)
     );
 
-    uart_tx #(.DIV(1736)) u_uart (
+    uart_tx #(.DIV(868)) u_uart (
         .clk(clk), .rst(rst), .we(tx_we), .data(tx_data),
         .tx(o_uart_tx), .busy(tx_busy)
     );
