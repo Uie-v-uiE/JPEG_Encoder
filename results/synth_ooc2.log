@@ -1,0 +1,798 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Sat Nov  7 02:11:19 2026
+# Process ID         : 21608
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts/synth_ooc.tcl -nojournal -log results/synth_ooc2.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/synth_ooc2.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 28935 MB
+#-----------------------------------------------------------
+source scripts/synth_ooc.tcl
+# set part xcku5p-ffvb676-2-i
+# set period 10.0
+# cd [file normalize [file join [file dirname [info script]] ..]]
+# puts "OOC CWD: [pwd]"
+OOC CWD: D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# create_project -force jpeg_ooc build/ooc -part $part
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 542.105 ; gain = 223.629
+# add_files rtl/jpeg_top.v
+# add_files rtl/rgb2ycbcr.v
+# add_files rtl/decim420.v
+# add_files rtl/mcu_gather.v
+# add_files rtl/fdct1d_llm.v
+# add_files rtl/dct2d.v
+# add_files rtl/quant.v
+# add_files rtl/huff_enc.v
+# foreach f {zigzag.mem huff_dc0.mem huff_dc1.mem huff_ac0.mem huff_ac1.mem
+#            quant_luma_q.mem quant_luma_m.mem quant_luma_s.mem
+#            quant_chroma_q.mem quant_chroma_m.mem quant_chroma_s.mem} {
+#     add_files -norecurse $f
+#     set_property file_type {Memory File} [get_files $f]
+# }
+# set_property top jpeg_top [current_fileset]
+# set_property -name {STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS} \
+#     -value {-mode out_of_context} -objects [get_runs synth_1]
+# synth_design -top jpeg_top -part $part -mode out_of_context
+Command: synth_design -top jpeg_top -part xcku5p-ffvb676-2-i -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8032
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1080.395 ; gain = 533.355
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'jpeg_top' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+INFO: [Synth 8-6157] synthesizing module 'rgb2ycbcr' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2ycbcr' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6157] synthesizing module 'decim420' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'decim420' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mcu_gather' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mcu_gather' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+INFO: [Synth 8-6157] synthesizing module 'dct2d' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fdct1d_llm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fdct1d_llm' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dct2d' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'quant' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_q.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:52]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_m.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:53]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_s.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:54]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_q.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:55]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_m.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:56]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_s.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'quant' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-6157] synthesizing module 'huff_enc' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-3876] $readmem data file 'zigzag.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:46]
+INFO: [Synth 8-3876] $readmem data file 'huff_dc0.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:47]
+INFO: [Synth 8-3876] $readmem data file 'huff_dc1.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:48]
+INFO: [Synth 8-3876] $readmem data file 'huff_ac0.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:49]
+INFO: [Synth 8-3876] $readmem data file 'huff_ac1.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'huff_enc' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_top' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+WARNING: [Synth 8-6014] Unused sequential element fp_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:43]
+WARNING: [Synth 8-6014] Unused sequential element tmp0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:45]
+WARNING: [Synth 8-6014] Unused sequential element tmp7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:46]
+WARNING: [Synth 8-6014] Unused sequential element tmp1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:47]
+WARNING: [Synth 8-6014] Unused sequential element tmp6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:48]
+WARNING: [Synth 8-6014] Unused sequential element tmp2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:49]
+WARNING: [Synth 8-6014] Unused sequential element tmp5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:50]
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:51]
+WARNING: [Synth 8-6014] Unused sequential element tmp4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:52]
+WARNING: [Synth 8-6014] Unused sequential element tmp10_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:54]
+WARNING: [Synth 8-6014] Unused sequential element tmp13_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:55]
+WARNING: [Synth 8-6014] Unused sequential element tmp11_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:56]
+WARNING: [Synth 8-6014] Unused sequential element tmp12_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:57]
+WARNING: [Synth 8-6014] Unused sequential element even0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:60]
+WARNING: [Synth 8-6014] Unused sequential element even4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:61]
+WARNING: [Synth 8-6014] Unused sequential element z1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:66]
+WARNING: [Synth 8-6014] Unused sequential element even2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:68]
+WARNING: [Synth 8-6014] Unused sequential element even6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:69]
+WARNING: [Synth 8-6014] Unused sequential element z2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:76]
+WARNING: [Synth 8-6014] Unused sequential element z3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:77]
+WARNING: [Synth 8-6014] Unused sequential element z4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:78]
+WARNING: [Synth 8-6014] Unused sequential element z5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:79]
+WARNING: [Synth 8-6014] Unused sequential element m4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:81]
+WARNING: [Synth 8-6014] Unused sequential element m5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:82]
+WARNING: [Synth 8-6014] Unused sequential element m6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:83]
+WARNING: [Synth 8-6014] Unused sequential element m7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:84]
+WARNING: [Synth 8-6014] Unused sequential element odd7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:93]
+WARNING: [Synth 8-6014] Unused sequential element odd5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:94]
+WARNING: [Synth 8-6014] Unused sequential element odd3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:95]
+WARNING: [Synth 8-6014] Unused sequential element odd1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:96]
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_d_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:277]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_l_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:278]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-7129] Port q_first in module huff_enc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port blk_first in module dct2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_sof in module mcu_gather is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_sof in module mcu_gather is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1372.543 ; gain = 825.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1372.543 ; gain = 825.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcku5p-ffvb676-2-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1372.543 ; gain = 825.504
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'py_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:54]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pcb_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:55]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pcr_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:56]
+DSP Debug: swapped A/B pins for adder 000002876BF96AD0
+DSP Debug: swapped A/B pins for adder 000002876C4BF060
+INFO: [Synth 8-802] inferred FSM for state register 'fstate_reg' in module 'huff_enc'
+INFO: [Synth 8-6904] The RAM "decim420:/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "dct2d:/cf_comp_reg" of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "dct2d:/cf_last_reg" of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                             1000 |                               00
+                 iSTATE1 |                             0010 |                               01
+                  iSTATE |                             0100 |                               10
+*
+                 iSTATE2 |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fstate_reg' using encoding 'one-hot' in module 'huff_enc'
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:21 . Memory (MB): peak = 2150.410 ; gain = 1603.371
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   48 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 24    
+	   3 Input   32 Bit       Adders := 14    
+	   4 Input   32 Bit       Adders := 2     
+	   2 Input   16 Bit       Adders := 9     
+	   3 Input   16 Bit       Adders := 1     
+	   3 Input   14 Bit       Adders := 8     
+	   3 Input   12 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 10    
+	   4 Input   12 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 6     
+	   3 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 2     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 8     
+	   4 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 4     
+	   2 Input    3 Bit       Adders := 8     
+	   4 Input    3 Bit       Adders := 1     
+	   4 Input    2 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 6     
++---Registers : 
+	               48 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 25    
+	               15 Bit    Registers := 144   
+	               12 Bit    Registers := 139   
+	               11 Bit    Registers := 25    
+	                8 Bit    Registers := 188   
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 4     
+	                5 Bit    Registers := 23    
+	                4 Bit    Registers := 4     
+	                3 Bit    Registers := 17    
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 82    
++---Multipliers : 
+	              14x32  Multipliers := 3     
+	              13x32  Multipliers := 2     
+	              15x32  Multipliers := 4     
+	              16x32  Multipliers := 3     
++---RAMs : 
+	              16K Bit	(960 X 18 bit)          RAMs := 1     
+	              15K Bit	(960 X 16 bit)          RAMs := 16    
+	              15K Bit	(1920 X 8 bit)          RAMs := 32    
+	               96 Bit	(4 X 24 bit)          RAMs := 1     
+	               32 Bit	(4 X 8 bit)          RAMs := 2     
+	                6 Bit	(2 X 3 bit)          RAMs := 1     
+	                4 Bit	(4 X 1 bit)          RAMs := 4     
+	                2 Bit	(2 X 1 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   48 Bit        Muxes := 5     
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 17    
+	   2 Input   15 Bit        Muxes := 72    
+	   2 Input   14 Bit        Muxes := 8     
+	   2 Input   12 Bit        Muxes := 261   
+	   4 Input   12 Bit        Muxes := 2     
+	   5 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 14    
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 111   
+	   2 Input    7 Bit        Muxes := 2     
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 7     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	  13 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 7     
+	   3 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 61    
+	   4 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 396   
+	   4 Input    1 Bit        Muxes := 4     
+	   3 Input    1 Bit        Muxes := 3     
+	   6 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 51    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1824 (col length:96)
+BRAMs: 960 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "u_dct/cf_comp_reg" of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_dct/cf_last_reg" of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+DSP Report: Generating DSP u_quant/pr0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: register u_quant/mm0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: register u_quant/pr0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: operator u_quant/pr00 is absorbed into DSP u_quant/pr0_reg.
+DSP Report: Generating DSP u_quant/pr1_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: register u_quant/mm1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: register u_quant/pr1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: operator u_quant/pr10 is absorbed into DSP u_quant/pr1_reg.
+DSP Report: Generating DSP u_quant/pr2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: register u_quant/mm2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: register u_quant/pr2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: operator u_quant/pr20 is absorbed into DSP u_quant/pr2_reg.
+DSP Report: Generating DSP u_quant/pr3_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: register u_quant/mm3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: register u_quant/pr3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: operator u_quant/pr30 is absorbed into DSP u_quant/pr3_reg.
+DSP Report: Generating DSP u_quant/pr4_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: register u_quant/mm4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: register u_quant/pr4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: operator u_quant/pr40 is absorbed into DSP u_quant/pr4_reg.
+DSP Report: Generating DSP u_quant/pr5_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: register u_quant/mm5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: register u_quant/pr5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: operator u_quant/pr50 is absorbed into DSP u_quant/pr5_reg.
+DSP Report: Generating DSP u_quant/pr6_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: register u_quant/mm6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: register u_quant/pr6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: operator u_quant/pr60 is absorbed into DSP u_quant/pr6_reg.
+DSP Report: Generating DSP u_quant/pr7_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: register u_quant/mm7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: register u_quant/pr7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: operator u_quant/pr70 is absorbed into DSP u_quant/pr7_reg.
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_dct/cf_comp_reg" of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_dct/cf_last_reg" of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/u_decim/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_fstate_reg[0]) is unused and will be removed from module huff_enc.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:55 . Memory (MB): peak = 2355.777 ; gain = 1808.738
+---------------------------------------------------------------------------------
+ Sort Area is jpeg_top__GB1 u_quant/pr0_reg_0 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr1_reg_2 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr2_reg_3 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr3_reg_4 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr4_reg_5 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr5_reg_6 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr6_reg_7 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr7_reg_8 : 0 0 : 1765 1765 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|quant       | stab_c     | 64x5          | LUT            | 
+|quant       | stab_l     | 64x5          | LUT            | 
+|quant       | mtab_c     | 64x18         | LUT            | 
+|quant       | mtab_l     | 64x19         | LUT            | 
+|quant       | qtab_c     | 64x8          | LUT            | 
+|quant       | qtab_l     | 64x8          | LUT            | 
+|huff_enc    | zz         | 64x6          | LUT            | 
+|huff_enc    | dc1        | 16x15         | LUT            | 
+|huff_enc    | dc0        | 16x13         | LUT            | 
+|huff_enc    | ac1        | 256x19        | LUT            | 
+|huff_enc    | ac0        | 256x18        | LUT            | 
+|huff_enc    | zz         | 64x6          | LUT            | 
+|huff_enc    | p_0_out    | 16x15         | LUT            | 
+|huff_enc    | p_0_out    | 16x13         | LUT            | 
+|huff_enc    | ac1        | 256x19        | LUT            | 
+|huff_enc    | ac0        | 256x18        | LUT            | 
+|jpeg_top    | p_0_out    | 64x5          | LUT            | 
+|jpeg_top    | p_0_out    | 64x5          | LUT            | 
+|jpeg_top    | p_0_out    | 64x18         | LUT            | 
+|jpeg_top    | p_0_out    | 64x19         | LUT            | 
+|jpeg_top    | p_0_out    | 64x8          | LUT            | 
+|jpeg_top    | p_0_out    | 64x8          | LUT            | 
++------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|u_gather    | g_crow[0].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[1].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[2].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[3].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[4].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[5].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[6].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[7].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[8].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[9].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[10].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[11].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[12].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[13].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[14].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[15].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[0].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[1].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[2].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[3].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[4].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[5].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[6].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[7].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[8].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[9].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[10].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[11].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[12].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[13].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[14].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[15].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[16].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[17].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[18].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[19].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[20].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[21].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[22].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[23].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[24].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[25].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[26].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[27].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[28].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[29].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[30].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[31].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|jpeg_top    | u_decim/lbuf_reg   | 960 x 18(READ_FIRST)   | W |   | 960 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
++------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+-------------------+-----------+----------------------+---------------+
+|Module Name | RTL Object        | Inference | Size (Depth x Width) | Primitives    | 
++------------+-------------------+-----------+----------------------+---------------+
+|u_dct       | cf_comp_reg       | Implied   | 2 x 3                | RAM32M16 x 1  | 
+|u_dct       | cf_last_reg       | Implied   | 2 x 1                | RAM16X1D x 1  | 
+|jpeg_top    | f_d_reg           | Implied   | 4 x 24               | RAM32M16 x 2  | 
+|jpeg_top    | u_decim/f_cb_reg  | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|jpeg_top    | u_decim/f_cr_reg  | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|jpeg_top    | u_decim/f_eol_reg | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|jpeg_top    | f_u_reg           | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|jpeg_top    | f_l_reg           | Implied   | 4 x 1                | RAM16X1D x 1  | 
++------------+-------------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:57 ; elapsed = 00:00:56 . Memory (MB): peak = 2355.777 ; gain = 1808.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|u_gather    | g_crow[0].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[1].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[2].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[3].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[4].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[5].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[6].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[7].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[8].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[9].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[10].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[11].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[12].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[13].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[14].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_crow[15].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[0].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[1].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[2].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[3].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[4].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[5].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[6].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[7].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[8].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[9].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[10].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[11].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[12].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[13].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[14].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[15].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[16].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[17].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[18].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[19].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[20].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[21].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[22].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[23].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[24].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[25].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[26].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[27].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[28].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[29].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[30].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_gather    | g_yrow[31].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|jpeg_top    | u_decim/lbuf_reg   | 960 x 18(READ_FIRST)   | W |   | 960 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
++------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+
+Distributed RAM: Final Mapping Report
++------------+-------------------+-----------+----------------------+---------------+
+|Module Name | RTL Object        | Inference | Size (Depth x Width) | Primitives    | 
++------------+-------------------+-----------+----------------------+---------------+
+|u_dct       | cf_comp_reg       | Implied   | 2 x 3                | RAM32M16 x 1  | 
+|u_dct       | cf_last_reg       | Implied   | 2 x 1                | RAM16X1D x 1  | 
+|jpeg_top    | f_d_reg           | Implied   | 4 x 24               | RAM32M16 x 2  | 
+|jpeg_top    | u_decim/f_cb_reg  | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|jpeg_top    | u_decim/f_cr_reg  | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|jpeg_top    | u_decim/f_eol_reg | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|jpeg_top    | f_u_reg           | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|jpeg_top    | f_l_reg           | Implied   | 4 x 1                | RAM16X1D x 1  | 
++------------+-------------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[0].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[1].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[2].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[3].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[4].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[5].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[6].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[7].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[8].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[9].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[10].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[11].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[12].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[13].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[14].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_crow[15].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[0].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[1].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[2].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[3].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[4].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[5].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[6].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[7].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[8].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[9].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[10].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[11].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[12].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[13].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[14].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[15].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[16].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[17].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[18].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[19].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[20].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[21].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[22].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[23].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[24].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[25].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[26].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[27].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[28].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[29].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[30].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_gather/g_yrow[31].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_decim/lbuf_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:00 ; elapsed = 00:00:58 . Memory (MB): peak = 2355.777 ; gain = 1808.738
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:04 ; elapsed = 00:01:02 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:04 ; elapsed = 00:01:02 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:04 ; elapsed = 00:01:03 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:04 ; elapsed = 00:01:03 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:04 ; elapsed = 00:01:03 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:04 ; elapsed = 00:01:03 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|quant       | (A*B')'     | 0      | 11     | -      | -      | 35     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|quant       | (A*B')'     | 0      | 11     | -      | -      | 35     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|quant       | (A*B')'     | 0      | 11     | -      | -      | 35     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|quant       | (A*B')'     | 0      | 11     | -      | -      | 35     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|quant       | (A*B')'     | 0      | 11     | -      | -      | 35     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|quant       | (A*B')'     | 0      | 11     | -      | -      | 35     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|quant       | (A*B')'     | 0      | 11     | -      | -      | 35     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|quant       | (A'*B')'    | 17     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |CARRY8          |   373|
+|2     |DSP_ALU         |     8|
+|3     |DSP_A_B_DATA    |     8|
+|4     |DSP_C_DATA      |     8|
+|5     |DSP_MULTIPLIER  |     8|
+|6     |DSP_M_DATA      |     8|
+|7     |DSP_OUTPUT      |     8|
+|8     |DSP_PREADD      |     8|
+|9     |DSP_PREADD_DATA |     8|
+|10    |LUT1            |   219|
+|11    |LUT2            |  1435|
+|12    |LUT3            |   867|
+|13    |LUT4            |   840|
+|14    |LUT5            |  1553|
+|15    |LUT6            |  2634|
+|16    |MUXF7           |   664|
+|17    |MUXF8           |   132|
+|18    |RAM16X1D        |     4|
+|19    |RAM32M          |     1|
+|20    |RAM32M16        |     4|
+|21    |RAMB18E2        |    49|
+|22    |FDRE            |  5571|
+|23    |FDSE            |     1|
++------+----------------+------+
+
+Report Instance Areas: 
++------+------------+----------------------------+------+
+|      |Instance    |Module                      |Cells |
++------+------------+----------------------------+------+
+|1     |top         |                            | 14411|
+|2     |  u_conv    |rgb2ycbcr                   |   387|
+|3     |  u_dct     |dct2d                       |  7814|
+|4     |    u_core  |fdct1d_llm                  |  4379|
+|5     |  u_decim   |decim420                    |   172|
+|6     |  u_gather  |mcu_gather                  |   549|
+|7     |  u_huff    |huff_enc                    |  5113|
+|8     |  u_quant   |quant                       |   357|
+|9     |    pr0_reg |\u_quant/pr6_reg_funnel__6  |     8|
+|10    |    pr1_reg |\u_quant/pr6_reg_funnel__5  |     8|
+|11    |    pr2_reg |\u_quant/pr6_reg_funnel__4  |     8|
+|12    |    pr3_reg |\u_quant/pr6_reg_funnel__3  |     8|
+|13    |    pr4_reg |\u_quant/pr6_reg_funnel__2  |     8|
+|14    |    pr5_reg |\u_quant/pr6_reg_funnel__1  |     8|
+|15    |    pr6_reg |\u_quant/pr6_reg_funnel     |     8|
+|16    |    pr7_reg |\u_quant/pr7_reg_funnel     |     8|
++------+------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:04 ; elapsed = 00:01:03 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 40 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:03 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+Synthesis Optimization Complete : Time (s): cpu = 00:01:04 ; elapsed = 00:01:03 . Memory (MB): peak = 2372.605 ; gain = 1825.566
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.124 . Memory (MB): peak = 2400.895 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1186 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2509.945 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 17 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 8 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 4 instances
+
+Synth Design complete | Checksum: a7f3d0e7
+INFO: [Common 17-83] Releasing license: Synthesis
+118 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:09 . Memory (MB): peak = 2509.945 ; gain = 1967.840
+# create_clock -name clk -period $period [get_ports clk]
+# report_utilization -hierarchical -hierarchical_depth 3 \
+#     -file results/ooc_hier.rpt
+# report_timing_summary -file results/ooc_timing.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+report_timing_summary: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3502.191 ; gain = 992.246
+# report_utilization   -file results/ooc_util.rpt
+# write_checkpoint -force build/ooc/jpeg_top_synth.dcp
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 3502.191 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/ooc/jpeg_top_synth.dcp' has been generated.
+# set wns [get_property SLACK [get_timing_paths -delay_type max]]
+# set whs [get_property SLACK [get_timing_paths -delay_type min]]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -hier -filter {PRIMITIVE_TYPE =~ BMEM.*}'.
+# set nbram [llength [get_cells -hier -filter "PRIMITIVE_TYPE =~ BMEM.*"]]
+# set nmd [llength [get_drc_violations -quiet -filter {Severity == Critical}]]
+# set fh [open results/ooc_status.txt w]
+# puts $fh "WNS=$wns WHS=$whs period=$period BRAM_cells=$nbram critDRC=$nmd"
+# if {$wns < 0 || $whs < 0} {
+#     puts $fh "TIMING_FAIL"
+# } else {
+#     puts $fh "TIMING_MET"
+# }
+# close $fh
+# puts "OOC done: WNS=$wns WHS=$whs BRAM=$nbram critDRC=$nmd"
+OOC done: WNS=3.941 WHS=0.026 BRAM=0 critDRC=0
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 02:13:09 2026...
