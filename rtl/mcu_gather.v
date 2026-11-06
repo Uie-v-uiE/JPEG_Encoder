@@ -120,55 +120,69 @@ module mcu_gather #(
     // be inferred as RAM -- Vivado exploded ybuf+cbuf into ~740k flip-
     // flops and the OOC synthesis died of memory exhaustion (I-22/P0-3).
     // Per-row arrays give every RAM exactly one write + one read port.
+    // I-22 终版:per-row 内的"8 条件读"仍会把每个 RAM 建模成 8 端口形状
+    // (综合内部 3D-RAM 建模内存爆炸,无 ERROR 退出)。改为每行单一同步
+    // 读寄存 rd_q,槽映射(哪一行喂哪个槽)在寄存后做 mux —— 行号当拍
+    // 已知,打 1 拍后与 rd_q 同相,行为与原实现逐拍等价。
     localparam integer YROWS = 2*YL;
     localparam integer CROWS = 2*CL;
     wire [10:0] wr_row_y = {gpp, y_line};
     wire [10:0] wr_row_c = {gpp, c_line};
     wire        wr_en_y  = accept_y && cfg_seen;
     wire        wr_en_c  = accept_c && cfg_seen;
-    reg [7:0]   y_rd_q [0:7];
-    reg [15:0]  c_rd_q [0:7];
+    reg [10:0]  y_slot_row [0:7];              // 槽 gi 当拍读的行号(打拍)
+    reg [10:0]  c_slot_row [0:7];
+    wire [7:0]  y_row_q [0:YROWS-1];           // 每行读寄存引出(模块级,mux 用)
+    wire [15:0] c_row_q [0:CROWS-1];
     genvar r;
     generate
         for (r = 0; r < YROWS; r = r + 1) begin : g_yrow
             (* ram_style = "block" *)
             reg [7:0] mem [0:MAX_W-1];
-            integer gi;
+            reg [7:0] rd_q;                    // 每行单一读寄存(标准 BRAM 形状)
             always @(posedge clk) begin
-                if (rd_en) begin
-                    for (gi = 0; gi < 8; gi = gi + 1)
-                        if ({epp, y_row_base + gi[3:0]} == r)
-                            y_rd_q[gi] <= mem[y_raddr];
-                end
+                if (rd_en)
+                    rd_q <= mem[y_raddr];
                 if (wr_en_y && wr_row_y == r)
                     mem[y_x] <= y_data;
             end
+            assign y_row_q[r] = rd_q;
         end
     endgenerate
     generate
         for (r = 0; r < CROWS; r = r + 1) begin : g_crow
             (* ram_style = "block" *)
             reg [15:0] mem [0:MAX_W/2-1];
-            integer gi;
+            reg [15:0] rd_q;
             always @(posedge clk) begin
-                if (rd_en) begin
-                    for (gi = 0; gi < 8; gi = gi + 1)
-                        if ({epp, gi[2:0]} == r)
-                            c_rd_q[gi] <= mem[c_raddr];
-                end
+                if (rd_en)
+                    rd_q <= mem[c_raddr];
                 if (wr_en_c && wr_row_c == r)
                     mem[c_x] <= {c_cb, c_cr};
             end
+            assign c_row_q[r] = rd_q;
         end
     endgenerate
 
+    // 槽→行映射打拍:rd_en 拍记录每槽读的行号,与各行 rd_q 同相
+    integer qi;
+    always @(posedge clk) begin
+        if (rd_en) begin
+            for (qi = 0; qi < 8; qi = qi + 1) begin
+                y_slot_row[qi] <= {epp, y_row_base + qi[3:0]};
+                c_slot_row[qi] <= {epp, qi[2:0]};
+            end
+        end
+    end
+
+    // 读出 mux:变量索引模块级 wire 数组(综合为 mux 墙,行为等价)
     wire [7:0]  y_rd [0:7];
     wire [15:0] c_rd [0:7];
     genvar gi2;
     generate
         for (gi2 = 0; gi2 < 8; gi2 = gi2 + 1) begin : g_rd
-            assign y_rd[gi2] = y_rd_q[gi2];
-            assign c_rd[gi2] = c_rd_q[gi2];
+            assign y_rd[gi2] = y_row_q[y_slot_row[gi2]];
+            assign c_rd[gi2] = c_row_q[c_slot_row[gi2]];
         end
     endgenerate
 

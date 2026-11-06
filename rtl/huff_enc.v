@@ -52,47 +52,27 @@ module huff_enc (
 
     // ------------------------------------------------------- block buffers
     reg [11:0] bram [0:1][0:63];
-    reg        slot_v [0:1];
-    reg [1:0]  slot_comp [0:1];
-    reg        slot_eof [0:1];
+    // scalar slot regs: the array form (constant-index reset writes +
+    // variable-index functional writes) triggered Vivado 8-6859 multi-
+    // driven expansion, collapsing the whole module to constants (I-31)
+    reg        slot_v0, slot_v1;
+    reg [1:0]  slot_comp0, slot_comp1;
+    reg        slot_eof0, slot_eof1;
     reg [6:0]  widx;
-    reg [1:0]  wslot;
+    reg        wslot;
     wire take = q_valid && q_ready;
     wire fill_done = take && q_last;
+    // slot_v next-state intents (single write point, see below)
+    wire wr_set0 = take && q_last && (wslot == 1'b0);
+    wire wr_set1 = take && q_last && (wslot == 1'b1);
     // the writer's target slot (wslot) must hold no unconsumed block --
     // !(sv0&&sv1) allowed the writer to overwrite an unread block when the
     // engine lagged, dropping 2 Y blocks per MCU (I-06)
-    assign q_ready = !slot_v[wslot];
-
-    always @(posedge clk) begin
-        if (rst) begin
-            widx <= 7'd0;
-            wslot <= 2'd0;
-        end else if (take) begin
-            bram[wslot][widx[5:0]]      <= q_0;
-            bram[wslot][widx[5:0]+7'd1] <= q_1;
-            bram[wslot][widx[5:0]+7'd2] <= q_2;
-            bram[wslot][widx[5:0]+7'd3] <= q_3;
-            bram[wslot][widx[5:0]+7'd4] <= q_4;
-            bram[wslot][widx[5:0]+7'd5] <= q_5;
-            bram[wslot][widx[5:0]+7'd6] <= q_6;
-            bram[wslot][widx[5:0]+7'd7] <= q_7;
-            if (q_last) begin
-                slot_v[wslot] <= 1'b1;
-                slot_comp[wslot] <= q_comp[1:0];
-                slot_eof[wslot] <= q_comp[2];
-                // toggle (NOT +1): wslot indexes a 2-entry array; +1 walked
-                // it to 2/3, slot_v[wslot] read X, q_ready went X and the
-                // engine starved after 2 blocks (I-08)
-                wslot <= wslot ^ 2'd1;
-            end
-            widx <= q_last ? 7'd0 : widx + 7'd8;
-        end
-    end
+    assign q_ready = !(wslot ? slot_v1 : slot_v0);
 
     // ------------------------------------------------------------- engine
     reg        eng_run;
-    reg [1:0]  eng_slot;
+    reg        eng_slot;
     reg [1:0]  eng_comp;
     reg        eng_eof;
     reg [6:0]  k;
@@ -224,6 +204,13 @@ module huff_enc (
     wire [47:0] acc_next = put_apply ?
         ((acc_shift << put_len) | put_word) : acc_shift;
     wire [5:0]  nbits_next = put_apply ? (nbits_shift + put_len) : nbits_shift;
+    // engine releases its slot on either block-done path (both gated by
+    // advance_ok && put_v; the ZRL branch must NOT count as done)
+    wire eng_done_now = eng_run && (fstate == 2'd0) && advance_ok && put_v &&
+                        (eob_pending ||
+                         ((din != 12'sd0) && (run < 6'd16) && (k == 7'd63)));
+    wire eng_clr0 = eng_done_now && (eng_slot == 1'b0);
+    wire eng_clr1 = eng_done_now && (eng_slot == 1'b1);
 
     always @(posedge clk) begin
         if (rst) begin
@@ -233,14 +220,49 @@ module huff_enc (
             fstate <= 2'd0; pad_n <= 0;
             acc <= 0; nbits <= 0;
             f_wr <= 0; f_rd <= 0; f_cnt <= 0;
-            slot_v[0] <= 0; slot_v[1] <= 0;
-            slot_comp[0] <= 0; slot_comp[1] <= 0;
-            slot_eof[0] <= 0; slot_eof[1] <= 0;
+            widx <= 0; wslot <= 1'b0;
+            slot_v0 <= 0; slot_v1 <= 0;
+            slot_comp0 <= 0; slot_comp1 <= 0;
+            slot_eof0 <= 0; slot_eof1 <= 0;
         end else begin
             // ---------------- output FIFO drain ----------------
             if (f_pop) begin
                 f_rd <= f_rd + 1'b1;
             end
+
+            // ---------------- block writer (merged; the writer used to be
+            // a SECOND always block also driving slot_v/comp/eof -- illegal
+            // multi-driven in synthesis, silently "worked" in simulation
+            // until Vivado kept the reset's GND driver and constant-folded
+            // the whole encoder, I-33) ----------------
+            if (take) begin
+                bram[wslot][widx[5:0]]      <= q_0;
+                bram[wslot][widx[5:0]+7'd1] <= q_1;
+                bram[wslot][widx[5:0]+7'd2] <= q_2;
+                bram[wslot][widx[5:0]+7'd3] <= q_3;
+                bram[wslot][widx[5:0]+7'd4] <= q_4;
+                bram[wslot][widx[5:0]+7'd5] <= q_5;
+                bram[wslot][widx[5:0]+7'd6] <= q_6;
+                bram[wslot][widx[5:0]+7'd7] <= q_7;
+                if (q_last) begin
+                    if (wslot) begin
+                        slot_comp1 <= q_comp[1:0]; slot_eof1 <= q_comp[2];
+                    end else begin
+                        slot_comp0 <= q_comp[1:0]; slot_eof0 <= q_comp[2];
+                    end
+                    // toggle (NOT +1): wslot indexes a 2-entry array; +1 walked
+                    // it to 2/3, slot_v[wslot] read X, q_ready went X and the
+                    // engine starved after 2 blocks (I-08)
+                    wslot <= ~wslot;
+                end
+                widx <= q_last ? 7'd0 : widx + 7'd8;
+            end
+            // slot_v single write point: the writer's SET must beat the
+            // engine's CLEAR when a block completes into the slot the
+            // engine frees on the same edge (two-always days hid this in
+            // NBA ordering; one block needs explicit priority, I-33)
+            slot_v0 <= (wr_set0 | slot_v0) & ~eng_clr0;
+            slot_v1 <= (wr_set1 | slot_v1) & ~eng_clr1;
 
             // ---------------- accumulator: drain + put ----------------
             acc <= acc_next;
@@ -263,20 +285,20 @@ module huff_enc (
             // ---------------- engine ----------------
             if (fstate == 2'd0) begin
                 if (!eng_run) begin
-                    if ((slot_v[0] || slot_v[1]) && !f_full && (nbits <= 6'd16)) begin
+                    if ((slot_v0 || slot_v1) && !f_full && (nbits <= 6'd16)) begin
                         eng_run <= 1'b1;
                         // when both slots hold completed blocks, the OLDEST
                         // is the writer's current target slot (wslot): the
                         // writer filled wslot^1 last and stalled before
                         // re-filling wslot
-                        eng_slot <= (slot_v[0] && slot_v[1]) ? wslot :
-                                    (slot_v[0] ? 2'd0 : 2'd1);
-                        eng_comp <= (slot_v[0] && slot_v[1]) ?
-                            slot_comp[wslot] :
-                            (slot_v[0] ? slot_comp[0] : slot_comp[1]);
-                        eng_eof <= (slot_v[0] && slot_v[1]) ?
-                            slot_eof[wslot] :
-                            (slot_v[0] ? slot_eof[0] : slot_eof[1]);
+                        eng_slot <= (slot_v0 && slot_v1) ? wslot :
+                                    (slot_v0 ? 1'b0 : 1'b1);
+                        eng_comp <= (slot_v0 && slot_v1) ?
+                            (wslot ? slot_comp1 : slot_comp0) :
+                            (slot_v0 ? slot_comp0 : slot_comp1);
+                        eng_eof <= (slot_v0 && slot_v1) ?
+                            (wslot ? slot_eof1 : slot_eof0) :
+                            (slot_v0 ? slot_eof0 : slot_eof1);
                         k <= 7'd0;
                         zz_q <= zz[0];
                         run <= 6'd0;
@@ -293,7 +315,6 @@ module huff_enc (
                     end else if (eob_pending) begin
                         // final EOB: block done
                         eng_run <= 1'b0;
-                        slot_v[eng_slot] <= 1'b0;
                         if (eng_eof) begin
                             fstate <= 2'd1;
                             pad_n <= (4'd8 - {1'b0, nbits_next[2:0]}) & 4'd7;
@@ -305,7 +326,6 @@ module huff_enc (
                         if (k == 7'd63) begin
                             // last AC coefficient was nonzero: block done
                             eng_run <= 1'b0;
-                            slot_v[eng_slot] <= 1'b0;
                             if (eng_eof) begin
                                 fstate <= 2'd1;
                                 pad_n <= (4'd8 - {1'b0, nbits_next[2:0]}) & 4'd7;

@@ -64,7 +64,7 @@ module dct2d (
     reg [14:0] cf_d   [0:1][0:7];
     reg [2:0]  cf_comp[0:1];
     reg        cf_last[0:1];
-    reg [1:0]  cf_wr, cf_rd;
+    reg        cf_wr, cf_rd;
     reg [1:0]  cf_cnt;
     wire core_yv;   // (driven by the fdct1d instance below)
     wire coef_push = core_yv && !core_out_is_p1;
@@ -273,7 +273,7 @@ module dct2d (
                     // out-of-bounds X entries (same bug class as huff's
                     // wslot, I-08) -- rows 3/7 of every block became X and
                     // q_last never reached huff (I-15)
-                    cf_wr <= cf_wr ^ 2'd1;
+                    cf_wr <= ~cf_wr;
                     if (core_idx == 3'd7) begin
                         state[core_slot] <= S_FREE;
                         p2_active <= 1'b0;
@@ -284,7 +284,7 @@ module dct2d (
             cf_cnt <= cf_cnt + (coef_push ? 2'd1 : 2'd0)
                               - (coef_pop ? 2'd1 : 2'd0);
             if (coef_pop)
-                cf_rd <= cf_rd ^ 2'd1;
+                cf_rd <= ~cf_rd;
         end
     end
 endmodule
