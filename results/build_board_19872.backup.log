@@ -1,0 +1,104 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Sat Nov  7 23:39:40 2026
+# Process ID         : 19872
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts/build_board.tcl -nojournal -log results/build_board.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/build_board.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 19478 MB
+#-----------------------------------------------------------
+source scripts/build_board.tcl
+# set part xcku5p-ffvb676-2-i
+# set out results
+# file mkdir $out
+# create_project -force jpeg_board build/jpeg_board -part $part
+create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 540.754 ; gain = 223.816
+# add_files rtl/rgb2ycbcr.v
+# add_files rtl/decim420.v
+# add_files rtl/mcu_gather.v
+# add_files rtl/dct2d.v
+# add_files rtl/fdct1d_llm.v
+# add_files rtl/quant.v
+# add_files rtl/huff_enc.v
+# add_files rtl/jpeg_top.v
+# add_files rtl/uart_tx.v
+# add_files rtl/jpeg_demo_board.v
+# add_files vectors/jpeg_demo_rgb.mem
+# set_property file_type {Memory File} [get_files vectors/jpeg_demo_rgb.mem]
+# add_files -fileset constrs_1 constr/jpeg_demo_board.xdc
+# set_property top jpeg_demo_board [current_fileset]
+# launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Sat Nov  7 23:39:55 2026] Launched synth_1...
+Run output will be captured here: D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Sat Nov  7 23:39:55 2026] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log jpeg_demo_board.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source jpeg_demo_board.tcl
+
+
+
+****** Vivado v2025.2.1 (64-bit)
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+  **** IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+  **** SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+  **** Start of session at: Sat Nov  7 23:39:56 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source jpeg_demo_board.tcl -notrace
+create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 540.633 ; gain = 223.062
+Command: synth_design -top jpeg_demo_board -part xcku5p-ffvb676-2-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 18072
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1932.121 ; gain = 253.188
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clk_raw', assumed default net type 'wire' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:15]
+WARNING: [Synth 8-6901] identifier 'rsync' is used before its declaration [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:20]
+ERROR: [Synth 8-36] 'cfg_cnt' is not declared [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:69]
+ERROR: [Synth 8-36] 'cfg_cnt' is not declared [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:77]
+ERROR: [Synth 8-36] 'cfg_cnt' is not declared [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:77]
+ERROR: [Synth 8-36] 'cfg_cnt' is not declared [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:78]
+INFO: [Synth 8-10285] module 'jpeg_demo_board' is ignored due to previous errors [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:132]
+INFO: [Synth 8-9084] Verilog file 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v' ignored due to errors
+ERROR: [Synth 8-12188] Failed to read verilog 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v'
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2045.508 ; gain = 366.574
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+9 Infos, 1 Warnings, 0 Critical Warnings and 6 Errors encountered.
+synth_design failed
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2045.508 ; gain = 1504.875
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 23:40:31 2026...
+[Sat Nov  7 23:40:35 2026] synth_1 finished
+ERROR: [Vivado 12-13638] Failed runs(s) : 'synth_1'
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:00:40 . Memory (MB): peak = 548.289 ; gain = 0.000
+ERROR: [Common 17-39] 'wait_on_runs' failed due to earlier errors.
+
+    while executing
+"wait_on_run synth_1"
+    (file "scripts/build_board.tcl" line 21)
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 23:40:35 2026...

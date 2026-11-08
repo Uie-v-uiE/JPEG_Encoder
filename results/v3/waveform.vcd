@@ -1,0 +1,33 @@
+$date
+        2026-Nov-08 07:17:47
+$end
+$version
+        Vivado v2025.2.1 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 1 " u_jpeg/u_gather/cfg_valid $end
+$var reg 1 # u_jpeg/u_decim/s_valid $end
+$var reg 1 $ u_jpeg/u_decim/s_ready $end
+$var reg 1 % u_jpeg/u_gather/y_valid $end
+$var reg 1 & u_ila_jpeg_y_ready $end
+$var reg 1 ' u_jpeg/u_gather/c_valid $end
+$var reg 1 ( u_jpeg/u_gather/cfg_seen $end
+$var reg 1 ) u_jpeg/u_gather/hold_input $end
+$var reg 1 * u_jpeg/u_gather/accept_y $end
+$var reg 1 + u_jpeg/u_gather/pending_emit $end
+$var reg 1 , u_jpeg/u_huff/m_valid $end
+$var reg 1 - u_jpeg/u_huff/m_last $end
+$var reg 1 . tx_we $end
+$var reg 1 / done $end
+$var reg 11 0 u_jpeg/u_decim/W [0:10] $end
+$var reg 11 ; u_jpeg/u_decim/xcnt [0:10] $end
+$var reg 1 F u_jpeg/u_decim/odd_row $end
+$var reg 12 G ridx [0:11] $end
+$var reg 1 S _TRIGGER $end
+$var reg 1 T _WINDOW $end
+$var reg 1 U _GAP $end
+$upscope $end
+$enddefinitions $end

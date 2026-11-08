@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Sat Nov  7 23:31:38 2026
+# Process ID         : 21156
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts/ila_capture_dbg.tcl -nojournal -notrace -log results/ila_capture_dbg.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/ila_capture_dbg.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 20475 MB
+#-----------------------------------------------------------
+source scripts/ila_capture_dbg.tcl -notrace
+open_hw_manager: Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 546.402 ; gain = 227.301
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.2.0
+  ****** Build date   : Nov 14 2025-07:16:52
+    **** Build number : 2025.2.1763075812
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/0ABC01A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/0ABC01A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+
+    while executing
+"open_hw_target $t"
+    (file "scripts/ila_capture_dbg.tcl" line 5)
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 23:31:52 2026...

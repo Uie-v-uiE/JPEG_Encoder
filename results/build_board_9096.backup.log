@@ -1,0 +1,1857 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Sat Nov  7 20:59:28 2026
+# Process ID         : 9096
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts/build_board.tcl -nojournal -log results/build_board.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/build_board.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 20919 MB
+#-----------------------------------------------------------
+source scripts/build_board.tcl
+# set part xcku5p-ffvb676-2-i
+# set out results
+# file mkdir $out
+# create_project -force jpeg_board build/jpeg_board -part $part
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 543.742 ; gain = 225.188
+# add_files rtl/rgb2ycbcr.v
+# add_files rtl/decim420.v
+# add_files rtl/mcu_gather.v
+# add_files rtl/dct2d.v
+# add_files rtl/fdct1d_llm.v
+# add_files rtl/quant.v
+# add_files rtl/huff_enc.v
+# add_files rtl/jpeg_top.v
+# add_files rtl/uart_tx.v
+# add_files rtl/jpeg_demo_board.v
+# add_files vectors/jpeg_demo_rgb.mem
+# set_property file_type {Memory File} [get_files vectors/jpeg_demo_rgb.mem]
+# add_files -fileset constrs_1 constr/jpeg_demo_board.xdc
+# set_property top jpeg_demo_board [current_fileset]
+# launch_runs synth_1 -jobs 4
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Sat Nov  7 20:59:39 2026] Launched synth_1...
+Run output will be captured here: D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/synth_1/runme.log
+# wait_on_run synth_1
+[Sat Nov  7 20:59:39 2026] Waiting for synth_1 to finish...
+
+*** Running vivado
+    with args -log jpeg_demo_board.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source jpeg_demo_board.tcl
+
+
+
+****** Vivado v2025.2.1 (64-bit)
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+  **** IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+  **** SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+  **** Start of session at: Sat Nov  7 20:59:40 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source jpeg_demo_board.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 539.160 ; gain = 222.582
+Command: synth_design -top jpeg_demo_board -part xcku5p-ffvb676-2-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28460
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1932.832 ; gain = 253.727
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'clk_raw', assumed default net type 'wire' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:15]
+WARNING: [Synth 8-6901] identifier 'rsync' is used before its declaration [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:20]
+INFO: [Synth 8-6157] synthesizing module 'jpeg_demo_board' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:7]
+INFO: [Synth 8-3876] $readmem data file 'jpeg_demo_rgb.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:49]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:82819]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (0#1) [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:82819]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_BASE' [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:95830]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 5.000000e+00 - type: double 
+	Parameter CLKIN1_PERIOD bound to: 5.000000e+00 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 1.000000e+01 - type: double 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_BASE' (0#1) [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:95830]
+WARNING: [Synth 8-7071] port 'CLKFBOUTB' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT0B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT1' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT1B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT2' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT2B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT3' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT3B' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT4' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT5' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7071] port 'CLKOUT6' of module 'MMCME2_BASE' is unconnected for instance 'u_mmcm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+WARNING: [Synth 8-7023] instance 'u_mmcm' of module 'MMCME2_BASE' has 18 connections declared, but only 7 given [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:2678]
+INFO: [Synth 8-226] default block is never used [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:73]
+INFO: [Synth 8-6157] synthesizing module 'jpeg_top' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rgb2ycbcr' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2ycbcr' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6157] synthesizing module 'decim420' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'decim420' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mcu_gather' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mcu_gather' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+INFO: [Synth 8-6157] synthesizing module 'dct2d' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fdct1d_llm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fdct1d_llm' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dct2d' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'quant' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_luma_q.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:52]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_luma_m.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:53]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_luma_s.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:54]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_chroma_q.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:55]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_chroma_m.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:56]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'quant_chroma_s.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'quant' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-6157] synthesizing module 'huff_enc' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'zigzag.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:46]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_dc0.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:47]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_dc1.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:48]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_ac0.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:49]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'huff_ac1.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'huff_enc' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_top' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/uart_tx.v:2]
+	Parameter DIV bound to: 868 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/uart_tx.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_demo_board' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:7]
+WARNING: [Synth 8-6014] Unused sequential element fp_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:43]
+WARNING: [Synth 8-6014] Unused sequential element tmp0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:45]
+WARNING: [Synth 8-6014] Unused sequential element tmp7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:46]
+WARNING: [Synth 8-6014] Unused sequential element tmp1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:47]
+WARNING: [Synth 8-6014] Unused sequential element tmp6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:48]
+WARNING: [Synth 8-6014] Unused sequential element tmp2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:49]
+WARNING: [Synth 8-6014] Unused sequential element tmp5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:50]
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:51]
+WARNING: [Synth 8-6014] Unused sequential element tmp4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:52]
+WARNING: [Synth 8-6014] Unused sequential element tmp10_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:54]
+WARNING: [Synth 8-6014] Unused sequential element tmp13_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:55]
+WARNING: [Synth 8-6014] Unused sequential element tmp11_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:56]
+WARNING: [Synth 8-6014] Unused sequential element tmp12_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:57]
+WARNING: [Synth 8-6014] Unused sequential element even0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:60]
+WARNING: [Synth 8-6014] Unused sequential element even4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:61]
+WARNING: [Synth 8-6014] Unused sequential element z1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:66]
+WARNING: [Synth 8-6014] Unused sequential element even2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:68]
+WARNING: [Synth 8-6014] Unused sequential element even6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:69]
+WARNING: [Synth 8-6014] Unused sequential element z2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:76]
+WARNING: [Synth 8-6014] Unused sequential element z3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:77]
+WARNING: [Synth 8-6014] Unused sequential element z4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:78]
+WARNING: [Synth 8-6014] Unused sequential element z5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:79]
+WARNING: [Synth 8-6014] Unused sequential element m4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:81]
+WARNING: [Synth 8-6014] Unused sequential element m5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:82]
+WARNING: [Synth 8-6014] Unused sequential element m6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:83]
+WARNING: [Synth 8-6014] Unused sequential element m7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:84]
+WARNING: [Synth 8-6014] Unused sequential element odd7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:93]
+WARNING: [Synth 8-6014] Unused sequential element odd5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:94]
+WARNING: [Synth 8-6014] Unused sequential element odd3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:95]
+WARNING: [Synth 8-6014] Unused sequential element odd1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:96]
+WARNING: [Synth 8-6014] Unused sequential element gidx_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:104]
+WARNING: [Synth 8-3848] Net qtab_l in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:41]
+WARNING: [Synth 8-3848] Net qtab_c in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:43]
+WARNING: [Synth 8-3848] Net mtab_l in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:45]
+WARNING: [Synth 8-3848] Net mtab_c in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:47]
+WARNING: [Synth 8-3848] Net stab_l in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:49]
+WARNING: [Synth 8-3848] Net stab_c in module/entity quant does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:51]
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_d_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:277]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_l_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:278]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-3848] Net dc0 in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:39]
+WARNING: [Synth 8-3848] Net dc1 in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:41]
+WARNING: [Synth 8-3848] Net zz[0] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[1] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[2] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[3] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[4] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[5] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[6] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[7] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[8] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[9] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[10] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[11] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[12] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[13] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[14] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[15] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[16] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[17] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[18] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[19] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[20] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[21] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[22] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[23] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[24] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[25] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[26] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[27] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[28] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[29] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[30] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[31] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[32] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[33] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[34] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[35] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[36] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[37] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[38] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[39] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[40] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[41] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[42] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[43] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[44] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[45] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[46] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[47] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[48] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[49] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[50] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[51] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[52] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[53] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[54] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[55] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[56] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[57] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[58] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[59] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[60] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[61] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[62] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net zz[63] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:37]
+WARNING: [Synth 8-3848] Net ac0[0] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac1[0] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:45]
+WARNING: [Synth 8-3848] Net ac0[240] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac1[240] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:45]
+WARNING: [Synth 8-3848] Net ac0[1] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[2] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[3] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[4] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[5] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[6] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[7] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[8] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[9] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[10] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[11] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[12] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[13] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[14] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[15] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[16] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[17] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[18] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[19] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[20] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[21] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[22] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[23] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+WARNING: [Synth 8-3848] Net ac0[24] in module/entity huff_enc does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:43]
+INFO: [Common 17-14] Message 'Synth 8-3848' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_jpeg'. This will prevent further optimization [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:106]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_gather'. This will prevent further optimization [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:104]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_decim'. This will prevent further optimization [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:88]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_conv'. This will prevent further optimization [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:54]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_mmcm'. This will prevent further optimization [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:25]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_uart'. This will prevent further optimization [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:114]
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port q_first in module huff_enc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port blk_first in module dct2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_sof in module mcu_gather is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_sof in module mcu_gather is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_sys_rst in module jpeg_demo_board is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2232.047 ; gain = 552.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2232.047 ; gain = 552.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 2232.047 ; gain = 552.941
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.312 . Memory (MB): peak = 2232.047 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/constr/jpeg_demo_board.xdc]
+create_clock: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2327.805 ; gain = 0.430
+CRITICAL WARNING: [Netlist 29-154] Cannot set property 'CFGBVS' because incorrect value 'VCCO' specified. Expecting type 'enum' with possible values of 'GND'. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/constr/jpeg_demo_board.xdc:10]
+Resolution: Please check the value of the property and set to a correct value.
+Finished Parsing XDC File [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/constr/jpeg_demo_board.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/constr/jpeg_demo_board.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/jpeg_demo_board_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/jpeg_demo_board_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2327.875 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  MMCME2_BASE => MMCME4_ADV: 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.274 . Memory (MB): peak = 2327.875 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2327.875 ; gain = 648.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcku5p-ffvb676-2-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2327.875 ; gain = 648.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 2327.875 ; gain = 648.770
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'py_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:54]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pcb_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:55]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pcr_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:56]
+DSP Debug: swapped A/B pins for adder 0000024640BB9130
+DSP Debug: swapped A/B pins for adder 0000024640BB6370
+INFO: [Synth 8-802] inferred FSM for state register 'fstate_reg' in module 'huff_enc'
+INFO: [Synth 8-802] inferred FSM for state register 'st_reg' in module 'jpeg_demo_board'
+INFO: [Synth 8-6904] The RAM "decim420:/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "dct2d:/cf_comp_reg" of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "dct2d:/cf_last_reg" of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                             1000 |                               00
+                 iSTATE1 |                             0010 |                               01
+                  iSTATE |                             0100 |                               10
+*
+                 iSTATE2 |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fstate_reg' using encoding 'one-hot' in module 'huff_enc'
+INFO: [Synth 8-6904] The RAM "jpeg_top:/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top:/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top:/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   S_CFG |                             0001 |                               00
+                  S_SEND |                             0010 |                               01
+                 S_DRAIN |                             0100 |                               10
+                  S_DONE |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'st_reg' using encoding 'one-hot' in module 'jpeg_demo_board'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:51 ; elapsed = 00:00:54 . Memory (MB): peak = 2327.875 ; gain = 648.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   48 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 24    
+	   3 Input   32 Bit       Adders := 14    
+	   4 Input   32 Bit       Adders := 2     
+	   2 Input   16 Bit       Adders := 10    
+	   3 Input   16 Bit       Adders := 1     
+	   3 Input   14 Bit       Adders := 8     
+	   3 Input   12 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 11    
+	   4 Input   12 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 6     
+	   3 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 3     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    7 Bit       Adders := 3     
+	   2 Input    6 Bit       Adders := 8     
+	   4 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 5     
+	   2 Input    3 Bit       Adders := 7     
+	   4 Input    3 Bit       Adders := 1     
+	   4 Input    2 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 6     
++---Registers : 
+	               48 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 26    
+	               15 Bit    Registers := 144   
+	               12 Bit    Registers := 140   
+	               11 Bit    Registers := 25    
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 190   
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 4     
+	                5 Bit    Registers := 23    
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 16    
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 88    
++---Multipliers : 
+	              14x32  Multipliers := 3     
+	              13x32  Multipliers := 2     
+	              15x32  Multipliers := 4     
+	              16x32  Multipliers := 3     
++---RAMs : 
+	              16K Bit	(960 X 18 bit)          RAMs := 1     
+	              15K Bit	(960 X 16 bit)          RAMs := 16    
+	              15K Bit	(1920 X 8 bit)          RAMs := 32    
+	               96 Bit	(4 X 24 bit)          RAMs := 1     
+	               32 Bit	(4 X 8 bit)          RAMs := 2     
+	                6 Bit	(2 X 3 bit)          RAMs := 1     
+	                4 Bit	(4 X 1 bit)          RAMs := 4     
+	                2 Bit	(2 X 1 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   48 Bit        Muxes := 5     
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   21 Bit        Muxes := 4     
+	   2 Input   16 Bit        Muxes := 16    
+	   4 Input   16 Bit        Muxes := 1     
+	   2 Input   15 Bit        Muxes := 72    
+	   2 Input   14 Bit        Muxes := 8     
+	   2 Input   12 Bit        Muxes := 261   
+	   4 Input   12 Bit        Muxes := 3     
+	   5 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 14    
+	   2 Input   10 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 112   
+	   2 Input    7 Bit        Muxes := 2     
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 7     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 8     
+	  13 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 61    
+	   4 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 398   
+	   4 Input    1 Bit        Muxes := 8     
+	   3 Input    1 Bit        Muxes := 5     
+	   6 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 51    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1824 (col length:96)
+BRAMs: 960 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "u_jpeg/u_dct/cf_comp_reg" of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/u_dct/cf_last_reg" of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+DSP Report: Generating DSP u_quant/pr0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: register u_quant/mm0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: register u_quant/pr0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: operator u_quant/pr00 is absorbed into DSP u_quant/pr0_reg.
+DSP Report: Generating DSP u_quant/pr1_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: register u_quant/mm1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: register u_quant/pr1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: operator u_quant/pr10 is absorbed into DSP u_quant/pr1_reg.
+DSP Report: Generating DSP u_quant/pr2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: register u_quant/mm2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: register u_quant/pr2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: operator u_quant/pr20 is absorbed into DSP u_quant/pr2_reg.
+DSP Report: Generating DSP u_quant/pr3_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: register u_quant/mm3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: register u_quant/pr3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: operator u_quant/pr30 is absorbed into DSP u_quant/pr3_reg.
+DSP Report: Generating DSP u_quant/pr4_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: register u_quant/mm4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: register u_quant/pr4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: operator u_quant/pr40 is absorbed into DSP u_quant/pr4_reg.
+DSP Report: Generating DSP u_quant/pr5_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: register u_quant/mm5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: register u_quant/pr5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: operator u_quant/pr50 is absorbed into DSP u_quant/pr5_reg.
+DSP Report: Generating DSP u_quant/pr6_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: register u_quant/mm6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: register u_quant/pr6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: operator u_quant/pr60 is absorbed into DSP u_quant/pr6_reg.
+DSP Report: Generating DSP u_quant/pr7_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: register u_quant/mm7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: register u_quant/pr7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: operator u_quant/pr70 is absorbed into DSP u_quant/pr7_reg.
+INFO: [Synth 8-6904] The RAM "u_jpeg/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port i_sys_rst in module jpeg_demo_board is either unconnected or has no load
+INFO: [Synth 8-6904] The RAM "u_jpeg/u_dct/cf_comp_reg" of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/u_dct/cf_last_reg" of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/i_0/u_decim/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "u_jpeg/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_fstate_reg[0]) is unused and will be removed from module huff_enc.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:33 ; elapsed = 00:01:37 . Memory (MB): peak = 2364.016 ; gain = 684.910
+---------------------------------------------------------------------------------
+ Sort Area is jpeg_top__GB1 u_quant/pr0_reg_0 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr1_reg_2 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr2_reg_3 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr3_reg_4 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr4_reg_5 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr5_reg_6 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr6_reg_7 : 0 0 : 1765 1765 : Used 1 time 0
+ Sort Area is jpeg_top__GB1 u_quant/pr7_reg_8 : 0 0 : 1765 1765 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++----------------+------------+---------------+----------------+
+|Module Name     | RTL Object | Depth x Width | Implemented As | 
++----------------+------------+---------------+----------------+
+|jpeg_demo_board | rom        | 4096x2        | LUT            | 
+|jpeg_demo_board | p_0_out    | 4096x2        | LUT            | 
++----------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping Report (see note below)
++--------------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name         | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++--------------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|u_jpeg/i_0/u_decim  | lbuf_reg           | 960 x 18(READ_FIRST)   | W |   | 960 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[0].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[1].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[2].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[3].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[4].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[5].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[6].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[7].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[8].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[9].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[10].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[11].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[12].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[13].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[14].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[15].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[0].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[1].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[2].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[3].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[4].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[5].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[6].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[7].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[8].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[9].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[10].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[11].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[12].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[13].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[14].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[15].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[16].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[17].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[18].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[19].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[20].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[21].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[22].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[23].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[24].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[25].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[26].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[27].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[28].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[29].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[30].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[31].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
++--------------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------+-------------+-----------+----------------------+---------------+
+|Module Name        | RTL Object  | Inference | Size (Depth x Width) | Primitives    | 
++-------------------+-------------+-----------+----------------------+---------------+
+|u_jpeg/u_dct       | cf_comp_reg | Implied   | 2 x 3                | RAM32M16 x 1  | 
+|u_jpeg/u_dct       | cf_last_reg | Implied   | 2 x 1                | RAM16X1D x 1  | 
+|u_jpeg/i_0/u_decim | f_cb_reg    | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|u_jpeg/i_0/u_decim | f_cr_reg    | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|u_jpeg/i_0/u_decim | f_eol_reg   | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|u_jpeg             | f_d_reg     | Implied   | 4 x 24               | RAM32M16 x 2  | 
+|u_jpeg             | f_u_reg     | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|u_jpeg             | f_l_reg     | Implied   | 4 x 1                | RAM16X1D x 1  | 
++-------------------+-------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
+|quant       | (A2*B2)'    | 24     | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 1    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:51 ; elapsed = 00:01:56 . Memory (MB): peak = 2793.254 ; gain = 1114.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:34 ; elapsed = 00:02:41 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++--------------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name         | RTL Object         | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++--------------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|u_jpeg/i_0/u_decim  | lbuf_reg           | 960 x 18(READ_FIRST)   | W |   | 960 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[0].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[1].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[2].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[3].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[4].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[5].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[6].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[7].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[8].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[9].mem_reg  | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[10].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[11].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[12].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[13].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[14].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_crow[15].mem_reg | 960 x 16(READ_FIRST)   | W |   | 960 x 16(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[0].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[1].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[2].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[3].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[4].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[5].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[6].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[7].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[8].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[9].mem_reg  | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[10].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[11].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[12].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[13].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[14].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[15].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[16].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[17].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[18].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[19].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[20].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[21].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[22].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[23].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[24].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[25].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[26].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[27].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[28].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[29].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[30].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
+|u_jpeg/i_0/u_gather | g_yrow[31].mem_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 1               | 
++--------------------+--------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+
+Distributed RAM: Final Mapping Report
++-------------------+-------------+-----------+----------------------+---------------+
+|Module Name        | RTL Object  | Inference | Size (Depth x Width) | Primitives    | 
++-------------------+-------------+-----------+----------------------+---------------+
+|u_jpeg/u_dct       | cf_comp_reg | Implied   | 2 x 3                | RAM32M16 x 1  | 
+|u_jpeg/u_dct       | cf_last_reg | Implied   | 2 x 1                | RAM16X1D x 1  | 
+|u_jpeg/i_0/u_decim | f_cb_reg    | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|u_jpeg/i_0/u_decim | f_cr_reg    | Implied   | 4 x 8                | RAM32M16 x 1  | 
+|u_jpeg/i_0/u_decim | f_eol_reg   | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|u_jpeg             | f_d_reg     | Implied   | 4 x 24               | RAM32M16 x 2  | 
+|u_jpeg             | f_u_reg     | Implied   | 4 x 1                | RAM16X1D x 1  | 
+|u_jpeg             | f_l_reg     | Implied   | 4 x 1                | RAM16X1D x 1  | 
++-------------------+-------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_decim/lbuf_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[0].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[1].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[2].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[3].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[4].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[5].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[6].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[7].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[8].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[9].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[10].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[11].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[12].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[13].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[14].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_crow[15].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[0].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[1].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[2].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[3].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[4].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[5].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[6].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[7].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[8].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[9].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[10].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[11].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[12].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[13].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[14].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[15].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[16].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[17].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[18].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[19].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[20].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[21].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[22].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[23].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[24].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[25].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[26].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[27].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[28].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[29].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[30].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance u_jpeg/u_gather/g_yrow[31].mem_reg_bram_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:40 ; elapsed = 00:02:47 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:47 ; elapsed = 00:02:55 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:47 ; elapsed = 00:02:55 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:48 ; elapsed = 00:02:56 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:48 ; elapsed = 00:02:56 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:48 ; elapsed = 00:02:56 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:48 ; elapsed = 00:02:56 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|quant       | (A'*B')'    | 0      | 11     | -      | -      | 35     | 1    | 1    | -    | -    | -     | 0    | 1    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------------+------+
+|      |Cell            |Count |
++------+----------------+------+
+|1     |BUFG            |     1|
+|2     |CARRY8          |   348|
+|3     |DSP_ALU         |     1|
+|4     |DSP_A_B_DATA    |     1|
+|5     |DSP_C_DATA      |     1|
+|6     |DSP_MULTIPLIER  |     1|
+|7     |DSP_M_DATA      |     1|
+|8     |DSP_OUTPUT      |     1|
+|9     |DSP_PREADD      |     1|
+|10    |DSP_PREADD_DATA |     1|
+|11    |LUT1            |   192|
+|12    |LUT2            |  1280|
+|13    |LUT3            |   825|
+|14    |LUT4            |   585|
+|15    |LUT5            |   298|
+|16    |LUT6            |  2135|
+|17    |MMCME2_BASE     |     1|
+|18    |MUXF7           |   450|
+|19    |MUXF8           |    73|
+|20    |RAM16X1D        |     4|
+|21    |RAM32M          |     1|
+|22    |RAM32M16        |     3|
+|23    |RAMB18E2        |    49|
+|25    |FDRE            |  3798|
+|26    |FDSE            |     3|
+|27    |IBUFDS          |     1|
+|28    |OBUF            |     5|
++------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:48 ; elapsed = 00:02:56 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:16 ; elapsed = 00:02:39 . Memory (MB): peak = 3371.023 ; gain = 1596.090
+Synthesis Optimization Complete : Time (s): cpu = 00:02:49 ; elapsed = 00:02:57 . Memory (MB): peak = 3371.023 ; gain = 1691.918
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.139 . Memory (MB): peak = 3371.023 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 883 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-326] The CLKFBOUT to CLKFBIN net for instance u_mmcm with COMPENSATION=INTERNAL is optimized away to aid design routability
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 3371.023 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  MMCME2_BASE => MMCME4_ADV: 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 3 instances
+
+Synth Design complete | Checksum: 105cad58
+INFO: [Common 17-83] Releasing license: Synthesis
+136 Infos, 158 Warnings, 12 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:04 ; elapsed = 00:03:16 . Memory (MB): peak = 3371.023 ; gain = 2831.863
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 3371.023 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/synth_1/jpeg_demo_board.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file jpeg_demo_board_utilization_synth.rpt -pb jpeg_demo_board_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 21:03:07 2026...
+[Sat Nov  7 21:03:09 2026] synth_1 finished
+wait_on_runs: Time (s): cpu = 00:00:00 ; elapsed = 00:03:31 . Memory (MB): peak = 548.453 ; gain = 0.000
+# if {[get_property PROGRESS [get_runs synth_1]] != "100%"} { puts "SYNTH FAIL"; exit 1 }
+# launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Sat Nov  7 21:03:09 2026] Launched impl_1...
+Run output will be captured here: D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/runme.log
+# wait_on_run impl_1
+[Sat Nov  7 21:03:09 2026] Waiting for impl_1 to finish...
+
+*** Running vivado
+    with args -log jpeg_demo_board.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source jpeg_demo_board.tcl -notrace
+
+
+
+****** Vivado v2025.2.1 (64-bit)
+  **** SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+  **** IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+  **** SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+  **** Start of session at: Sat Nov  7 21:03:17 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source jpeg_demo_board.tcl -notrace
+create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 541.504 ; gain = 223.348
+Command: link_design -top jpeg_demo_board -part xcku5p-ffvb676-2-i
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1683.258 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 882 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/constr/jpeg_demo_board.xdc]
+create_clock: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1683.258 ; gain = 0.000
+CRITICAL WARNING: [Netlist 29-154] Cannot set property 'CFGBVS' because incorrect value 'VCCO' specified. Expecting type 'enum' with possible values of 'GND'. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/constr/jpeg_demo_board.xdc:10]
+Resolution: Please check the value of the property and set to a correct value.
+Finished Parsing XDC File [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/constr/jpeg_demo_board.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1958.164 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 10 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 3 instances
+
+7 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1958.164 ; gain = 1416.660
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2002.617 ; gain = 44.453
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-2] Deriving generated clocks
+Ending Cache Timing Information Task | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2375.359 ; gain = 372.742
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2833.191 ; gain = 0.000
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2833.191 ; gain = 0.000
+Phase 1 Initialization | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2833.191 ; gain = 0.000
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Detect if minReqCache needed
+Phase 2.1 Detect if minReqCache needed | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 2833.199 ; gain = 0.008
+
+Phase 2.2 Timer Update
+Phase 2.2 Timer Update | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.431 . Memory (MB): peak = 2833.199 ; gain = 0.008
+
+Phase 2.3 Timing Data Collection
+Phase 2.3 Timing Data Collection | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.439 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Phase 2 Timer Update And Timing Data Collection | Checksum: 1fae6f137
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.441 . Memory (MB): peak = 2833.199 ; gain = 0.008
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-1566] Pulled 2 inverters resulting in an inversion of 164 pins
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 3 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 298a5f711
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.824 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Retarget | Checksum: 298a5f711
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 4 cells
+INFO: [Opt 31-1021] In phase Retarget, 4 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 24c582e2b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.988 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Constant propagation | Checksum: 24c582e2b
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Constant propagation, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2833.199 ; gain = 0.000
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Phase 5 Sweep | Checksum: 2f6c90be0
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Sweep | Checksum: 2f6c90be0
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 4 cells
+INFO: [Opt 31-1021] In phase Sweep, 73 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 6 BUFG optimization
+INFO: [Opt 31-1077] Phase BUFG optimization inserted 0 global clock buffer(s) for CLOCK_LOW_FANOUT.
+Phase 6 BUFG optimization | Checksum: 2f6c90be0
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2833.199 ; gain = 0.008
+BUFG optimization | Checksum: 2f6c90be0
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: 2f6c90be0
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Shift Register Optimization | Checksum: 2f6c90be0
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: 2f6c90be0
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Post Processing Netlist | Checksum: 2f6c90be0
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+INFO: [Opt 31-1021] In phase Post Processing Netlist, 2 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: 2a5365b1c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2833.199 ; gain = 0.008
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Phase 9.2 Verifying Netlist Connectivity | Checksum: 2a5365b1c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Phase 9 Finalization | Checksum: 2a5365b1c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2833.199 ; gain = 0.008
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               4  |                                              4  |
+|  Constant propagation         |               0  |               0  |                                              1  |
+|  Sweep                        |               0  |               4  |                                             73  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              2  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: 2a5365b1c
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 2833.199 ; gain = 0.008
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 49 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 48 WE to EN ports
+Number of BRAM Ports augmented: 1 newly gated: 48 Total Ports: 98
+Ending PowerOpt Patch Enables Task | Checksum: 2972c6a69
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.300 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 2972c6a69
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:09 . Memory (MB): peak = 2833.199 ; gain = 0.000
+
+Starting Final Cleanup Task
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Logic Optimization Task | Checksum: 2e21e5435
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Ending Final Cleanup Task | Checksum: 2e21e5435
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2833.199 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+41 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:35 . Memory (MB): peak = 2833.199 ; gain = 875.035
+INFO: [Vivado 12-24828] Executing command : report_drc -file jpeg_demo_board_drc_opted.rpt -pb jpeg_demo_board_drc_opted.pb -rpx jpeg_demo_board_drc_opted.rpx
+Command: report_drc -file jpeg_demo_board_drc_opted.rpt -pb jpeg_demo_board_drc_opted.pb -rpx jpeg_demo_board_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Software/Vivado/2025.2.1/Vivado/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board_drc_opted.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2833.199 ; gain = 0.000
+generate_parallel_reports: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2833.199 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Wrote PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Writing XDEF routing.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.111 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.041 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.174 . Memory (MB): peak = 2833.199 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1f121c27f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2833.199 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2833.199 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 187686490
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1dbc2a63f
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1dbc2a63f
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 1 Placer Initialization | Checksum: 1dbc2a63f
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+
+Phase 2.1.1 Partition Driven Placement
+
+Phase 2.1.1.1 PBP: Partition Driven Placement
+Phase 2.1.1.1 PBP: Partition Driven Placement | Checksum: 274702da3
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:27 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.1.1.2 PBP: Clock Region Placement
+INFO: [Place 30-3162] Check ILP status : ILP-based clock placer completed successfully.
+Phase 2.1.1.2 PBP: Clock Region Placement | Checksum: 208ab719a
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:27 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.1.1.3 PBP: Compute Congestion
+Phase 2.1.1.3 PBP: Compute Congestion | Checksum: 208ab719a
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:38 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.1.1.4 PBP: UpdateTiming
+Phase 2.1.1.4 PBP: UpdateTiming | Checksum: 19763634d
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.1.1.5 PBP: Add part constraints
+Phase 2.1.1.5 PBP: Add part constraints | Checksum: 19763634d
+
+Time (s): cpu = 00:00:51 ; elapsed = 00:00:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 2.1.1 Partition Driven Placement | Checksum: 19763634d
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 2.1 Floorplanning | Checksum: 271369c88
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 271369c88
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 271369c88
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 1ddc21dc6
+
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:23 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.5 Global Place Phase2
+
+Phase 2.5.1 UpdateTiming Before Physical Synthesis
+Phase 2.5.1 UpdateTiming Before Physical Synthesis | Checksum: 1ddc21dc6
+
+Time (s): cpu = 00:02:12 ; elapsed = 00:01:24 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 2.5.2 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 0 LUTNM shape to break, 377 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 0, two critical 0, total 0, new lutff created 0
+INFO: [Physopt 32-1138] End 1 Pass. Optimized 175 nets or LUTs. Breaked 0 LUT, combined 175 existing LUTs and moved 0 existing LUT
+INFO: [Physopt 32-670] No setup violation found.  Equivalent Driver Rewiring was not performed.
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  URAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for dynamic/static region interface net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 3364.402 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |            175  |                   175  |           0  |           1  |  00:00:01  |
+|  Retime                                           |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Equivalent Driver Rewiring                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |            175  |                   175  |           0  |           4  |  00:00:01  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.5.2 Physical Synthesis In Placer | Checksum: 21393c73f
+
+Time (s): cpu = 00:02:15 ; elapsed = 00:01:27 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 2.5 Global Place Phase2 | Checksum: 20f912c46
+
+Time (s): cpu = 00:02:38 ; elapsed = 00:01:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 2 Global Placement | Checksum: 20f912c46
+
+Time (s): cpu = 00:02:38 ; elapsed = 00:01:39 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 175ecce9e
+
+Time (s): cpu = 00:03:00 ; elapsed = 00:01:51 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1f541c6d7
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:01:53 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 3.3 Small Shape DP
+
+Phase 3.3.1 Small Shape Clustering
+Phase 3.3.1 Small Shape Clustering | Checksum: 1b3af15ad
+
+Time (s): cpu = 00:03:44 ; elapsed = 00:02:16 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 3.3.2 Slice Area Swap
+
+Phase 3.3.2.1 Slice Area Swap Initial
+Phase 3.3.2.1 Slice Area Swap Initial | Checksum: 227c0ea65
+
+Time (s): cpu = 00:04:06 ; elapsed = 00:02:29 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 3.3.2 Slice Area Swap | Checksum: 227c0ea65
+
+Time (s): cpu = 00:04:06 ; elapsed = 00:02:29 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 3.3 Small Shape DP | Checksum: 2a9debf66
+
+Time (s): cpu = 00:04:52 ; elapsed = 00:02:54 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 3.4 Re-assign LUT pins
+Phase 3.4 Re-assign LUT pins | Checksum: 1e3462470
+
+Time (s): cpu = 00:04:54 ; elapsed = 00:02:55 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 3.5 Pipeline Register Optimization
+Phase 3.5 Pipeline Register Optimization | Checksum: 1e95ad769
+
+Time (s): cpu = 00:04:54 ; elapsed = 00:02:55 . Memory (MB): peak = 3364.402 ; gain = 531.203
+Phase 3 Detail Placement | Checksum: 1e95ad769
+
+Time (s): cpu = 00:04:54 ; elapsed = 00:02:55 . Memory (MB): peak = 3364.402 ; gain = 531.203
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 22ab992c5
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=1.818 | TNS=0.000 |
+Phase 1 Physical Synthesis Initialization | Checksum: 1e6acd236
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.357 . Memory (MB): peak = 3411.039 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to netlist editing failed: 0.
+Ending Physical Synthesis Task | Checksum: 2a9f2c863
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.432 . Memory (MB): peak = 3411.039 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 22ab992c5
+
+Time (s): cpu = 00:05:25 ; elapsed = 00:03:14 . Memory (MB): peak = 3411.039 ; gain = 577.840
+
+Phase 4.1.1.2 Post Placement Timing Optimization
+INFO: [Place 30-746] Post Placement Timing Summary WNS=1.818. For the most accurate timing information please run report_timing.
+Phase 4.1.1.2 Post Placement Timing Optimization | Checksum: 1db080e8d
+
+Time (s): cpu = 00:05:25 ; elapsed = 00:03:14 . Memory (MB): peak = 3411.039 ; gain = 577.840
+
+Time (s): cpu = 00:05:25 ; elapsed = 00:03:14 . Memory (MB): peak = 3411.039 ; gain = 577.840
+Phase 4.1 Post Commit Optimization | Checksum: 1db080e8d
+
+Time (s): cpu = 00:05:25 ; elapsed = 00:03:14 . Memory (MB): peak = 3411.039 ; gain = 577.840
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 148877e72
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:03:32 . Memory (MB): peak = 3423.406 ; gain = 590.207
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ________________________________________________________________________
+|           | Global Congestion | Long Congestion   | Short Congestion  |
+| Direction | Region Size       | Region Size       | Region Size       |
+|___________|___________________|___________________|___________________|
+|      North|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+|      South|                1x1|                1x1|                4x4|
+|___________|___________________|___________________|___________________|
+|       East|                1x1|                1x1|                1x1|
+|___________|___________________|___________________|___________________|
+|       West|                1x1|                1x1|                2x2|
+|___________|___________________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 148877e72
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:03:32 . Memory (MB): peak = 3423.406 ; gain = 590.207
+Phase 4.3 Placer Reporting | Checksum: 148877e72
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:03:32 . Memory (MB): peak = 3423.406 ; gain = 590.207
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:03:32 . Memory (MB): peak = 3423.406 ; gain = 590.207
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 17808190c
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:03:32 . Memory (MB): peak = 3423.406 ; gain = 590.207
+Ending Placer Task | Checksum: 155f6412c
+
+Time (s): cpu = 00:05:53 ; elapsed = 00:03:32 . Memory (MB): peak = 3423.406 ; gain = 590.207
+80 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:05:59 ; elapsed = 00:03:36 . Memory (MB): peak = 3423.406 ; gain = 590.207
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file jpeg_demo_board_utilization_placed.rpt -pb jpeg_demo_board_utilization_placed.pb
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file jpeg_demo_board_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.043 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_io -file jpeg_demo_board_io_placed.rpt
+report_io: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.262 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.958 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:04 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Vivado_Tcl 4-2279] Estimated Timing Summary | WNS= 1.821 | TNS= 0.000 | 
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. All physical synthesis setup optimizations will be skipped.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+91 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.974 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: 7e625ee9 ConstDB: 0 ShapeSum: b36d7f02 RouteDB: 24266341
+Nodegraph reading from file.  Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Post Restoration Checksum: NetGraph: 4a43db4c | NumContArr: 4bf72c0f | Constraints: 5749d3fe | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 1b02dd5f6
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 2 Router Initialization
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 1b02dd5f6
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 1b02dd5f6
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 2.3 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.3 Global Clock Net Routing | Checksum: 1a64001fa
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: cf13be3c
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=2.173  | TNS=0.000  | WHS=-0.039 | THS=-0.699 |
+
+
+Phase 2.5 Soft Constraint Pins - Fast Budgeting
+Phase 2.5 Soft Constraint Pins - Fast Budgeting | Checksum: 159e8379f
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:17 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 8634
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 7826
+  Number of Partially Routed Nets     = 808
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: eb88f012
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:18 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: eb88f012
+
+Time (s): cpu = 00:00:27 ; elapsed = 00:00:18 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 1db5885d8
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:22 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Phase 4 Initial Routing | Checksum: 1e3a7f8de
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:22 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 2613
+ Number of Nodes with overlaps = 579
+ Number of Nodes with overlaps = 201
+ Number of Nodes with overlaps = 63
+ Number of Nodes with overlaps = 33
+ Number of Nodes with overlaps = 21
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.141  | TNS=0.000  | WHS=0.021  | THS=0.000  |
+
+Phase 5.1 Global Iteration 0 | Checksum: 198749ab4
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 5.2 Additional Iteration for Hold
+Phase 5.2 Additional Iteration for Hold | Checksum: 13da543be
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Phase 5 Rip-up And Reroute | Checksum: 13da543be
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 6 Delay and Skew Optimization
+
+Phase 6.1 Delay CleanUp
+Phase 6.1 Delay CleanUp | Checksum: 10fa1cfb1
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 6.2 Clock Skew Optimization
+Phase 6.2 Clock Skew Optimization | Checksum: 10fa1cfb1
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Phase 6 Delay and Skew Optimization | Checksum: 10fa1cfb1
+
+Time (s): cpu = 00:01:13 ; elapsed = 00:00:49 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=1.141  | TNS=0.000  | WHS=0.021  | THS=0.000  |
+
+Phase 7.1 Hold Fix Iter | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:51 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Phase 7 Post Hold Fix | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:17 ; elapsed = 00:00:51 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.573089 %
+  Global Horizontal Routing Utilization  = 0.630536 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 8 Route finalize | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:52 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:18 ; elapsed = 00:00:52 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 11 Resolve XTalk
+Phase 11 Resolve XTalk | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 12 Post Process Routing
+Phase 12 Post Process Routing | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Phase 13 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=1.141  | TNS=0.000  | WHS=0.021  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 13 Post Router Timing | Checksum: 1ba218d0d
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Total Elapsed time in route_design: 53.846 secs
+
+Phase 14 Post-Route Event Processing
+Phase 14 Post-Route Event Processing | Checksum: 17f34e7fc
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: 17f34e7fc
+
+Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3423.406 ; gain = 0.000
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+102 Infos, 0 Warnings, 1 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:01:20 ; elapsed = 00:00:54 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_drc -file jpeg_demo_board_drc_routed.rpt -pb jpeg_demo_board_drc_routed.pb -rpx jpeg_demo_board_drc_routed.rpx
+Command: report_drc -file jpeg_demo_board_drc_routed.rpt -pb jpeg_demo_board_drc_routed.pb -rpx jpeg_demo_board_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board_drc_routed.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_methodology -file jpeg_demo_board_methodology_drc_routed.rpt -pb jpeg_demo_board_methodology_drc_routed.pb -rpx jpeg_demo_board_methodology_drc_routed.rpx
+Command: report_methodology -file jpeg_demo_board_methodology_drc_routed.rpt -pb jpeg_demo_board_methodology_drc_routed.pb -rpx jpeg_demo_board_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_drc: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file jpeg_demo_board_timing_summary_routed.rpt -pb jpeg_demo_board_timing_summary_routed.pb -rpx jpeg_demo_board_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Vivado 12-24838] Running report commands "report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 2 threads.
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file jpeg_demo_board_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file jpeg_demo_board_route_status.rpt -pb jpeg_demo_board_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_power -file jpeg_demo_board_power_routed.rpt -pb jpeg_demo_board_power_summary_routed.pb -rpx jpeg_demo_board_power_routed.rpx
+Command: report_power -file jpeg_demo_board_power_routed.rpt -pb jpeg_demo_board_power_summary_routed.pb -rpx jpeg_demo_board_power_routed.rpx
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+119 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file jpeg_demo_board_clock_utilization_routed.rpt
+report_clock_utilization: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file jpeg_demo_board_bus_skew_routed.rpt -pb jpeg_demo_board_bus_skew_routed.pb -rpx jpeg_demo_board_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+generate_parallel_reports: Time (s): cpu = 00:00:50 ; elapsed = 00:00:41 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.967 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.252 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 3423.406 ; gain = 0.000
+Write Physdb Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 3423.406 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board_routed.dcp' has been generated.
+Command: write_bitstream -force jpeg_demo_board.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+Integrating Hard IP ELF/MEM with the PDI.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 84965056 bits.
+Writing bitstream ./jpeg_demo_board.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+133 Infos, 1 Warnings, 1 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:48 ; elapsed = 00:00:36 . Memory (MB): peak = 3488.836 ; gain = 65.430
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 21:10:44 2026...
+[Sat Nov  7 21:10:47 2026] impl_1 finished
+wait_on_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:07:37 . Memory (MB): peak = 548.453 ; gain = 0.000
+# set bit [glob -nocomplain build/jpeg_board/jpeg_board.runs/impl_1/*.bit]
+# if {[llength $bit] == 0} { puts "IMPL FAIL"; exit 1 }
+# open_run impl_1
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.068 . Memory (MB): peak = 1692.602 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 882 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1692.602 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1894.184 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.056 . Memory (MB): peak = 1894.184 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.545 . Memory (MB): peak = 1904.195 ; gain = 10.012
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1904.195 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2311.676 ; gain = 407.480
+Read Physdb Files: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 2311.676 ; gain = 417.492
+Restored from archive | CPU: 10.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2311.676 ; gain = 418.438
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2311.676 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 10 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 3 instances
+
+open_run: Time (s): cpu = 00:00:32 ; elapsed = 00:00:36 . Memory (MB): peak = 2311.676 ; gain = 1763.223
+# report_timing_summary -file $out/jpeg_board_timing.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -2, Temperature grade: I, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+report_timing_summary: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 2406.555 ; gain = 94.879
+# report_utilization -file $out/jpeg_board_util.rpt
+# puts "JPEG-BOARD BIT: [lindex $bit 0]"
+JPEG-BOARD BIT: build/jpeg_board/jpeg_board.runs/impl_1/jpeg_demo_board.bit
+# puts "JPEG-BOARD DONE"
+JPEG-BOARD DONE
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 21:11:36 2026...

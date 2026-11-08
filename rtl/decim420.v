@@ -51,9 +51,9 @@ module decim420 #(
     reg vq0, vq1, sofq0, sofq1, eolq0, eolq1;
 
     // ------------------------------------------------------------- chroma
-    reg [LCW-1:0] xcnt;      // pixel index in the line (0..W-1)
-    reg [10:0] W;            // configured frame width (latched on cfg_valid)
-    reg odd_row;             // 1 = second row of the vertical pair
+    (* mark_debug = "true" *) reg [LCW-1:0] xcnt;      // pixel index in the line (0..W-1)
+    (* mark_debug = "true" *) reg [10:0] W;            // configured frame width (latched on cfg_valid)
+    (* mark_debug = "true" *) reg odd_row;             // 1 = second row of the vertical pair
     reg [8:0] cb_sum, cr_sum;
     reg [17:0] lbuf_dout;
 

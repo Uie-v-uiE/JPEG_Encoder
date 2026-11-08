@@ -1,0 +1,183 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Sat Nov  7 21:56:23 2026
+# Process ID         : 21756
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts/ila_insert.tcl -nojournal -log results/ila_insert.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/ila_insert.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 22709 MB
+#-----------------------------------------------------------
+source scripts/ila_insert.tcl
+# open_checkpoint build/jpeg_dbg/synth_dbg.dcp
+Command: open_checkpoint build/jpeg_dbg/synth_dbg.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 328.684 ; gain = 0.766
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1684.059 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 882 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1684.059 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1789.070 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1789.070 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1789.070 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1789.070 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1789.070 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1789.070 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.146 . Memory (MB): peak = 1789.070 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2165.289 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 10 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD, DSP_PREADD_DATA): 1 instance 
+  IBUFDS => IBUFDS (DIFFINBUF, IBUFCTRL): 1 instance 
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 4 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 1 instance 
+  RAM32M16 => RAM32M16 (RAMD32(x14), RAMS32(x2)): 3 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2.1 (64-bit) build 6403652
+open_checkpoint: Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2165.289 ; gain = 1846.258
+# create_debug_core u_ila_jpeg ila
+# set_property C_DATA_DEPTH 4096 [get_debug_cores u_ila_jpeg]
+# for {set i 0} {$i < 18} {incr i} { create_debug_port u_ila_jpeg probe }
+# set_property C_TRIGIN_EN false [get_debug_cores u_ila_jpeg]
+# set_property C_TRIGOUT_EN false [get_debug_cores u_ila_jpeg]
+# set_property C_ADV_TRIGGER false [get_debug_cores u_ila_jpeg]
+# set_property C_INPUT_PIPE_STAGES 0 [get_debug_cores u_ila_jpeg]
+# set_property ALL_PROBE_SAME_MU true [get_debug_cores u_ila_jpeg]
+# set_property ALL_PROBE_SAME_MU_CNT 1 [get_debug_cores u_ila_jpeg]
+# set_property port_width 1 [get_debug_ports u_ila_jpeg/clk]
+# set clknet [get_nets clk]
+# puts "ILA-CLK NET: $clknet  driver: [get_cells -of_objects $clknet]"
+ILA-CLK NET: clk  driver: FSM_onehot_st_reg[0] FSM_onehot_st_reg[1] FSM_onehot_st_reg[2] FSM_onehot_st_reg[3] blink_cnt_reg[0] blink_cnt_reg[10] blink_cnt_reg[11] blink_cnt_reg[12] blink_cnt_reg[13] blink_cnt_reg[14] blink_cnt_reg[15] blink_cnt_reg[16] blink_cnt_reg[17] blink_cnt_reg[18] blink_cnt_reg[19] blink_cnt_reg[1] blink_cnt_reg[20] blink_cnt_reg[21] blink_cnt_reg[22] blink_cnt_reg[23] blink_cnt_reg[24] blink_cnt_reg[2] blink_cnt_reg[3] blink_cnt_reg[4] blink_cnt_reg[5] blink_cnt_reg[6] blink_cnt_reg[7] blink_cnt_reg[8] blink_cnt_reg[9] cfg_valid_reg done_reg lock_cnt_reg[0] lock_cnt_reg[1] lock_cnt_reg[2] lock_cnt_reg[3] lock_cnt_reg[4] lock_cnt_reg[5] lock_cnt_reg[6] ridx_reg[0] ridx_reg[10] ridx_reg[11] ridx_reg[1] ridx_reg[2] ridx_reg[3] ridx_reg[4] ridx_reg[5] ridx_reg[6] ridx_reg[7] ridx_reg[8] ridx_reg[9] s_valid_reg tx_cnt_reg[0] tx_cnt_reg[10] tx_cnt_reg[11] tx_cnt_reg[12] tx_cnt_reg[13] tx_cnt_reg[14] tx_cnt_reg[15] tx_cnt_reg[1] tx_cnt_reg[2] tx_cnt_reg[3] tx_cnt_reg[4] tx_cnt_reg[5] tx_cnt_reg[6] tx_cnt_reg[7] tx_cnt_reg[8] tx_cnt_reg[9] tx_data_reg[0] tx_data_reg[1] tx_data_reg[2] tx_data_reg[3] tx_data_reg[4] tx_data_reg[5] tx_data_reg[6] tx_data_reg[7] tx_we_reg u_bufg u_jpeg u_uart
+# puts "ILA-CLK DRVTYPE: [get_property REF_NAME [get_cells -of_objects $clknet]]"
+ILA-CLK DRVTYPE: FDSE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE FDRE BUFGCE jpeg_top uart_tx
+# connect_debug_port u_ila_jpeg/clk $clknet
+# set probes {cfg_valid s_valid s_ready y_valid y_ready c_valid cfg_seen hold_input accept_y pending_emit dbg_locked u_decim_W u_decim_xcnt u_decim_odd_row}
+# set pi 0
+# foreach sig $probes {
+#     set p u_ila_jpeg/probe$pi
+#     set_property port_width 1 [get_debug_ports $p]
+#     set nl [get_nets -quiet -hierarchical $sig]
+#     if {[llength $nl] == 0} { puts "SKIP $sig (no net)"; incr pi; continue }
+#     connect_debug_port $p [lindex $nl 0]
+#     puts "PROBE$pi <- [lindex $nl 0]"
+#     incr pi
+# }
+PROBE0 <- cfg_valid
+PROBE1 <- s_valid
+PROBE2 <- s_ready
+PROBE3 <- u_jpeg/y_valid
+PROBE4 <- u_jpeg/y_ready
+PROBE5 <- u_jpeg/c_valid
+PROBE6 <- u_jpeg/u_gather/cfg_seen
+PROBE7 <- u_jpeg/u_gather/hold_input
+PROBE8 <- u_jpeg/u_gather/accept_y
+PROBE9 <- u_jpeg/u_gather/pending_emit
+PROBE10 <- dbg_locked
+SKIP u_decim_W (no net)
+SKIP u_decim_xcnt (no net)
+SKIP u_decim_odd_row (no net)
+# set p u_ila_jpeg/probe$pi
+# set_property port_width 11 [get_debug_ports $p]
+# set nets {}
+# for {set b 10} {$b >= 0} {incr b -1} { lappend nets "u_jpeg/u_decim/W\[$b\]" }
+# connect_debug_port $p $nets
+# puts "PROBE$pi <- W[10:0]"
+PROBE14 <- W[10:0]
+# incr pi
+# set p u_ila_jpeg/probe$pi
+# set_property port_width 12 [get_debug_ports $p]
+# set nets {}
+# for {set b 11} {$b >= 0} {incr b -1} { lappend nets "u_jpeg/u_decim/xcnt\[$b\]" }
+# connect_debug_port $p $nets
+# puts "PROBE$pi <- xcnt[11:0]"
+PROBE15 <- xcnt[11:0]
+# incr pi
+# set p u_ila_jpeg/probe$pi
+# set_property port_width 1 [get_debug_ports $p]
+# connect_debug_port $p [get_nets -hierarchical *odd_row]
+# puts "PROBE$pi <- odd_row"
+PROBE16 <- odd_row
+# incr pi
+# set p u_ila_jpeg/probe$pi
+# set_property port_width 12 [get_debug_ports $p]
+# set nets {}
+# for {set b 11} {$b >= 0} {incr b -1} { lappend nets "ridx\[$b\]" }
+# connect_debug_port $p $nets
+# puts "PROBE$pi <- ridx[11:0]"
+PROBE17 <- ridx[11:0]
+# implement_debug_core
+INFO: [Chipscope 16-329] Generating Script for core instance : dbg_hub 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Software/Vivado/2025.2.1/Vivado/data/ip'.
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+INFO: [Chipscope 16-329] Generating Script for core instance : u_ila_jpeg 
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:ila:6.2 for cell u_ila_jpeg_CV.
+INFO: [Chipscope 16-78] labtools_xsdbm_v3 netlist file is 'd:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/.Xil/Vivado-21756-Uie-laptop/dbg_hub_CV.0/out/dcp/dbg_hub_0.edf'.
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2192.387 ; gain = 0.000
+INFO: [Chipscope 16-78] labtools_ila_v6 netlist file is 'd:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/.Xil/Vivado-21756-Uie-laptop/u_ila_jpeg_CV.0/out/dcp/u_ila_jpeg_1.edf'.
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2233.434 ; gain = 0.000
+get_clocks: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2445.477 ; gain = 212.043
+implement_debug_core: Time (s): cpu = 00:00:48 ; elapsed = 00:04:32 . Memory (MB): peak = 2445.477 ; gain = 279.230
+# opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcku5p'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.855 . Memory (MB): peak = 2445.477 ; gain = 0.000
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 271466b3f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2445.477 ; gain = 0.000
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 271466b3f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 2890.852 ; gain = 0.000
+Phase 1 Initialization | Checksum: 271466b3f
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 2890.852 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 1 Errors encountered.
+opt_design failed
+opt_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2890.852 ; gain = 445.375
+ERROR: [Chipscope 16-213] The debug port 'u_ila_jpeg/probe11' has 1 unconnected channels (bits). This will cause errors during implementation.
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 22:01:39 2026...

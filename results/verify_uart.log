@@ -1,0 +1,23 @@
+gold bytes = 67
+COM6 opened @115200
+program rc=0 ok=False
+09 ; elapsed = 00:00:06 . Memory (MB): peak = 545.559 ; gain = 225.141
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.2.0
+  ****** Build date   : Nov 14 2025-07:16:52
+    **** Build number : 2025.2.1763075812
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/0ABC01A
+INFO: [Labtools 27-3164] End of startup status: HIGH
+PROGRAMMED JPEG DBG OK
+INFO: [Common 17-206] Exiting Vivado at Sat Nov  7 19:26:45 2026...
+

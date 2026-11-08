@@ -1,0 +1,2 @@
+Sample in Buffer,Sample in Window,TRIGGER,cfg_valid,s_valid,s_ready,m_valid,m_last,tx_we,done,u_jpeg/u_gather/cfg_seen,u_jpeg/u_gather/hold_input,u_jpeg/u_gather/accept_y,u_jpeg/u_gather/pending_emit
+Radix - UNSIGNED,UNSIGNED,UNSIGNED,HEX,HEX,HEX,HEX,HEX,HEX,HEX,HEX,HEX,HEX,HEX

@@ -1,0 +1,25 @@
+gold bytes = 67
+COM6 opened @115200
+program rc=1 ok=False
+calhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.2.0
+  ****** Build date   : Nov 14 2025-07:16:52
+    **** Build number : 2025.2.1763075812
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/0ABC01A
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+
+    while executing
+"open_hw_target $t"
+    (file "D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/scripts/program_jpeg.tcl" line 4)
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  8 00:01:58 2026...
+
