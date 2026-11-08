@@ -8,3 +8,4 @@ vsim_stacktrace.vstf
 *.bak
 .Xil/
 __pycache__/
+docs/LEARNING.md
