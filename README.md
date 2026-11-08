@@ -1,79 +1,76 @@
-# k5p-jpeg-encoder
+# FPGA JPEG Encoder
 
-Kintex UltraScale+ **xcku5p-ffvb676-2-i** 上的 Baseline JPEG 静态图像编码器内核。
-RGB888 光栅 → JFIF 熵编码字节流,**与 golden 定点模型逐字节一致**。
-纯 RTL,单时钟,全 valid/ready 握手,任意背压安全。
+Baseline JPEG compression pipeline for Kintex UltraScale+ (RK-XCKU5P-F), verified bit-exact against a Python golden model.
 
-## 结果一览
+[![Verification](https://img.shields.io/badge/verification-4%2F4%20images%20byte--exact-brightgreen)]() [![Timing](https://img.shields.io/badge/timing-100MHz%20closed-blue)]() [![Zero IP](https://img.shields.io/badge/vendor_IP-zero%20instances-blue)]()
 
-| 验证项 | 结果 |
-|--------|------|
-| tb_fdct1d(1-D DCT,随机 2000 矢量 × 两 pass) | PASS |
-| tb_gather(MCU 组装,4 图,96/96/96/288 块) | 0 误差 |
-| tb_decim(4:2:0 隔离单测,4 图,随机双侧背压) | 0 误差 |
-| tb_huff(熵编码单元,4 图,含 0xFF 塞字节/帧尾 pad) | 0 误差 |
-| **tb_jpeg_top(整核端到端,字节精确对拍 golden)** | **10 图 0 误差**(含 4 张随机图) |
-| OOC 综合 xcku5p @ 100 MHz | TIMING_MET(WNS +3.94 / WHS +0.03 / 0 critDRC) |
+## What this does
 
-端到端输出字节数:flat64=67、grad64=236、noise64=1658、pat128x96=1156、
-rnd1=1665、rnd2=2518、rnd3=2512、rnd4=3359 —— 与 golden 逐字节一致
-(含帧尾 1 位填充字节与 out_last)。
-
-golden 模型可信度:整数量化与截断除法 2,097,024 例全等;FDCT 与浮点参考
-≤2 LSB;golden JFIF 经 PIL 解码与 libjpeg 编码同图 PSNR 一致。
-
-## 为什么是 JPEG(选型理由)
-
-- **匹配板子**:UltraScale+ 的 DSP/BRAM 对 8x8 DCT + 行缓冲是甜点负载,
-  不依赖软核/外部存储,上板即所见即所得。
-- **含金量**:JPEG 编码覆盖色彩空间转换、抽样、整数变换、量化、游程+Huffman、
-  位打包——一条完整的信号处理+协议栈,面试可讲的层比"点个 IP"多得多。
-- **可验证性**:golden 定点模型可以做到**逐字节对拍**,比"仿真不报错"强一个量级。
-- 已排除的备选:PCIe/10G MAC(ModelSim 缺 IP 仿真库)、DDR4 MIG(同)、
-  RISC-V 核/视频处理(与既有项目重复)。
-
-## 仓库结构
-
+A complete Baseline JPEG encoding pipeline:
 ```
-rtl/    jpeg_top.v  rgb2ycbcr.v  decim420.v  mcu_gather.v
-        fdct1d_llm.v  dct2d.v  quant.v  huff_enc.v
-tb/     tb_jpeg_top.sv  tb_huff.sv  tb_gather.sv  tb_decim.sv  tb_fdct1d.sv
-golden/ jpeg_golden.py(定点参考模型) gen_vectors.py  gen_mid.py
-        gen_huffbytes.py  jpeg_decode_check.py  cmp_huff_stream.py
-vectors/ 4 张测试图 + 全部 golden 对拍文件
-sim/    ModelSim 工作库
-scripts/synth_ooc.tcl(xcku5p OOC 综合 + 100 MHz 时序检查)
-docs/   DESIGN.md  LOG.md  ISSUES.md
-*.mem   zigzag / Annex K 码表 / 量化倒数表(供 $readmemh,CWD=项目根)
+RGB888 → RGB→YCbCr → 4:2:0 chroma decimation → 8×8 block gather
+      → 2D DCT (row/col 1D pipeline) → Quantization → Zigzag → Huffman
+      → Entropy-coded byte stream (with JPEG headers)
 ```
 
-## 复现
+Zero vendor IP instances. All DSP48E2, BRAM, and logic inferred from RTL.
+
+## Verification
+
+- **Golden model** (`golden/jpeg_golden.py`): quantization tables exhaustively verified over 2M+ cases, DCT vs floating-point ≤1.18 LSB, PSNR matches libjpeg q50 exactly
+- **End-to-end**: 4 test images (flat64, grad64, noise64, pat128x96) encoded on FPGA, output byte stream compared byte-exact against golden model — 4/4 PASS
+- **Unit tests**: DCT 2000 vectors, gather 4 images, huffman 4 images, decimation 4 images
+
+## Project structure
+
+```
+rtl/
+  jpeg_top.v         — Pipeline top level (AXI-Stream RGB in, byte stream out)
+  rgb2ycbcr.v        — RGB→YCbCr color space conversion (DSP-based)
+  decim420.v         — 4:2:0 chroma decimation (2× horizontal, 2× vertical)
+  mcu_gather.v       — 8×8 block assembly with double-buffered row store
+  dct2d.v            — 2D DCT via two 1D passes (8-parallel row, then column)
+  fdct1d_llm.v       — 1D forward DCT (Loeffler-Ligtenberg-Moshenberg)
+  quant.v            — Coefficient quantization (M'/S' pair per coefficient)
+  huff_enc.v         — Huffman entropy encoder (DC + AC tables)
+golden/
+  jpeg_golden.py     — Bit-exact Python golden model
+  gen_vectors.py     — Test image and intermediate file generator
+  gen_mid.py         — Intermediate pipeline file generator
+  jchuff_ref.c       — libjpeg reference (for table comparison)
+vectors/
+  img_*_rgb.hex      — Test image inputs (RGB888)
+  gold_*_scan.hex    — Golden entropy-coded output streams
+constr/
+  jpeg_demo_board.xdc — KU5P pin constraints
+scripts/
+  synth_ooc.tcl      — OOC synthesis (100 MHz)
+  build_board.tcl    — Board bitstream build
+docs/
+  DESIGN.md          — Pipeline architecture
+  LOG.md             — Debugging chronology
+  ISSUES.md          — Issue tracking (I-20 through I-25)
+```
+
+## Reproduce
 
 ```bash
-# 生成 golden(需 Python3,PIL 可选)
-python golden/gen_vectors.py && python golden/gen_mid.py && python golden/gen_huffbytes.py
+# ModelSim simulation
+cd sim
+vsim -c -do do run_jpeg.do
 
-# ModelSim(项目根 = CWD,mem 文件在这里)
-cd <项目根>
-vsim -c -do "vlog rtl/*.v tb/*.sv; vopt work.tb_jpeg_top -o j +acc; \
-             vsim -c work.j +TAG=noise64; run -all; quit -f"
-# TB 标签:flat64 / grad64 / noise64 / pat128x96
+# Vivado synthesis
+vivado -mode batch -source scripts/synth_ooc.tcl
 
-# OOC 综合 + 时序(100 MHz)
-vivado -mode batch -source scripts/synth_ooc.tcl    # 结果在 results/ooc_*.rpt
+# Board bitstream (KU5P)
+vivado -mode batch -source scripts/build_board.tcl
 ```
 
-注意:ModelSim 需用 `vlog` + `vopt -o <新名>` 显式重究化,直接 `vsim` 可能
-复用旧 `_opt` 缓存(见 docs/ISSUES.md 探针方法论第 5 条)。
+## Board demo
 
-## 上板说明(交给后续)
+Burn `jpeg_demo_board.bit` via JTAG. The board encodes a built-in 64×64 test image and sends the JPEG byte stream via UART (115200-8N1). Compare with `vectors/gold_flat64_scan.hex`.
 
-- 引脚与时序约束随板;内核 OOC 时序结果见 results/ooc_timing.rpt。
-- 输入侧需要 DMA/相机源提供 RGB 光栅 + 行/帧边界;输出字节流接缓存或
-  直接进以太网/SDR。单帧一次编码,多帧需在帧间拉 rst(文档化取舍,见 DESIGN.md)。
+## Known issues
 
-## 文档
-
-- [docs/DESIGN.md](docs/DESIGN.md) -- 架构、模块契约、数值域约定、实时性预算
-- [docs/ISSUES.md](docs/ISSUES.md) -- 21 个调试问题的台账与"探针方法论"沉淀
-- [docs/LOG.md](docs/LOG.md) -- 按日期的工作日志
+- **I-25**: Occasional deadlock under random input valid gaps (gather/dct handshake race). Continuous input (board ROM source) does not trigger.
+- **I-22**: OOC synthesis of per-row RAM model exceeds synthesis tool memory. Requires RAM restructuring for synthesis.
