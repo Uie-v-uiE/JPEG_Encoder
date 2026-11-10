@@ -1,0 +1,47 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Wed Nov 11 02:29:54 2026
+# Process ID         : 28384
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts\synth_ooc.tcl -journal results\qihe_jpeg.jou -log results\qihe_jpeg.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/qihe_jpeg.log
+# Journal file       : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder\results\qihe_jpeg.jou
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 25280 MB
+#-----------------------------------------------------------
+source {scripts\synth_ooc.tcl}
+# set part xcku5p-ffvb676-2-i
+# set period 10.0
+# cd [file normalize [file join [file dirname [info script]] ..]]
+# puts "OOC CWD: [pwd]"
+OOC CWD: D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# create_project -force jpeg_ooc build/ooc -part $part
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 541.770 ; gain = 222.004
+# add_files rtl/jpeg_top.v
+# add_files rtl/rgb2ycbcr.v
+# add_files rtl/decim420.v
+# add_files rtl/mcu_gather.v
+# add_files rtl/fdct1d_llm.v
+# add_files rtl/dct2d.v
+# add_files rtl/quant.v
+# add_files rtl/huff_enc.v
+# foreach f {zigzag.mem huff_dc0.mem huff_dc1.mem huff_ac0.mem huff_ac1.mem
+#            quant_luma_q.mem quant_luma_m.mem quant_luma_s.mem
+#            quant_chroma_q.mem quant_chroma_m.mem quant_chroma_s.mem} {
+#     add_files -norecurse $f
+#     set_property file_type {Memory File} [get_files $f]
+# }
+ERROR: [Vivado 12-172] File or Directory 'zigzag.mem' does not exist
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 11 02:30:02 2026...
