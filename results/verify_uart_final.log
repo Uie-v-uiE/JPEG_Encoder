@@ -1,0 +1,13 @@
+gold bytes = 67
+Traceback (most recent call last):
+  File "D:\Xilinx\Harness\Project\new_prj\k5p-jpeg-encoder\scripts\verify_uart.py", line 20, in <module>
+    ser = serial.Serial('COM6', 115200, bytesize=8, parity='N', stopbits=1, timeout=30)
+  File "D:\Software\Scoop\apps\python\current\Lib\site-packages\serial\serialwin32.py", line 33, in __init__
+    super(Serial, self).__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Software\Scoop\apps\python\current\Lib\site-packages\serial\serialutil.py", line 244, in __init__
+    self.open()
+    ~~~~~~~~~^^
+  File "D:\Software\Scoop\apps\python\current\Lib\site-packages\serial\serialwin32.py", line 64, in open
+    raise SerialException("could not open port {!r}: {!r}".format(self.portstr, ctypes.WinError()))
+serial.serialutil.SerialException: could not open port 'COM6': FileNotFoundError(2, '系统找不到指定的文件。', None, 2)

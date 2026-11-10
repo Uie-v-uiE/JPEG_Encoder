@@ -12,7 +12,7 @@ module jpeg_demo_board (
     output wire       o_uart_tx       // AC14
 );
     wire clk;
-    IBUFDS #(.DIFF_TERM("TRUE")) u_ibufds (
+    IBUFDS u_ibufds (
         .O(clk), .I(i_sys_clk_p), .IB(i_sys_clk_n));
 
     reg [1:0] rsync;
