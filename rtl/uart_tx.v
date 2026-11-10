@@ -28,14 +28,10 @@ module uart_tx #(
             if (baud_cnt == DIV - 1) begin
                 baud_cnt <= 0;
                 if (bitidx == 4'd9) begin
-                    running <= 1'b0; tx <= 1'b1;      // 停止位满周期毕
-                end else if (bitidx == 4'd8) begin
-                    bitidx <= 4'd9; tx <= 1'b1;        // 进入停止位
-                    // 旧版在 bitidx==8 直接结束:停止位只剩 2 拍(应 868),
-                    // 接收端帧错误 (I-35);busy 需覆盖整个停止位
+                    running <= 1'b0; tx <= 1'b1;      // 停止位结束
                 end else begin
-                    tx <= shreg[0];                    // LSB 先
-                    shreg <= shreg >> 1;
+                    tx <= (bitidx == 4'd0) ? 1'b0 : shreg[0];  // 起始位后移位发
+                    if (bitidx != 4'd0) shreg <= shreg >> 1;
                     bitidx <= bitidx + 1'b1;
                 end
             end else begin

@@ -39,9 +39,7 @@ module mcu_gather #(
     output wire [2:0]  blk_comp,    // [1:0]=0/Y 1/Cb 2/Cr, [2]=frame end
     output wire        blk_first,
     output wire        blk_last,
-    output wire        blk_sof_frame,
-    // 板级诊断(I-25):cfg_seen / !hold / accept_y / y_valid
-    output wire [3:0]  diag
+    output wire        blk_sof_frame
 );
     localparam integer YL = 16;
     localparam integer CL = 8;
@@ -59,14 +57,14 @@ module mcu_gather #(
 
     // ---------------------------------------------------------- gather FSM
     reg [10:0] W, H;
-    (* mark_debug = "true" *) reg [3:0]  y_line;
-    (* mark_debug = "true" *) reg [LCW-1:0] y_x;
+    reg [3:0]  y_line;
+    reg [LCW-1:0] y_x;
     reg [2:0]  c_line;
     reg [LCW-1:0] c_x;
     reg [10:0] mcu_row;
     reg        gpp;
-    (* mark_debug = "true" *) reg        cfg_seen;
-    (* mark_debug = "true" *) reg        pending_emit;
+    reg        cfg_seen;
+    reg        pending_emit;
 
     // ----------------------------------------------------------- emit FSM
     reg        epp;
@@ -77,7 +75,7 @@ module mcu_gather #(
     reg [2:0]  row_cnt;
     reg        phase;            // 0 = warm (bram read), 1 = data
 
-    (* mark_debug = "true" *) wire accept_y = y_valid && y_ready;
+    wire accept_y = y_valid && y_ready;
     wire accept_c = c_valid && c_ready;
     wire gather_complete = accept_y && (y_line == YL-1) && y_eol;
     // stall the input the moment a completed window awaits emission: the
@@ -86,7 +84,7 @@ module mcu_gather #(
     // whole emission -- so backpressure-stretched emissions lost windows
     // (I-18). pending_emit clears in start_emit, which also flips gpp to
     // the just-emptied set, so the input resumes into free storage.
-    (* mark_debug = "true" *) wire hold_input = !cfg_seen || pending_emit;
+    wire hold_input = !cfg_seen || pending_emit;
     assign y_ready = !hold_input;
     assign c_ready = !hold_input;
 

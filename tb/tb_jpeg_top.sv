@@ -30,7 +30,6 @@ module tb_jpeg_top;
     );
 
     integer fd_img, fd_gold, fd_rtl, code, errors, sent, got, W, H;
-    integer nogap, dummy_int;
     reg [23:0] px;
     string tag;
     string fname;
@@ -418,7 +417,6 @@ module tb_jpeg_top;
 
     initial begin
         if (!$value$plusargs("TAG=%s", tag)) tag = "flat64";
-        if ($value$plusargs("NOGAP", dummy_int)) nogap = 1;
         rng_state = 32'hBEEF;
         errors = 0; sent = 0; got = 0;
         done_flag = 0;
@@ -458,10 +456,8 @@ module tb_jpeg_top;
                         $display("FATAL: rgb hex short at pixel %0d", i);
                         disable input_driver;
                     end
-                    // randomized valid gaps (+NOGAP disables: continuous
-                    // stream = board ROM source; random gaps hit an
-                    // occasional gather/dct handshake deadlock, I-25)
-                    if (nogap == 0 && (nextr() & 3) == 0) begin
+                    // randomized valid gaps
+                    if ((nextr() & 3) == 0) begin
                         @(negedge clk);
                         s_valid <= 0;
                     end

@@ -13,7 +13,7 @@ module jpeg_top #(
 ) (
     input  wire        clk,
     input  wire        rst,
-    (* mark_debug = "true" *) input  wire        cfg_valid,
+    input  wire        cfg_valid,
     input  wire [10:0] cfg_w,
     input  wire [10:0] cfg_h,
     // AXI-Stream slave: RGB888
@@ -26,9 +26,7 @@ module jpeg_top #(
     output wire        m_valid,
     input  wire        m_ready,
     output wire [7:0]  m_data,
-    output wire        m_last,
-    // 板级诊断输出(I-25):cfg_seen / !hold / accept_y / m_valid 活动
-    output wire [3:0]  diag
+    output wire        m_last
 );
     // ------------------------------------------------ input 2-deep FIFO
     reg [23:0] f_d [0:3];
@@ -51,7 +49,7 @@ module jpeg_top #(
     assign f_pop = f_head_v && conv_ready;
 
     // ------------------------------------------------------- rgb2ycbcr
-    (* mark_debug = "true" *) wire c_valid, c_ready, c_sof, c_eol;
+    wire c_valid, c_ready, c_sof, c_eol;
     wire [7:0] c_y, c_cb, c_cr;
     rgb2ycbcr u_conv (
         .clk(clk), .rst(rst),
@@ -83,7 +81,7 @@ module jpeg_top #(
     end
 
     // -------------------------------------------------------- decim420
-(* mark_debug = "true" *) wire y_valid, y_ready, y_sof, y_eol;
+    wire y_valid, y_ready, y_sof, y_eol;
     wire [7:0] y_data;
     wire cc_valid, cc_ready, cc_sof, cc_eol;
     wire [7:0] cc_cb, cc_cr;
@@ -103,7 +101,6 @@ module jpeg_top #(
     wire blk_valid, blk_ready, blk_first, blk_last, blk_sof_frame;
     wire [63:0] blk_a;
     wire [2:0] blk_comp;
-    wire [3:0] gather_diag;
     mcu_gather #(.MAX_W(MAX_W)) u_gather (
         .clk(clk), .rst(rst),
         .cfg_valid(cfg_valid), .cfg_w(cfg_w), .cfg_h(cfg_h),
@@ -114,8 +111,7 @@ module jpeg_top #(
         .blk_valid(blk_valid), .blk_ready(blk_ready),
         .blk_a(blk_a), .blk_comp(blk_comp),
         .blk_first(blk_first), .blk_last(blk_last),
-        .blk_sof_frame(blk_sof_frame),
-        .diag(gather_diag)
+        .blk_sof_frame(blk_sof_frame)
     );
 
     // ------------------------------------------------------------ dct2d
@@ -167,6 +163,5 @@ module jpeg_top #(
     assign m_valid = h_valid;
     assign m_data = h_data;
     assign m_last = h_last;
-    assign diag = gather_diag;
     assign h_ready = m_ready;
 endmodule
