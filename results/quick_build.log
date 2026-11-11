@@ -1,0 +1,344 @@
+#-----------------------------------------------------------
+# Vivado v2025.2.1 (64-bit)
+# SW Build 6403652 on Thu Mar 19 19:48:24 GMT 2026
+# IP Build 6403511 on Thu Mar 19 12:41:45 MDT 2026
+# SharedData Build 6403650 on Thu Mar 19 14:02:13 MDT 2026
+# Start of session at: Thu Nov 12 00:53:30 2026
+# Process ID         : 17424
+# Current directory  : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder
+# Command line       : vivado.exe -mode batch -source scripts\quick_build.tcl -nojournal -notrace -log results\quick_build.log
+# Log file           : D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/results/quick_build.log
+# Journal file       : 
+# Running On         : Uie-laptop
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12450H
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16873 MB
+# Swap memory        : 25769 MB
+# Total Virtual      : 42643 MB
+# Available Virtual  : 24993 MB
+#-----------------------------------------------------------
+source {scripts\quick_build.tcl} -notrace
+Command: synth_design -top jpeg_demo_board -part xcku5p-ffvb676-2-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcku5p'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3040
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1082.680 ; gain = 534.285
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'jpeg_demo_board' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:7]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file 'jpeg_demo_rgb.mem'; please make sure the file is added to project and has read permission, ignoring [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:28]
+INFO: [Synth 8-6157] synthesizing module 'IBUFDS' [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:82819]
+INFO: [Synth 8-6155] done synthesizing module 'IBUFDS' (0#1) [D:/Software/Vivado/2025.2.1/Vivado/scripts/rt/data/unisim_comp.v:82819]
+INFO: [Synth 8-226] default block is never used [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:52]
+INFO: [Synth 8-6157] synthesizing module 'jpeg_top' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'rgb2ycbcr' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'rgb2ycbcr' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:8]
+INFO: [Synth 8-6157] synthesizing module 'decim420' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'decim420' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/decim420.v:11]
+INFO: [Synth 8-6157] synthesizing module 'mcu_gather' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+	Parameter MAX_W bound to: 1920 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mcu_gather' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/mcu_gather.v:17]
+INFO: [Synth 8-6157] synthesizing module 'dct2d' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'fdct1d_llm' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'fdct1d_llm' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'dct2d' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/dct2d.v:14]
+INFO: [Synth 8-6157] synthesizing module 'quant' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_q.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:52]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_m.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:53]
+INFO: [Synth 8-3876] $readmem data file 'quant_luma_s.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:54]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_q.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:55]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_m.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:56]
+INFO: [Synth 8-3876] $readmem data file 'quant_chroma_s.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'quant' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/quant.v:10]
+INFO: [Synth 8-6157] synthesizing module 'huff_enc' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-3876] $readmem data file 'zigzag.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:46]
+INFO: [Synth 8-3876] $readmem data file 'huff_dc0.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:47]
+INFO: [Synth 8-3876] $readmem data file 'huff_dc1.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:48]
+INFO: [Synth 8-3876] $readmem data file 'huff_ac0.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:49]
+INFO: [Synth 8-3876] $readmem data file 'huff_ac1.mem' is read successfully [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'huff_enc' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_top' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_top.v:11]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/uart_tx.v:2]
+	Parameter DIV bound to: 1736 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/uart_tx.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'jpeg_demo_board' (0#1) [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:7]
+WARNING: [Synth 8-6014] Unused sequential element fp_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:43]
+WARNING: [Synth 8-6014] Unused sequential element tmp0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:45]
+WARNING: [Synth 8-6014] Unused sequential element tmp7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:46]
+WARNING: [Synth 8-6014] Unused sequential element tmp1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:47]
+WARNING: [Synth 8-6014] Unused sequential element tmp6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:48]
+WARNING: [Synth 8-6014] Unused sequential element tmp2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:49]
+WARNING: [Synth 8-6014] Unused sequential element tmp5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:50]
+WARNING: [Synth 8-6014] Unused sequential element tmp3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:51]
+WARNING: [Synth 8-6014] Unused sequential element tmp4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:52]
+WARNING: [Synth 8-6014] Unused sequential element tmp10_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:54]
+WARNING: [Synth 8-6014] Unused sequential element tmp13_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:55]
+WARNING: [Synth 8-6014] Unused sequential element tmp11_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:56]
+WARNING: [Synth 8-6014] Unused sequential element tmp12_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:57]
+WARNING: [Synth 8-6014] Unused sequential element even0_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:60]
+WARNING: [Synth 8-6014] Unused sequential element even4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:61]
+WARNING: [Synth 8-6014] Unused sequential element z1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:66]
+WARNING: [Synth 8-6014] Unused sequential element even2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:68]
+WARNING: [Synth 8-6014] Unused sequential element even6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:69]
+WARNING: [Synth 8-6014] Unused sequential element z2_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:76]
+WARNING: [Synth 8-6014] Unused sequential element z3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:77]
+WARNING: [Synth 8-6014] Unused sequential element z4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:78]
+WARNING: [Synth 8-6014] Unused sequential element z5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:79]
+WARNING: [Synth 8-6014] Unused sequential element m4_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:81]
+WARNING: [Synth 8-6014] Unused sequential element m5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:82]
+WARNING: [Synth 8-6014] Unused sequential element m6_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:83]
+WARNING: [Synth 8-6014] Unused sequential element m7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:84]
+WARNING: [Synth 8-6014] Unused sequential element odd7_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:93]
+WARNING: [Synth 8-6014] Unused sequential element odd5_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:94]
+WARNING: [Synth 8-6014] Unused sequential element odd3_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:95]
+WARNING: [Synth 8-6014] Unused sequential element odd1_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/fdct1d_llm.v:96]
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_d_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:277]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-4767] Trying to implement RAM 'f_l_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/huff_enc.v:278]
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Invalid write to RAM. 
+	3: Invalid write to RAM. 
+	4: No valid clock found for write to RAM. 
+WARNING: [Synth 8-6014] Unused sequential element tx_cnt_reg was removed.  [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:48]
+WARNING: [Synth 8-3848] Net rom in module/entity jpeg_demo_board does not have driver. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/jpeg_demo_board.v:27]
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[2] driven by constant 0
+WARNING: [Synth 8-7129] Port q_first in module huff_enc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port blk_first in module dct2d is either unconnected or has no load
+WARNING: [Synth 8-7129] Port y_sof in module mcu_gather is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_sof in module mcu_gather is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1378.898 ; gain = 830.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1378.898 ; gain = 830.504
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcku5p-ffvb676-2-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xcku5p-ffvb676-2-i
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1378.898 ; gain = 830.504
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'py_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:54]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pcb_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:55]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pcr_reg' and it is trimmed from '18' to '16' bits. [D:/Xilinx/Harness/Project/new_prj/k5p-jpeg-encoder/rtl/rgb2ycbcr.v:56]
+DSP Debug: swapped A/B pins for adder 000001F4DF369910
+DSP Debug: swapped A/B pins for adder 000001F4DF369670
+INFO: [Synth 8-802] inferred FSM for state register 'fstate_reg' in module 'huff_enc'
+INFO: [Synth 8-802] inferred FSM for state register 'st_reg' in module 'jpeg_demo_board'
+INFO: [Synth 8-6904] The RAM "decim420:/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "decim420:/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "dct2d:/cf_comp_reg" of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "dct2d:/cf_last_reg" of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                             1000 |                               00
+                 iSTATE1 |                             0010 |                               01
+                  iSTATE |                             0100 |                               10
+*
+                 iSTATE2 |                             0001 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fstate_reg' using encoding 'one-hot' in module 'huff_enc'
+INFO: [Synth 8-6904] The RAM "jpeg_top:/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top:/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_top:/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                   S_CFG |                             0001 |                               00
+                  S_SEND |                             0010 |                               01
+                 S_DRAIN |                             0100 |                               10
+                  S_DONE |                             1000 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'st_reg' using encoding 'one-hot' in module 'jpeg_demo_board'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:16 . Memory (MB): peak = 2152.863 ; gain = 1604.469
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   48 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 24    
+	   3 Input   32 Bit       Adders := 14    
+	   4 Input   32 Bit       Adders := 2     
+	   2 Input   16 Bit       Adders := 9     
+	   3 Input   16 Bit       Adders := 1     
+	   3 Input   14 Bit       Adders := 8     
+	   3 Input   12 Bit       Adders := 2     
+	   2 Input   12 Bit       Adders := 11    
+	   4 Input   12 Bit       Adders := 1     
+	   2 Input   11 Bit       Adders := 7     
+	   3 Input   11 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 2     
+	   3 Input   10 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 8     
+	   4 Input    6 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 5     
+	   2 Input    3 Bit       Adders := 8     
+	   4 Input    3 Bit       Adders := 1     
+	   4 Input    2 Bit       Adders := 1     
+	   2 Input    2 Bit       Adders := 6     
++---Registers : 
+	               48 Bit    Registers := 1     
+	               18 Bit    Registers := 1     
+	               16 Bit    Registers := 25    
+	               15 Bit    Registers := 144   
+	               12 Bit    Registers := 140   
+	               11 Bit    Registers := 26    
+	                8 Bit    Registers := 190   
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 4     
+	                5 Bit    Registers := 23    
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 17    
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 88    
++---Multipliers : 
+	              14x32  Multipliers := 3     
+	              13x32  Multipliers := 2     
+	              15x32  Multipliers := 4     
+	              16x32  Multipliers := 3     
++---RAMs : 
+	              16K Bit	(960 X 18 bit)          RAMs := 1     
+	               96 Bit	(4 X 24 bit)          RAMs := 1     
+	               32 Bit	(4 X 8 bit)          RAMs := 2     
+	                6 Bit	(2 X 3 bit)          RAMs := 1     
+	                4 Bit	(4 X 1 bit)          RAMs := 4     
+	                2 Bit	(2 X 1 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   48 Bit        Muxes := 5     
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input   24 Bit        Muxes := 1     
+	   2 Input   21 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 17    
+	   2 Input   15 Bit        Muxes := 72    
+	   2 Input   14 Bit        Muxes := 8     
+	   2 Input   12 Bit        Muxes := 261   
+	   4 Input   12 Bit        Muxes := 3     
+	   5 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 15    
+	   2 Input    9 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 112   
+	   2 Input    7 Bit        Muxes := 2     
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 7     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	  13 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 8     
+	   3 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 61    
+	   4 Input    3 Bit        Muxes := 2     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 406   
+	   4 Input    1 Bit        Muxes := 8     
+	   3 Input    1 Bit        Muxes := 5     
+	   6 Input    1 Bit        Muxes := 1     
+	   7 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 51    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 1824 (col length:96)
+BRAMs: 960 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6904] The RAM "\u_jpeg/u_dct/cf_comp_reg " of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\u_jpeg/u_dct/cf_last_reg " of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+DSP Report: Generating DSP u_quant/pr0_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: register u_quant/mm0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: register u_quant/pr0_reg is absorbed into DSP u_quant/pr0_reg.
+DSP Report: operator u_quant/pr00 is absorbed into DSP u_quant/pr0_reg.
+DSP Report: Generating DSP u_quant/pr1_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: register u_quant/mm1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: register u_quant/pr1_reg is absorbed into DSP u_quant/pr1_reg.
+DSP Report: operator u_quant/pr10 is absorbed into DSP u_quant/pr1_reg.
+DSP Report: Generating DSP u_quant/pr2_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: register u_quant/mm2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: register u_quant/pr2_reg is absorbed into DSP u_quant/pr2_reg.
+DSP Report: operator u_quant/pr20 is absorbed into DSP u_quant/pr2_reg.
+DSP Report: Generating DSP u_quant/pr3_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: register u_quant/mm3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: register u_quant/pr3_reg is absorbed into DSP u_quant/pr3_reg.
+DSP Report: operator u_quant/pr30 is absorbed into DSP u_quant/pr3_reg.
+DSP Report: Generating DSP u_quant/pr4_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: register u_quant/mm4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: register u_quant/pr4_reg is absorbed into DSP u_quant/pr4_reg.
+DSP Report: operator u_quant/pr40 is absorbed into DSP u_quant/pr4_reg.
+DSP Report: Generating DSP u_quant/pr5_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: register u_quant/mm5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: register u_quant/pr5_reg is absorbed into DSP u_quant/pr5_reg.
+DSP Report: operator u_quant/pr50 is absorbed into DSP u_quant/pr5_reg.
+DSP Report: Generating DSP u_quant/pr6_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: register u_quant/mm6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: register u_quant/pr6_reg is absorbed into DSP u_quant/pr6_reg.
+DSP Report: operator u_quant/pr60 is absorbed into DSP u_quant/pr6_reg.
+DSP Report: Generating DSP u_quant/pr7_reg, operation Mode is: (A2*B2)'.
+DSP Report: register u_quant/t7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: register u_quant/mm7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: register u_quant/pr7_reg is absorbed into DSP u_quant/pr7_reg.
+DSP Report: operator u_quant/pr70 is absorbed into DSP u_quant/pr7_reg.
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design jpeg_demo_board has port o_led[2] driven by constant 0
+INFO: [Synth 8-6904] The RAM "\u_jpeg/u_dct/cf_comp_reg " of size (depth=2 x width=3) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "\u_jpeg/u_dct/cf_last_reg " of size (depth=2 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/f_d_reg" of size (depth=4 x width=24) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_cb_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_cr_reg" of size (depth=4 x width=8) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_sof_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/u_decim/f_eol_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/f_u_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
+INFO: [Synth 8-6904] The RAM "jpeg_demo_board/f_l_reg" of size (depth=4 x width=1) is automatically implemented using LUTRAM. BRAM implementation would be inefficient 
