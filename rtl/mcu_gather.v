@@ -137,7 +137,7 @@ module mcu_gather #(
     genvar r;
     generate
         for (r = 0; r < YROWS; r = r + 1) begin : g_yrow
-            (* ram_style = "block" *)
+            (* ram_style = "distributed" *)
             reg [7:0] mem [0:MAX_W-1];
             reg [7:0] rd_q;                    // 每行单一读寄存(标准 BRAM 形状)
             always @(posedge clk) begin
@@ -151,7 +151,7 @@ module mcu_gather #(
     endgenerate
     generate
         for (r = 0; r < CROWS; r = r + 1) begin : g_crow
-            (* ram_style = "block" *)
+            (* ram_style = "distributed" *)
             reg [15:0] mem [0:MAX_W/2-1];
             reg [15:0] rd_q;
             always @(posedge clk) begin

@@ -1,0 +1,9 @@
+gold bytes = 67
+COM6 opened @115200
+program rc=0 ok=True
+TIMEOUT: got 1/67 bytes
+received 1 bytes
+hex : 00
+compare: 0/67 bytes match
+JPEG UART VERIFY: FAIL
+  first diff @0: got 00 exp 9A
